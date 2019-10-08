@@ -1,0 +1,183 @@
+a) Herramientas
+1. maven
+	Conoces maven? como funciona y para que sirve?
+		-ok.
+	Como resuelvo un problema de dependencias con maven?
+		-ok.
+	Cuales son los scope de las dependencias de maven?
+		-testing.provided ok.
+
+2. git - ok.
+	2.1 Que es un branch?
+	2.2 Estas en rama master, creas un branch llamado 'branch1', efectuas cambios en el,como son los pasos para que tus cambios se reflejen en master.
+		- clone, checkout -b, cambio, commit, push origin.
+	2.3 Como cambio un typo en un mensaje ya commiteado.
+		- ok.
+	3.4 Cherry picking.
+		- ok.
+	3.5 Que es un pull request?
+		- ok.
+
+3. Servidor de colas externos, activemq.
+	- maso. 
+
+4. Bamboo
+	*para que sirve.
+		- no
+5. Jira 
+	* conta un poco de tu expreiencia con jira
+		- ok. tickets
+6. jenkins
+	- ok.
+
+7. cucumer
+	- no.
+
+8. Gradle - ok.
+	* Que es y para que sirve?
+	* Ventajas y desventajas con respecto a maven
+	* Que es una task en gradle y que ventajas me da.
+	* como se manejan las dependencias de las taks y como puedo hacer que una dependa de otra.
+
+9. Webservices
+	*REST
+		-ok
+		-stateless - no.
+	*SOAP wsdl 
+		-ok.
+	
+b) Java
+
+1. diferencia entre jdk y jre
+	* Herramientas para debugear la jdk, jconsole, new relic.
+	* como funciona el garbage collector. tipos de garbage collector.
+	
+2.Cuales son los conceptos de POO?
+	*Encapsulamiento
+		-ok.
+	*Polymorphism
+		-ok.
+	*Inheritance
+		-ok.
+
+2.a polimorfismo
+	-maso.
+
+2.b clase abstracta/interfaz
+	b1. como instancio una clase abstracta. 
+		-no.
+	b2. ¿Cuántas clases puede extender una clase abstracta?  
+		-ok.
+	 ¿Cuántas interfaces? 
+	 	-ok.
+	
+2.c encapsulamiento, definir.
+	private
+		-ok
+	public
+		-ok
+	protected
+		-ok
+	default
+		-ok.
+
+2.d clase/objeto/instancia
+
+3. estructuras de datos
+	*nombrar. 
+		-hashmap
+		-list
+		-set
+	*diferencia LinkedList/arrayList 
+		-no.
+	*set. porque el set no asegura el orden? 
+		-ok.
+
+3a. map
+	a1. equals y hashcode
+		-maso.
+	a2. como implementar un hashcode y un equals.
+		-no.
+
+4. Final
+	* variable.
+		-ok.
+			-persona -no
+	* método. 
+		-no.
+	* Clase. 
+		-no.
+
+4a. transient
+	- no.
+
+4b. volatile
+	- no.
+
+5. Constructores
+	* ¿Se puede sobrecargar un constructor? 
+		- ok.
+	* ¿Se puede sobreescribir un constructor?
+		- ok.
+
+6 Exceptions
+usamos bastante las runtime exceptions.
+	* checked
+		-ok.
+	* unchecked
+		-ok.
+	* ¿El bloqué finally se ejecuta siempre?
+		- ok.
+	* ¿Se ejecuta siempre completo?
+
+7 Generics
+	* ventajas
+		-no.
+	* Como implementar una clase con generics.
+		-no.
+
+8 reflexion
+	* para que sirve?
+		-maso
+	* ventajas y desventajas
+		-no
+
+9 Threads
+	9.a diferentes formas de crear threads, cual te gusta mas y porque?
+		-extends thread
+			-ok.
+		-implement runnable
+			-ok.
+		-use Executors
+			-ok.
+	start() -no
+	9.b que es un deadlock?
+		-no.
+	9.c synchronized
+		-ok
+	9.d lock
+		-no.
+	9.e executors
+		-no.
+
+lambda filter -ok.
+
+11. Patrones de diseño
+	10.1 que patrones de disenio conoces.
+		* Singleton -ok.
+		* strategy -maso.
+
+	10.2 Como se implementa singleton.
+		-ok.
+
+
+
+14. Junit/mockito/tdd
+	9.1 herramientas de stress test. jmetter
+	9.2 como probas tu codigo.
+		-junit, mockito.
+	9.3 defini a grandes rasgos como funciona junit.
+	9.4 como usarias mockito para mockear un metodo.
+		-@mock, 
+	9.5 TDD
+		-ok.

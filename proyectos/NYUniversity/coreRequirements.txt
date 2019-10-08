@@ -1,0 +1,16 @@
+Required Experience:
+•	3+ years information technology implementation and development experience; 
+•	broad programming experience (e.g. for operating systems, applications, and/or web development using Java and other scripting or object oriented languages); 
+•	or an equivalent combination of training and experience.
+
+Preferred Experience:
+•	Java, JavaScript, Identity Management applications (preferably Sailpoint IIQ), Apache, web containers, Unix/Linux proficiency, RESTful web services, cloud technologies. 
+•	Experience working with methods of authentication, authorization, and access management, including SAML2 (preferably Shibboleth), OAuth, MFA, and LDAP/ADFS. 
+•	Previous experience working with any major IAM technology is highly desirable.
+
+Required Skills, Knowledge and Abilities:
+Should possess analytical and problem solving skills, excellent oral and written communication skills, and the ability to effectively communicate with individuals at all levels, including non-technical users. Able to document code/work and participate in knowledge transfers.
+•	Software development lifecycle knowledge, agile methodologies, familiarity with Git/other version control software.
+•	Demonstrated success working in a collaborative environment as well as independently. 
+•	Working experience with other IAM technologies including: SSO (Shibboleth and OpenID Connect), Grouper, LDAP, Duo for MFA, SailPoint, OAuth as well as, related systems Active Directory, ServiceNow, JIRA, Web Publishing.
+

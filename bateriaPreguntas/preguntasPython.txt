@@ -1,0 +1,55 @@
+
+*¿Cuándo utilizar list, tuple, dict. ó set?
+*¿Por qué no puedo usar una asignación en una expresión?
+*¿Para que se utiliza __init__.py?
+{
+The __init__.py file is usually empty, but can be used to export selected portions of the package under more convenient name, hold convenience functions, etc. Given the example above, the contents of the init module can be accessed as
+  
+  }
+*¿Cuáles son los decoradores de Python y cómo se utilizan?
+{
+	  Un decorador nos permite realizar modificación simples en objetos que podemos llamar como son las funciones, métodos o clases,estas modificaciones se realizan en tiempo de ejecución. Una definición de los decoradores sería, una función que recibe como parámetro otra función y devuelve una función, con lo que tenemos:
+	
+	    El decorador que es una función.
+	    La función a decorar que se recibe como un parámetro.
+	    La función decorada que es la función que devuelve el decorador.
+	    Con un decorador podemos cambiar el comportamiento de un función, método o clase sin modificar su código, esa es la ventaja de utilizar un decorador. Se crea un “envoltura” alrededor de la función a decorar donde se encuentra el código que deseamos añadir, esta envoltura y la función original, es la nueva función que obtenemos
+}
+*¿Cómo se puede depurar el código en Python?
+*¿Qué es un docstring?
+{
+  The doc string line should begin with a capital letter and end with a period. 
+
+  The first line should be a short description.
+
+  Don't write the name of the object. 
+  }
+*¿Para qué sirve la función map?
+{
+  	def doblar(numero):
+        return numero*2
+
+        numeros = [2, 5, 10, 23, 50, 33]
+
+        map(doblar, numeros)
+  }
+*¿Cuál es la diferencia entre una tupla y una lista?
+{
+Una lista puede ser alterada, no así una tupla. Una tupla puede ser utilizada como clave en un diccionario, no así una lista. Una tupla consume menos espacio que una lista.
+}
+*Demuestra el uso de control de excepciones en Python.
+*¿Cuáles son las reglas para las variables locales y globales en Python?
+{
+Si una variable es definida fuera de una función entonces es implícitamente global. Si la variable se asigna a un nuevo valor dentro de la función significa que es local. Si queremos que sea global tenemos que definirla explícitamente como global. La variable referenciada dentro de la función están implícitas como global.
+}
+*¿Qué es GIL?
+{
+Es el mecanismo utilizado en CPython para impedir que múltiples threads modifiquen los objetos de Python a la vez en una aplicación multi hilo. Esto no evita que tengamos que utilizar primitivas de sincronización en nuestras aplicaciones en Python, no van por ahí los tiros. Si en nuestras aplicaciones tenemos varios threads accediendo a una sección de código con datos mutables, tendremos un problema si no utilizamos primitivas de sincronización.
+}
+*¿Cómo utilizas una Cookie en Python?
+*¿Python soporta la herencia múltiple?, ¿Si o no? y explica tu respuesta.
+
+*Explica cómo copiar en python.
+{
+Hay dos formas en las que los objetos pueden ser copiados en python, ya sea la superficial o profunda. En una copia superficial, el objeto B puntos al objeto de Una ubicación en la memoria. En lo profundo de la copia, de todas las cosas en el objeto a la ubicación de memoria se copian a B objeto de la ubicación de la memoria.
+}

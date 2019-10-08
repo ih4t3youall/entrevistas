@@ -1,0 +1,10 @@
+Qué significa que Javascript sea Dynamic Typed?
+	- ok.
+Cuál es la diferencia entre == y ===?
+	- ok.
+Qué es una promesa en Javascript?
+	- ok.
+Qué es un callback?
+	- ok.
+Que es un callbackHell y como lo solucionarias?
+	- ok.

@@ -1,0 +1,17 @@
+1.- que es srping?
+	- Spring-security
+	- Spring-MVC
+	- Spring-boot
+
+2.- listame caracteristicas de spring
+	a) contenedor
+	b) framework-mvc
+	c) inversion de control
+		c.1) que es la inyeccion de dependencias?
+		c.2) Liste algunos tipos de inyeccion de dependencias.
+	d) transacciones
+		d.1) en que capa se manejan las transacciones?
+	e) programacion orientada a aspectos
+	f) manejo de excepciones jdbc
+		
+

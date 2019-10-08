@@ -1,0 +1,5 @@
+ssh? -ok.
+scp? -ok.
+grep?  -ok.
+mv? -no.
+

@@ -1,0 +1,13 @@
+como hacer para que un modulo de nodejs sea visible externamente?
+	- ok.
+como correr un archivo index.js con node?
+	- ok.
+como se instalan las dependencias en un proyecto node ?
+	- ok.
+como se crea un nuevo modulo en angularjs?
+	- ok.
+donde debo declarar las  un modulo que acabo de incluir en angularjs?
+	- ok.
+como funciona el eventEmitter?
+	- ok.
+

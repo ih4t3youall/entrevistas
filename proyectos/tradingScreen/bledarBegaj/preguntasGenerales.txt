@@ -1,0 +1,20 @@
+break the ice.
+1. un poco de tu experiencia pasada?
+	- Habla poco castellano. Trabajo en roma. 
+	- Problemas de comunicacion en espaniol.
+	- Trabajo en hp en American Airlines.
+	- Software de biblioteca para universidades.
+	- SSO, single sing on.
+
+2. cual fue el problema mas complicado que tuviste que resolver en temas de programacion?
+	- Software de control de camaras y decidieron hacer el video corriendo las imagenes.
+	- Lo resolvio con syncronizacion.
+
+3. Que rasgos destacas de tu personalidad?
+	- Muy curioso.
+
+4. Cual es tu mayor defecto?
+	- No me entendio la pregunta.
+
+5. trabajaste en ambientes con diversidad cultural
+	- si.

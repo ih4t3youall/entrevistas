@@ -1,0 +1,16 @@
+1. un poco de tu experiencia pasada?
+	-Java web, spring-mvc y gwt. swing front end para main coder.
+	-Desde 2012 desarrollando un programa llamado PAD , para agentes de call center, manejo multimedia.
+
+2. cual fue el problema mas complicado que tuviste que resolver en temas de programacion?
+	-Disenio desde cero de una aplicacion , interesado en el manejo de eventos y en la arquitectura.
+	-Programa expansible por plugin y que se puedan pisar las funcionalidades por los que hagan los plugin para hacerlo generico para otros clientes.
+
+3. Que rasgos destacas de tu personalidad?
+	-Me gusta hacer las cosas bien. Quiere estar orgulloso de lo que hago, no le gusta que le pongan tiempo muy limitados.
+
+4. Cual es tu mayor defecto?
+	-No le gusta desactualizarse con tecnologias.
+
+5. trabajaste en ambientes con diversidad cultural
+	-Si.

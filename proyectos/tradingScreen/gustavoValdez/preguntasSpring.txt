@@ -1,0 +1,22 @@
+1.- que es srping?
+	-spring-mvc
+	-spring-boot
+	-spring-security - si pero no.
+	
+2.- listame caracteristicas de spring
+	a) contenedor
+		-aop
+	b) framework-mvc
+		-no.
+	c) inversion de control
+		c.1) que es la inyeccion de dependencias?
+			-ok.
+	d) transacciones
+		d.1) en que capa se manejan las transacciones?
+			-no.
+	e) programacion orientada a aspectos
+		-no.
+	f) manejo de excepciones jdbc
+		-no.
+		
+

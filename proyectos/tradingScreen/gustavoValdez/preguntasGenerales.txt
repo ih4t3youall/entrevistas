@@ -1,0 +1,17 @@
+break the ice.
+1. un poco de tu experiencia pasada?
+	-era para impuestos de estados unidos y esas weas.
+	-trabajo en american airlines. para los operadores telefonicos.
+
+2. cual fue el problema mas complicado que tuviste que resolver en temas de programacion?
+	- en neveris, trabajando para movistar, aplicaciones de escritorio de uso interno pasarlas a web.
+	- backend en hibernate, el hizo el front end , jquery bootstrap.
+
+3. Que rasgos destacas de tu personalidad?
+	-Perseverancia, trata de enfocarse para conseguir el objetivo.
+
+4. Cual es tu mayor defecto?
+	-inseguridad para hacer ciertas cosas, siempre pensar que otro es mejor.
+
+5. trabajaste en ambientes con diversidad cultural
+	-si.

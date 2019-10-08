@@ -1,0 +1,508 @@
+equals
+public class PhoneNumber {
+
+    private Integer lineNumber;
+    private Integer prefix;
+    private Integer areaCode;
+
+    ...
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o)
+            return true;
+        if (!(o instanceof PhoneNumber))
+            return false;
+
+        PhoneNumber that = (PhoneNumber) o;
+        return super.equals(that)
+            && Objects.equals(this.lineNumber, that.lineNumber)
+            && Objects.equals(this.prefix, that.prefix)
+            && Objects.equals(this.areaCode, that.areaCode);
+    }
+}
+
+
+hashcode 
+public class PhoneNumber {
+
+    ...
+
+    @Override
+    public int hashCode() {
+        int result = 17;
+        result = 31 * result + areaCode;
+        result = 31 * result + prefix;
+        result = 31 * result + lineNumber;
+        return result;
+    }
+}
+// lo importante son los numeros primos
+public class PhoneNumber {
+
+    ...
+
+    @Override
+    public int hashCode() {
+        return new HashCodeBuilder(17, 31). //patron builder
+            append(areaCode).
+            append(prefix).
+            append(lineNumber).
+            toHashCode();
+    }
+}
+
+
+Map es una interfaz con una correspondencia clave-valor
+
+HashMap es un Map que utiliza una  hash table para su implementación
+
+Hashtable es una versión sincronizada de HashMap
+
+TreeMap usa un árbol para implementar un Map.
+
+ConcurrentHashMap permite a varios hilos que lo accedan al mismo tiempo y de forma segura
+
+LinkedHashMap conserva el orden de iteración de los objetos que fueron insertados (otros no proporcionan un orden de iteración fijo)
+
+/spring
+
+*¿Qué es Spring?
+Spring es un framework para desarrollar aplicaciones empresariales Java. El beneficio de usar Spring sobre otros frameworks es que es de código abierto. Esto significa que los desarrolladores puede construir código reutilizable sin depender de un proveedor. Otra ventaja sustancial de Spring es su estructura en capas que le permite elegir sólo aquellos componentes que necesite mientras que le ofrece un framework de desarrollo de aplicaciones J2EE sin fisuras.
+
+*Liste las ventajas del framework Spring
+
+*Liste algunas características de Spring
+Contenedor:
+Spring gestiona y contiene la configuración y ciclo de vida de aplicacion de los objetos.
+
+*Framework MVC:
+Spring utiliza el framework web modelo-vista-controlador (MVC) que se construye como el núcleo de funcionalidad Spring. Este framework puede dar cabida a muchas tecnologías de presentación como JSP, Tiles, Velocity, POI, e iText. Además, es altamente configurable con el uso de interfaces de estrategia. No obstante, otros muchos frameworks pueden ser usados fácilmente en lugar de Spring MVC Framework.
+
+*Inversión de Control (IOC):
+Spring consigue un bajo acoplamiento a través del uso de la Inversión de Control. Los objetos proporcionan sus dependencias en lugar de buscar o crear objetos de dependencia.
+
+*Gestión de Transacciones:
+Spring framework proporcion una capa abstracta genérica para llevar a cabo la gestión de transacciones. Esto permite al desarrollador incluir gestores de transacciones mientras que hace muy sencillo el separar transacciones y evitar problemas de bajo nivel. Este soporte de transacciones no está conectado al entorno J2REE. También puede ser utilizado en entornos sin contenedores.
+
+*Programación Orientada a Aspectos (AOP):
+Al separar los servicios de sistema de la lógica de negocio de la aplicación, Spring soporta la programación orientada a aspectos. Esto permite también el despliegue cohesivo de aplicaciones.
+
+*Manejo de Excepciones JDBC:
+
+La capa de abstracción para la Conectividad de Base de Datos Java (JDBC) proporciona una jerarquía de excepciones muy útil. Esto permite desarrollar de forma más fácil una estrategia de gestión de errores. Adicionalmente, Spring ofrece una gran integración con servicios como JDO, IBATIS, e Hibernate.
+
+*¿Qué es la Inyección de Dependencias (IOC)?
+La Inyección de Dependencias o la Inversión de Control (IOC), en su nivel más básico, le permite describir cómo los objetos deberían ser creados en lugar de crearlos directamente. Es decir, describe los servicios que necesitan diferentes componentes usando un fichero de configuración en lugar de conectar directamente estos componentes y servicios por código. En el caso del framework Spring, estos servicios y componentes se conectan luego por el contenedor IOC.
+
+Por ejemplo, a los objetos se les dan sus dependencias cuando son creados por un proceso externo que gestiona cada objeto dentro del sistema. En otras palabras, las dependencias se insertan en los objetos. Esto es contrario a la forma en que las dependencias se tratan en otros frameworks, que es por que se acuñó el término inversión de control. Esto representa una inversión de la responsabilidad de crear referencias a dependencias dentro de los objetos. Aquí tiene un curso que le puede enseñar más sobre la Orientación a Objetos con Spring MVC.
+
+*Liste algunos tipos distintos de Inyecciones de Dependencia (IOC)
+Los tres tipos de inyecciones de dependencia, o IOC, son:
+
+*Inyección Setter (usada por Spring): Las propiedades JavaBeans se usan para asignar dependencias.
+
+*Inyección de Interfaz (usada por Avalon): Una interfaz se utiliza para la inyección.
+
+*Inyección de Constructor (usada por Spring, Contenedor Pico, y otros): los parámetros del Constructor se usan para proporcionar dependencias.
+
+Es importante que tenga en cuenta que Spring sólo soporta Inyecciones Setter y de Constructor.
+
+
+gradle,
+maven es mejor para multiproyectos.
+gradle build
+gradle build deploy
+Core requirements: 
+•	Java as your primary programming language.
+•	Unit and Integration Testing, TDD or write complete post-hoc tests.
+•	Experience with  SQL DBs like PostgreSQL.
+•	Experience with Elasticsearch or Spark.
+•	Design experience with relational DBs and understanding of concepts like (for example) indexing, query optimization, and normalization/denormalization.
+•	Very deep experience designing enterprise java applications with Spring and Spring Boot or Spring MVC. Good understanding of dependency injection/IOC as implemented in Spring containers.
+•	Experience with Spring packages like Spring Security, Spring JDBC, Spring Integration, Spring Cloud Dataflow.
+•	Experience/familiarity with Docker and containerization concepts.
+•	Exposure to devops/cloud deployment (Digital Ocean/AWS/Azure/PCF).
+•	Experience with enterprise app development focused on job automation, integration, ETL, enterprise security, on-premise installs (docker etc).
+ 
+ Nice to have:
+ •	Java 8+
+ •	Elasticsearch & HDFS
+ •	Prior experience with enterprise SaaS application design
+ •	Experience with complex data transformations and data visualization
+  
+
+Conoces IAM?
+	-no.
+Porque usarias IAM siendo una solucion muy costosa?
+	-no.
+
+IAM Amazon
+	roles, a usuario a serivicios.
+
+LDAP Oracle
+	-lo uso pero solo para consumir.
+	sistema de autenticacion para accessar a diferentes servicios o usuarios. sistema. 
+
+OAth
+que es y para que srive?
+	-ok.
+es un single sing-on? 
+
+
+1.2.  Protocol Flow
+
+     +--------+                               +---------------+
+     |        |--(A)- Authorization Request ->|   Resource    |
+     |        |                               |     Owner     |
+     |        |<-(B)-- Authorization Grant ---|               |
+     |        |                               +---------------+
+     |        |
+     |        |                               +---------------+
+     |        |--(C)-- Authorization Grant -->| Authorization |
+     | Client |                               |     Server    |
+     |        |<-(D)----- Access Token -------|               |
+     |        |                               +---------------+
+     |        |
+     |        |                               +---------------+
+     |        |--(E)----- Access Token ------>|    Resource   |
+     |        |                               |     Server    |
+     |        |<-(F)--- Protected Resource ---|               |
+     +--------+                               +---------------+
+
+
+SSO
+tipos de SSO
+	-no lo programo nunca.
+	token. ok.
+	cookies del browser - ok.
+enterprice SSO (E-SSO)
+Este tipo de sistema opera como una autenticación primaria interceptando los requisitos de login que se requieren por las aplicaciones secundarias con el fin de completar los campos de usuario y contraseña. El sistema E-SSO permite la interacción con otros sistemas que pueden deshabilitar la pantalla de login.
+
+web SSO (W-SSO)
+Este tipo de solución opera solo con aplicaciones a las que es posible acceder a través de la web y que tienen como objetivo la autenticación de un usuario en diversas aplicaciones sin la necesidad de volver a introducir una identificación.
+
+Los datos de acceso son interceptados a través de un servidor proxy, quien realiza la comunicación y a continuación traslada el resultado al equipo que la solicitó. Los usuarios no identificados son redireccionados a un servicio de autenticación regresando con un acceso exitoso.
+
+identidad federada
+Este tipo de Single Sign On corresponde a una solución de gestión de identidad que utiliza estándares para habilitar que las aplicaciones puedan identificar a los clientes sin la necesidad de una autenticación redundante.
+
+Open ID
+es un proceso de SSO descentralizado en el que la identidad del usuario se compila en una URL que cualquier servidor puede verificar.
+
+
+ventajas 
+Acelera el acceso de los usuarios a sus aplicaciones
+Reduce la carga de memorizar diversas contraseñas
+Fácil de implementar y conectar a nuevas fuentes de datos
+
+desventajas
+Utilizar una única combinación aumenta las probabilidades de vulnerabilidad de contraseñas
+Al fallar SSO se pierde acceso a todos los sistemas relacionados
+Suplantación de identidades en los accesos externos de los usuarios
+
+
+
+clave publica y privada.
+llave y cerrojo.
+1. un poco de tu experiencia pasada?
+	-wala (uala (?)), tienen todo en amazon serverless, se autentican con no se que.
+	-base de dato no relacionales.
+	-github.
+	-framework propio.
+	-las librerias eran internas.
+	
+2. cual fue el problema mas complicado que tuviste que resolver en temas de programacion?
+	-multiple servicio por hilo, problemas de sincronizacion, multiples request simultaneos.
+	java8.
+
+3. Que rasgos destacas de tu personalidad?
+	-Extrovertido y tratar siempre de proponer nuevas soluciones.
+4. alto que trates de mejorar?
+	-otros lenguajes y frameworks.
+5. trabajaste en ambientes con diversidad cultural
+	-Si.
+a) Herramientas
+1. maven
+	Conoces maven? como funciona y para que sirve?
+		-ok.
+	Como resuelvo un problema de dependencias con maven?
+		-ok. script de bash.
+	Cuales son los scope de las dependencias de maven?
+		-provided -no., runtime, test, compile.
+		
+
+2. git
+	1.2 Estas en rama master, creas un branch llamado 'branch1', efectuas cambios en el,como son los pasos para que tus cambios se reflejen en master.
+		-ok.
+	2.3 Como cambio un typo en un mensaje ya commiteado.
+		-ok.
+	3.4 Cherry picking.
+		-ok.
+	3.5 Que es un pull request?
+		-ok. rara respuesta.
+
+3. Servidor de colas externos, activemq.
+	-amazon sqs
+	-kafka
+
+4. Bamboo
+	*para que sirve.
+		-no.
+5. Jira 
+	* conta un poco de tu expreiencia con jira
+		-ok.Scrum.
+
+6. jenkins
+	- Armaste jobs.
+	- no.
+
+7. cucumer
+	-no.
+
+
+8. Gradle - no. solo dependencias.
+	* Que es y para que sirve?
+	* Ventajas y desventajas con respecto a maven
+	* Que es una task en gradle y que ventajas me da.
+	* como se manejan las dependencias de las taks y como puedo hacer que una dependa de otra.
+
+9. Webservices
+	*REST
+		- http.
+		- jersey y spring.
+		- stateless - no.
+	
+b) Java
+
+1. diferencia entre jdk y jre
+	* Herramientas para debugear la jdk, jconsole, new relic.
+	* como funciona el garbage collector. tipos de garbage collector.
+	
+2.Cuales son los conceptos de POO?
+	*Encapsulamiento
+		-ok.
+	*Polymorphism
+		-ok.
+	*Inheritance
+		-ok.
+
+
+2.a polimorfismo
+	-ok.
+
+2.b clase abstracta/interfaz
+	b1. como instancio una clase abstracta. 
+		-ok.
+	b2. �Cu�ntas clases puede extender una clase abstracta?  
+		-ok.
+	 �Cu�ntas interfaces? 
+	 	-ok.
+	
+2.c encapsulamiento, definir.
+	private
+		-ok.
+	public
+		-ok.
+	protected
+			paquete -ok.
+			herencia -no.
+	default
+		-ok.
+
+2.d clase/objeto/instancia
+
+3. estructuras de datos
+	*nombrar. 
+		*arraylist
+		*map
+		*set
+
+	*diferencia LinkedList/arrayList 
+		-no
+		- insercion masiva mejor array list - ok.
+	*set. porque el set no asegura el orden? 
+		-ok.
+		-no repetidos - ok.
+
+3a. map
+	a1. equals y hashcode
+		-no.
+	hashcode igual
+		-no
+	a2. como implementar un hashcode y un equals.
+		-hashcode -no.
+		-equals -no.
+
+4. Final
+	* variable.
+		-ok.
+			validez de  final Persona p = new Persona() -ok
+	* m�todo. 
+		-ok.
+	* Clase. 
+		-ok.
+
+4a. transient
+	-no.
+
+4b. volatile
+	-ok.
+
+5. Constructores
+	* �Se puede sobrecargar un constructor? 
+		-ok.
+	* �Se puede sobreescribir un constructor?
+		-no.
+
+6 Exceptions
+usamos bastante las runtime exceptions.
+	* checked
+		-ok.
+	* unchecked
+		-ok.
+	* �El bloqu� finally se ejecuta siempre?
+		-ok
+
+7 Generics
+	* ventajas
+		-ok.
+	* Como implementar una clase con generics.
+		-ok.
+
+8 reflexion
+	* para que sirve?
+		-ok.
+	* ventajas y desventajas
+		-ok.
+
+9 Threads
+	9.a diferentes formas de crear threads, cual te gusta mas y porque?
+		-extends thread
+			-ok.
+		-implement runnable
+			-ok.
+		-use Executors
+			-ok.
+	9.b que es un deadlock?
+		-maso.
+	9.c synchronized
+		-ok
+	9.e start()
+		-ok.
+	sleep y await
+		-ok
+	callables and futures.
+		-maso.
+
+11. Patrones de dise�o
+	10.1 que patrones de disenio conoces.
+		*Singleton
+		*Factory, abstract factory.
+			implementacion abstract factory , tengo un factory que digamos que es un generico de una clase abstracta,
+			esa clase tiene varias implementaciones en base a eso le decis al factory. 
+
+	10.2 Como se implementa singleton.
+		-constructor privado ok.
+		-getInstance ok.
+		-threads safe ok.
+
+	10.3 como se implementa factory/builder
+
+
+
+14. Junit/mockito/tdd
+	9.1 herramientas de stress test. jmetter
+	9.2 como probas tu codigo.
+		-junit, mockito.
+		que es un mock: ok.
+	9.3 defini a grandes rasgos como funciona junit.
+	9.4 como usarias mockito para mockear un metodo.
+		-ok
+	9.5 TDD
+		-ok.
+Qué significa que Javascript sea Dynamic Typed?
+	-ok.
+Cuál es la diferencia entre == y ===?
+	-maso.
+Qué es una promesa en Javascript?
+	-ok.
+Qué es un callback?
+	-ok.
+Que es un callbackHell y como lo solucionarias?
+	-ok.
+
+
+
+
+==
+compara dos variables
+===
+compara dos pero ademas busca que el tipo de la variable sea el mismo
+ejemplo
+1 == ‘1’ // verdadero
+1 === ‘1’ // falso
+
+
+dynamicTyped
+las variables no necesitan tener un tipo declarado.
+
+1.- que es srping?
+	* spring-boot
+		-ok.
+	* spring-core
+		-
+	* spring-data
+		-
+	* spring-security
+		-
+	* spring-mvc
+		-ok.
+
+2.- listame caracteristicas de spring
+	a) contenedor
+	b) framework-mvc
+	c) inversion de control
+		c.1) que es la inyeccion de dependencias?
+			-ok.
+			-diferencia entre service y component. no.
+		c.2) Liste algunos tipos de inyeccion de dependencias.
+			-no.
+	d) transacciones
+		d.1) en que capa se manejan las transacciones?
+			-ok.
+	e) programacion orientada a aspectos
+		-interceptors
+			-ok
+	f) manejo de excepciones jdbc
+		
+
+1. Cual es el usuario administrador por defecto en unix?
+	-
+2. Como renombro un archivo en unix?
+	-no.
+3. Estoy parado en una carpeta con 10 archivos, quiero buscar la palabra error en esos 10 archivos.
+	-no.
+4. Quiero copiar la carpeta logs al directorio inferior al que estoy que comando usaria?
+	-no.
+5. Que hace y como funciona el comando ssh.
+	-ok.
+6. Que hace y como funciona el comando scp.
+	-no
+7. Tengo una apllicacion logeando en el archivo log.txt, como hago para ver que escribe la aplicacion en ese file en tiempo real?
+	-
+8. Que utilizarias para modificar un archivo desde la consola?
+	-
+
+Uuna empresa quiere liquidar sueldos, para eso utiliza sus dos tablas "empleado" y "salario".
+ La tabla "empleado" contiene: legajo, nombre, apellido y sexo.
+ La tabla "salario" contiene: legajo, salario.
+ Se quiere saber quienes ganan mas de 50.000.
+
+  select empleado.nombre from empleado inner join salario on empleado.legajo = salario.legajo where salario.salario > 50.000
+
+  Se quiere saber cuanto ganan las mujeres en total.
+  B) select SUM(salario.salario) from empleado inner join salario on empleado.legajo = salario.legajo where empleado.sexo = 'mujer' group by empleado.sexo
+
+  Se desea saber las distintas familias (apellido) que trabajan en la empresa, sin repetir.
+  A) select distinct apellido from empleado;

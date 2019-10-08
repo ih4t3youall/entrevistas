@@ -1,0 +1,23 @@
+1.- que es srping?
+	-nacio como alternativa a J2EE, principalmente para inyeccion de dependencias.
+2.- listame caracteristicas de spring
+	a) contenedor
+		-maso.
+	b) framework-mvc
+	c) inversion de control
+		c.1) que es la inyeccion de dependencias?
+			-ok, maso.
+		c.2) Liste algunos tipos de inyeccion de dependencias.
+	d) transacciones
+			-maso.
+		d.1) en que capa se manejan las transacciones?
+			-maso.
+	e) programacion orientada a aspectos
+		-
+	f) manejo de excepciones jdbc
+		-
+	d) Interceptors
+		-no.
+
+		
+

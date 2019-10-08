@@ -1,0 +1,14 @@
+1. un poco de tu experiencia pasada?
+	-Fullstack
+
+2. cual fue el problema mas complicado que tuviste que resolver en temas de programacion?
+	- Un proyecto con websocket.
+
+3. Que rasgos destacas de tu personalidad?
+	- Ansioso.
+
+4. Cual es tu mayor defecto?
+	- demaciado ansioso.
+
+5. trabajaste en ambientes con diversidad cultural
+	- Si.

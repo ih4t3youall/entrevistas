@@ -1,0 +1,17 @@
+1.- que es srping?
+	-ok.
+2.- listame caracteristicas de spring
+	a) contenedor
+	b) framework-mvc
+	c) inversion de control
+		c.1) que es la inyeccion de dependencias?
+			-ok.
+	d) transacciones
+		d.1) en que capa se manejan las transacciones?
+			-no.
+	e) programacion orientada a aspectos
+		- Interceptors -no.
+		- aspectJ y AOP. -maso
+	f) manejo de excepciones jdbc
+		
+

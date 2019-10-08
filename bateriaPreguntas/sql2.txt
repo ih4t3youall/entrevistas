@@ -1,0 +1,9 @@
+inner join, left ,right , full outer join
+
+Una empresa quiere liquidar sueldos, para eso utiliza sus dos tablas "empleado" y "salario".
+
+ La tabla "empleado" contiene: legajo, nombre, apellido y sexo.
+ La tabla "salario" contiene: legajo, salario.
+
+ Se quiere saber quienes ganan mas de 50.000.
+ 	-ok.

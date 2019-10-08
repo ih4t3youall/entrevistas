@@ -1,0 +1,13 @@
+1. Como renombro un archivo en unix?
+	- maso.
+3. Estoy parado en una carpeta con 10 archivos, quiero buscar la palabra error en esos 10 archivos.
+	- maso.
+4. Quiero copiar la carpeta logs al directorio inferior al que estoy que comando usaria?
+	-  ok.
+5. Que hace y como funciona el comando ssh.
+	- ok.
+6. Que hace y como funciona el comando scp.
+	- no.
+8. Que utilizarias para modificar un archivo desde la consola?
+	- vim,nano
+

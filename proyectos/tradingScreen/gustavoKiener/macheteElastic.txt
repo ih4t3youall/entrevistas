@@ -1,0 +1,20 @@
+ventajas
+- distribuido por definicion
+-  soporta REST-based search and analytics
+- muy buena performance de busqueda
+desventajas
+	- no soporta mar reduced operations
+	- no sirve como base de datos primaria
+	- no comple con ACID
+	- no soporta transacciones
+	- no tiene built in authenitication
+
+
+index and type and documents.
+
+index is a database in elastic search and a type is the content for example
+a bookstore have books, pencils, papers. bookstore is the index, books, pencils and papers, are the types.
+
+
+a document it;s and instance of a type.
+

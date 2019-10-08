@@ -1,0 +1,298 @@
+Conoces IAM?
+	 - netIQ access managment (ahora es microfocus).
+Porque usarias IAM siendo una solucion muy costosa?
+
+LDAP Oracle
+	- no.
+LDAP Edirectory de novel.
+
+0Auth2
+que es y para que srive?
+	- ok.
+es un single sing-on? 
+	-ok
+
+
+1.2.  Protocol Flow - re ok.
+
+     +--------+                               +---------------+
+     |        |--(A)- Authorization Request ->|   Resource    |
+     |        |                               |     Owner     |
+     |        |<-(B)-- Authorization Grant ---|               |
+     |        |                               +---------------+
+     |        |
+     |        |                               +---------------+
+     |        |--(C)-- Authorization Grant -->| Authorization |
+     | Client |                               |     Server    |
+     |        |<-(D)----- Access Token -------|               |
+     |        |                               +---------------+
+     |        |
+     |        |                               +---------------+
+     |        |--(E)----- Access Token ------>|    Resource   |
+     |        |                               |     Server    |
+     |        |<-(F)--- Protected Resource ---|               |
+     +--------+                               +---------------+
+
+
+SSO
+	- openIdConnect
+	- cookie - ok
+
+1. un poco de tu experiencia pasada?
+	- trabajo en empresas de soluciones de usuarios.
+	- workflows con reglas y actividads, gestion de procesos
+	- generaban redirecciones mediante el sistema de access managment.
+
+2. cual fue el problema mas complicado que tuviste que resolver en temas de programacion?
+	- programar en java (?)
+	- aprendio mvc, spring, maven, git.
+	- subirse a la vanguardia de la programacion
+
+3. Que rasgos destacas de tu personalidad?
+	- muy detallista, no se conforma con soluciones mediocres.
+	- habla raro , pero buena comunicacion.
+
+4. Cual es tu mayor defecto?
+	- disciplina perosnal, organizacion personal, establecer conjunto de prioridades etc.
+	- Seguir mejorando la calidad de codigo.
+	- trabaja mejor bajo presion.
+	- no le gusta ver el codigo feo.
+
+5. trabajaste en ambientes con diversidad cultural
+	- Si.
+a) Herramientas
+	
+1. maven
+	Conoces maven? como funciona y para que sirve?
+		- ok.
+	Como resuelvo un problema de dependencias con maven?
+		- no.
+	Cuales son los scope de las dependencias de maven?
+		- no.
+
+2. git - ok.
+	2.1 Que es un branch?
+	2.2 Estas en rama master, creas un branch llamado 'branch1', efectuas cambios en el,como son los pasos para que tus cambios se reflejen en master.
+		- maso.
+	2.3 Como cambio un typo en un mensaje ya commiteado.
+		- no.
+	3.4 Cherry picking.
+		- no.
+	3.5 Que es un pull request?
+		- no.
+
+3. Servidor de colas externos, activemq.
+	- no.
+
+4. Bamboo
+	*para que sirve.
+		-no.
+5. Jira 
+	* conta un poco de tu expreiencia con jira
+		-ok.
+6. jenkins
+	- no.
+
+7. cucumer
+	- no.
+
+8. Gradle - no.
+	* Que es y para que sirve?
+	* Ventajas y desventajas con respecto a maven
+	* Que es una task en gradle y que ventajas me da.
+	* como se manejan las dependencias de las taks y como puedo hacer que una dependa de otra.
+
+9. Webservices
+	*REST
+		-ok.
+			-stateless - no.
+	*SOAP wsdl 
+		- ok.
+	
+b) Java
+
+1. diferencia entre jdk y jre
+	* Herramientas para debugear la jdk, jconsole, new relic.
+	* como funciona el garbage collector. tipos de garbage collector.
+	
+2.Cuales son los conceptos de POO?
+	*Encapsulamiento
+		- ok.
+	*Polymorphism
+		- ok.
+	*Inheritance
+		- ok.
+
+
+2.a polimorfismo
+	- ok.
+
+2.b clase abstracta/interfaz
+	b1. como instancio una clase abstracta. 
+		- ok.
+	b2. ¿Cuántas clases puede extender una clase abstracta?  
+		- ok.
+	 ¿Cuántas interfaces? 
+	 	- ok.
+	
+2.c encapsulamiento, definir.
+	private
+		- ok.
+	public
+		- ok.
+	protected
+		- no.
+	default
+		- no.
+
+2.d clase/objeto/instancia
+
+3. estructuras de datos
+	*nombrar. 
+		-hashmap
+			- ok.
+		-set
+			- no estan ordenados - ok
+			- elementos duplicados - ok
+		-listas
+			-  ok.
+
+	*diferencia LinkedList/arrayList 
+		-no
+
+	*set. porque el set no asegura el orden? 
+		- ok.
+
+3a. map
+	a1. equals y hashcode
+		- no.
+	a2. como implementar un hashcode y un equals.
+		- no.
+	a3. sabes las diferencias entre map, hashmap, hashtable, treemap, concurrentHashMap y linkedHashmap?
+		- no.
+
+4. Final
+	* variable.
+		- ok.
+	* método. 
+		- ok.
+	* Clase. 
+		- ok.
+
+4a. transient
+	- no.
+
+4b. volatile
+	- no.
+
+5. Constructores
+	* ¿Se puede sobrecargar un constructor? 
+		- ok.
+	* ¿Se puede sobreescribir un constructor?
+		- ok.
+
+6 Exceptions
+usamos bastante las runtime exceptions.
+	* checked
+		- try catch ok
+		- throws tardo mucho. maso.
+	* unchecked
+		- ok.
+	* ¿El bloqué finally se ejecuta siempre?
+		-  ok.
+	* ¿Se ejecuta siempre completo?
+		- ok.
+
+7 Generics
+	* ventajas
+		- no.
+	* Como implementar una clase con generics.
+		- no.
+
+8 reflexion
+	* para que sirve?
+		- no.
+	* ventajas y desventajas
+		- no.
+
+9 Threads
+	9.a diferentes formas de crear threads, cual te gusta mas y porque?
+		-extends thread
+			- no.
+		-implement runnable
+			- no.
+		-use Executors
+			- no.
+	9.b que es un deadlock?
+		- no.
+	9.c synchronized
+		- no.
+
+11. Patrones de diseño
+	10.1 que patrones de disenio conoces.
+		- Singleton.
+		- Abstract factory, factory.
+
+	10.2 Como se implementa singleton.
+		- no.
+	10.3 como se implementa factory/builder
+		-no.
+
+
+13.  messaging
+	9.1 reactor pattern
+	9.2 kafka
+
+14. Junit/mockito/tdd
+	9.1 herramientas de stress test. jmetter
+	9.2 como probas tu codigo.
+	9.3 defini a grandes rasgos como funciona junit.
+	9.4 como usarias mockito para mockear un metodo.
+	9.5 TDD
+QuÃ© es la consola de desarrollo?
+QuÃ© significa que Javascript sea Dynamic Typed?
+	- ok.
+CuÃ¡l es la diferencia entre == y ===?
+	- ok.
+QuÃ© es una promesa en Javascript?
+	- no.
+QuÃ© es un callback?
+	- maso.
+Que es un callbackHell y como lo solucionarias?
+	- no.
+1.- que es srping?
+	- Spring-security
+
+2.- listame caracteristicas de spring
+	a) contenedor
+	b) framework-mvc
+	c) inversion de control
+		c.1) que es la inyeccion de dependencias?
+		c.2) Liste algunos tipos de inyeccion de dependencias.
+	d) transacciones
+		d.1) en que capa se manejan las transacciones?
+	e) programacion orientada a aspectos
+	f) manejo de excepciones jdbc
+		
+
+1. Cual es el usuario administrador por defecto en unix?
+2. Como renombro un archivo en unix?
+3. Estoy parado en una carpeta con 10 archivos, quiero buscar la palabra error en esos 10 archivos.
+4. Quiero copiar la carpeta logs al directorio inferior al que estoy que comando usaria?
+5. Que hace y como funciona el comando ssh.
+6. Que hace y como funciona el comando scp.
+7. Tengo una apllicacion logeando en el archivo log.txt, como hago para ver que escribe la aplicacion en ese file en tiempo real?
+8. Que utilizarias para modificar un archivo desde la consola?
+
+bases de datos
+	- postgre
+	- sqlsaerver
+	- oracle
+
+
+Una empresa quiere liquidar sueldos, para eso utiliza sus dos tablas "empleado" y "salario".
+ La tabla "empleado" contiene: legajo, nombre, apellido y sexo.
+ La tabla "salario" contiene: legajo, salario.
+ Se quiere saber quienes ganan mas de 50.000.
+
+ -ok.

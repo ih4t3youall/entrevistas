@@ -1,0 +1,4 @@
+Porque cuando utilizo una aplicacion con hibernate, no es conveniente o hay que tener mucho cuidado, con acceder a esa misma base de datos desde otra app?
+	- no.
+session.flush debe llamar explícitamente a confirmar la transacción. Verdadero o falso?
+	- no.

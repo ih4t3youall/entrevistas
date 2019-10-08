@@ -1,0 +1,17 @@
+break the ice.
+1. un poco de tu experiencia pasada?
+	-trabajo en swing, pero hace anios.(tipo mucho anios).
+	-laburo bastante en cosas bastante copadas.
+
+2. cual fue el problema mas complicado que tuviste que resolver en temas de programacion?
+	-transacciones con retailers con muchas ventas en simultaneo.
+	-comunicacion por socket. ws.
+
+3. Que rasgos destacas de tu personalidad?
+	- le gusta resolver problemas y armar grupos de trabajo, persona no problematica , con caracter fuerte pero sabe cuando parar. 
+
+4. Cual es tu mayor defecto?
+	- aprende mucho con prueba y error y no yendo a las fuentes.
+
+5. trabajaste en ambientes con diversidad cultural
+	-si, pero no con indios.

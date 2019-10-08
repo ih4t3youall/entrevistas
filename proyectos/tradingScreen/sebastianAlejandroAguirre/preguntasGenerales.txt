@@ -1,0 +1,19 @@
+1. un poco de tu experiencia pasada?
+	- experiencia en trading.
+	- entorno grafico basico , flex y swing.
+	- angular,react.
+	- java hasta java.6? omg.
+	- hibernate oracle, mysql, nodesql, mongo, cassandra.
+	- dificultad para comnunicarse.
+
+2. cual fue el problema mas complicado que tuviste que resolver en temas de programacion?
+	- RedHat, recibia casos de los problemas de las empresas , uno era problemas de memoria. Le empezaron a pasar esos problemas. y se adapto y le gusto
+
+3. Que rasgos destacas de tu personalidad?
+	- Buena capacidad para buscar soluciones a los problemas que se van presentando, a travez de la investingacion.
+
+4. Cual es tu mayor defecto?
+	-De pocas palabras.
+
+5. trabajaste en ambientes con diversidad cultural
+	-Si.

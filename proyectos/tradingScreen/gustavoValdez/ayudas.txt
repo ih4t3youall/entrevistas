@@ -1,0 +1,115 @@
+equals
+public class PhoneNumber {
+
+    private Integer lineNumber;
+    private Integer prefix;
+    private Integer areaCode;
+
+    ...
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o)
+            return true;
+        if (!(o instanceof PhoneNumber))
+            return false;
+
+        PhoneNumber that = (PhoneNumber) o;
+        return super.equals(that)
+            && Objects.equals(this.lineNumber, that.lineNumber)
+            && Objects.equals(this.prefix, that.prefix)
+            && Objects.equals(this.areaCode, that.areaCode);
+    }
+}
+
+
+hashcode 
+public class PhoneNumber {
+
+    ...
+
+    @Override
+    public int hashCode() {
+        int result = 17;
+        result = 31 * result + areaCode;
+        result = 31 * result + prefix;
+        result = 31 * result + lineNumber;
+        return result;
+    }
+}
+// lo importante son los numeros primos
+public class PhoneNumber {
+
+    ...
+
+    @Override
+    public int hashCode() {
+        return new HashCodeBuilder(17, 31). //patron builder
+            append(areaCode).
+            append(prefix).
+            append(lineNumber).
+            toHashCode();
+    }
+}
+
+
+Map es una interfaz con una correspondencia clave-valor
+
+HashMap es un Map que utiliza una  hash table para su implementación
+
+Hashtable es una versión sincronizada de HashMap
+
+TreeMap usa un árbol para implementar un Map.
+
+ConcurrentHashMap permite a varios hilos que lo accedan al mismo tiempo y de forma segura
+
+LinkedHashMap conserva el orden de iteración de los objetos que fueron insertados (otros no proporcionan un orden de iteración fijo)
+
+/spring
+
+*¿Qué es Spring?
+Spring es un framework para desarrollar aplicaciones empresariales Java. El beneficio de usar Spring sobre otros frameworks es que es de código abierto. Esto significa que los desarrolladores puede construir código reutilizable sin depender de un proveedor. Otra ventaja sustancial de Spring es su estructura en capas que le permite elegir sólo aquellos componentes que necesite mientras que le ofrece un framework de desarrollo de aplicaciones J2EE sin fisuras.
+
+*Liste las ventajas del framework Spring
+
+*Liste algunas características de Spring
+Contenedor:
+Spring gestiona y contiene la configuración y ciclo de vida de aplicacion de los objetos.
+
+*Framework MVC:
+Spring utiliza el framework web modelo-vista-controlador (MVC) que se construye como el núcleo de funcionalidad Spring. Este framework puede dar cabida a muchas tecnologías de presentación como JSP, Tiles, Velocity, POI, e iText. Además, es altamente configurable con el uso de interfaces de estrategia. No obstante, otros muchos frameworks pueden ser usados fácilmente en lugar de Spring MVC Framework.
+
+*Inversión de Control (IOC):
+Spring consigue un bajo acoplamiento a través del uso de la Inversión de Control. Los objetos proporcionan sus dependencias en lugar de buscar o crear objetos de dependencia.
+
+*Gestión de Transacciones:
+Spring framework proporcion una capa abstracta genérica para llevar a cabo la gestión de transacciones. Esto permite al desarrollador incluir gestores de transacciones mientras que hace muy sencillo el separar transacciones y evitar problemas de bajo nivel. Este soporte de transacciones no está conectado al entorno J2REE. También puede ser utilizado en entornos sin contenedores.
+
+*Programación Orientada a Aspectos (AOP):
+Al separar los servicios de sistema de la lógica de negocio de la aplicación, Spring soporta la programación orientada a aspectos. Esto permite también el despliegue cohesivo de aplicaciones.
+
+*Manejo de Excepciones JDBC:
+
+La capa de abstracción para la Conectividad de Base de Datos Java (JDBC) proporciona una jerarquía de excepciones muy útil. Esto permite desarrollar de forma más fácil una estrategia de gestión de errores. Adicionalmente, Spring ofrece una gran integración con servicios como JDO, IBATIS, e Hibernate.
+
+*¿Qué es la Inyección de Dependencias (IOC)?
+La Inyección de Dependencias o la Inversión de Control (IOC), en su nivel más básico, le permite describir cómo los objetos deberían ser creados en lugar de crearlos directamente. Es decir, describe los servicios que necesitan diferentes componentes usando un fichero de configuración en lugar de conectar directamente estos componentes y servicios por código. En el caso del framework Spring, estos servicios y componentes se conectan luego por el contenedor IOC.
+
+Por ejemplo, a los objetos se les dan sus dependencias cuando son creados por un proceso externo que gestiona cada objeto dentro del sistema. En otras palabras, las dependencias se insertan en los objetos. Esto es contrario a la forma en que las dependencias se tratan en otros frameworks, que es por que se acuñó el término inversión de control. Esto representa una inversión de la responsabilidad de crear referencias a dependencias dentro de los objetos. Aquí tiene un curso que le puede enseñar más sobre la Orientación a Objetos con Spring MVC.
+
+*Liste algunos tipos distintos de Inyecciones de Dependencia (IOC)
+Los tres tipos de inyecciones de dependencia, o IOC, son:
+
+*Inyección Setter (usada por Spring): Las propiedades JavaBeans se usan para asignar dependencias.
+
+*Inyección de Interfaz (usada por Avalon): Una interfaz se utiliza para la inyección.
+
+*Inyección de Constructor (usada por Spring, Contenedor Pico, y otros): los parámetros del Constructor se usan para proporcionar dependencias.
+
+Es importante que tenga en cuenta que Spring sólo soporta Inyecciones Setter y de Constructor.
+
+
+gradle,
+maven es mejor para multiproyectos.
+gradle build
+gradle build deploy

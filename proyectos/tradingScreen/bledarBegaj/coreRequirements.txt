@@ -1,0 +1,41 @@
+Overview 
+
+TS, the leading global provider of multi-asset trading systems to the buy-side, sell-side and trading platforms, has provided connectivity and execution management services to the global financial markets for nearly two decades. From our multi-asset class electronic trading platforms to our market data to our global financial cloud infrastructure, we are the industry's most comprehensive and compliant technology suite available to the investment management community. 
+
+A job is never just a job, and we recognize that at TS. At TS we are passionate about employee engagement and make it our business to provide our employees a range of challenging and rewarding opportunities that align with business strategy and promote team work and inspire innovation. 
+
+We have successfully built a company culture based on our single most important asset - our employees. Our passion for continuous growth and innovative approach have allowed us to become the company we are today. We believe our employees should have the opportunity to grow and be part of a company that is making a lasting contribution to the financial markets. 
+
+We challenge our employees every day to think creatively and innovate across silos and across platforms. 
+
+Join us! 
+
+Responsibilities 
+
+The TradingScreen Development group is looking for a talented Java developer who is capable of developing and supporting an Order and Execution Management System. 
+
+The candidate must be a self-starter who is able to work well with minimal direction. 
+
+TradingScreen has a core EMS product and has been building an Order Management platform that can be configured to be used both by Buy-Side as well as Sell-side clients. The role involves development efforts in both products. The products cover all aspects of the business cycle from SOD loads, through order generation, compliance, trading, allocation, and EOD file generation. There are numerous back-end components that work in concert so the developer will need to able to quickly learn and work in all areas of the environment. 
+
+Experience with trading systems, buy-side compliance systems and/or sell-side risk is a plus. 
+
+Qualifications 
+
+
+String Core Java development
+Multithreading
+	-maso.
+Web development with JavaScript and/or Java Swing development
+Strong OO design experience
+SQL
+Automated Unit and Integration testing experience
+Maven, Git, Teamcity
+	-TeamCity como un git.
+Distributed caching (plus)
+Financial industry experience specifically with execution and/or order management systems
+Good communication skills
+Bachelor or equivalent job experience
+4 -6 Years of experience:1
+
+

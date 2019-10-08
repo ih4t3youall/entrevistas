@@ -1,0 +1,17 @@
+1. un poco de tu experiencia pasada?
+	- full stack.
+	- no redes neuronales.
+
+2. cual fue el problema mas complicado que tuviste que resolver en temas de programacion?
+	- plataforma de administracion de usuarios de aseguradora medica, el problema es la infraestructura. Hay que tener varias cosas en cuenta
+	para resolver el dia a dia.
+
+3. Que rasgos destacas de tu personalidad?
+	- Bueno al trabajar en equipo.
+	- Perseverancia. Intenta o estudia hasta que salga.
+
+4. Cual es tu mayor defecto?
+	- aprender (?) esquivo.
+
+5. trabajaste en ambientes con diversidad cultural
+	- No.

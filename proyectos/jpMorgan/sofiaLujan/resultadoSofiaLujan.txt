@@ -1,0 +1,325 @@
+•Knowledge of application, data and infrastructure architecture disciplines.
+
+•Understanding of architecture and design across all systems .
+
+•Working proficiency in developmental toolsets.
+
+•Knowledge of industry wide technology strategies and best practices.
+•Ability to work in large, collaborative teams to achieve organizational goals, and passionate about building an innovative culture.
+
+•Experience using Core Java and Python to develop robust pricing, trading and risk systems including building new applications & enriching existing applications using the most suitable technology choices and align development with the overall Credit trading strategy.
+	-no
+
+•Work closely with the Quant team to develop pricing and analytic components in Python, leveraging the Athena platform.
+
+•Strong grasp of object oriented design and programming, multi-threaded programming and middleware technologies (e.g. Informatica LBM or Tibco).
+	tibco - no
+•	Experience with Spring, Maven, Git.
+•	Unix/Linux command line and shell scripting.
+•	Prior experience working in electronic trading is preferred.
+
+1. un poco de tu experiencia pasada?
+	- empresa incubadora, para ver si habia que regar o no.
+	- django. 
+	- python.
+	- plataforma donde las aseguradoras tenian la cartera de clientes. (django). 
+	- siglo 21, plataforma educativa.
+	- Microservicios en Spring-boot, el front end es en .net.
+	- jenkins, integracion continua, unit tests, integration tests.
+	
+2. cual fue el problema mas complicado que tuviste que resolver en temas de programacion?
+	- banco, sobredosis de transacciones, y store procedures, acomodarlos, etc.
+	- la parte de organizacion.
+	- 
+
+3. Que rasgos destacas de tu personalidad?
+	- perserverante, pide ayuda, conocimiento de sus limitaciones, hace lo que le den para a hacer como sea.
+	- buena comunicacion.
+
+4. Cual es tu mayor defecto?
+	-  en el hacer se pierde en lo teorico.
+
+5. trabajaste en ambientes con diversidad cultural
+	- si.
+a) Herramientas
+1. maven
+	Conoces maven? como funciona y para que sirve?
+		-ok.
+	Como resuelvo un problema de dependencias con maven?
+		-ok.
+	Cuales son los scope de las dependencias de maven?
+		-testing.provided ok.
+
+2. git - ok.
+	2.1 Que es un branch?
+	2.2 Estas en rama master, creas un branch llamado 'branch1', efectuas cambios en el,como son los pasos para que tus cambios se reflejen en master.
+		- clone, checkout -b, cambio, commit, push origin.
+	2.3 Como cambio un typo en un mensaje ya commiteado.
+		- ok.
+	3.4 Cherry picking.
+		- ok.
+	3.5 Que es un pull request?
+		- ok.
+
+3. Servidor de colas externos, activemq.
+	- maso. 
+
+4. Bamboo
+	*para que sirve.
+		- no
+5. Jira 
+	* conta un poco de tu expreiencia con jira
+		- ok. tickets
+6. jenkins
+	- ok.
+
+7. cucumer
+	- no.
+
+8. Gradle - ok.
+	* Que es y para que sirve?
+	* Ventajas y desventajas con respecto a maven
+	* Que es una task en gradle y que ventajas me da.
+	* como se manejan las dependencias de las taks y como puedo hacer que una dependa de otra.
+
+9. Webservices
+	*REST
+		-ok
+		-stateless - no.
+	*SOAP wsdl 
+		-ok.
+	
+b) Java
+
+1. diferencia entre jdk y jre
+	* Herramientas para debugear la jdk, jconsole, new relic.
+	* como funciona el garbage collector. tipos de garbage collector.
+	
+2.Cuales son los conceptos de POO?
+	*Encapsulamiento
+		-ok.
+	*Polymorphism
+		-ok.
+	*Inheritance
+		-ok.
+
+2.a polimorfismo
+	-maso.
+
+2.b clase abstracta/interfaz
+	b1. como instancio una clase abstracta. 
+		-no.
+	b2. �Cu�ntas clases puede extender una clase abstracta?  
+		-ok.
+	 �Cu�ntas interfaces? 
+	 	-ok.
+	
+2.c encapsulamiento, definir.
+	private
+		-ok
+	public
+		-ok
+	protected
+		-ok
+	default
+		-ok.
+
+2.d clase/objeto/instancia
+
+3. estructuras de datos
+	*nombrar. 
+		-hashmap
+		-list
+		-set
+	*diferencia LinkedList/arrayList 
+		-no.
+	*set. porque el set no asegura el orden? 
+		-ok.
+
+3a. map
+	a1. equals y hashcode
+		-maso.
+	a2. como implementar un hashcode y un equals.
+		-no.
+
+4. Final
+	* variable.
+		-ok.
+			-persona -no
+	* m�todo. 
+		-no.
+	* Clase. 
+		-no.
+
+4a. transient
+	- no.
+
+4b. volatile
+	- no.
+
+5. Constructores
+	* �Se puede sobrecargar un constructor? 
+		- ok.
+	* �Se puede sobreescribir un constructor?
+		- ok.
+
+6 Exceptions
+usamos bastante las runtime exceptions.
+	* checked
+		-ok.
+	* unchecked
+		-ok.
+	* �El bloqu� finally se ejecuta siempre?
+		- ok.
+	* �Se ejecuta siempre completo?
+
+7 Generics
+	* ventajas
+		-no.
+	* Como implementar una clase con generics.
+		-no.
+
+8 reflexion
+	* para que sirve?
+		-maso
+	* ventajas y desventajas
+		-no
+
+9 Threads
+	9.a diferentes formas de crear threads, cual te gusta mas y porque?
+		-extends thread
+			-ok.
+		-implement runnable
+			-ok.
+		-use Executors
+			-ok.
+	start() -no
+	9.b que es un deadlock?
+		-no.
+	9.c synchronized
+		-ok
+	9.d lock
+		-no.
+	9.e executors
+		-no.
+
+lambda filter -ok.
+
+11. Patrones de dise�o
+	10.1 que patrones de disenio conoces.
+		* Singleton -ok.
+		* strategy -maso.
+
+	10.2 Como se implementa singleton.
+		-ok.
+
+
+
+14. Junit/mockito/tdd
+	9.1 herramientas de stress test. jmetter
+	9.2 como probas tu codigo.
+		-junit, mockito.
+	9.3 defini a grandes rasgos como funciona junit.
+	9.4 como usarias mockito para mockear un metodo.
+		-@mock, 
+	9.5 TDD
+		-ok.
+*¿Cuándo utilizar list, tuple, dict. ó set?
+	- 
+*¿Por qué no puedo usar una asignación en una expresión?
+	-
+*¿Para que se utiliza __init__.py? -no.
+{
+The __init__.py file is usually empty, but can be used to export selected portions of the package under more convenient name, hold convenience functions, etc. Given the example above, the contents of the init module can be accessed as
+  }
+*¿Cuáles son los decoradores de Python y cómo se utilizan?
+{
+	  Un decorador nos permite realizar modificación simples en objetos que podemos llamar como son las funciones, métodos o clases,estas modificaciones se realizan en tiempo de ejecución. Una definición de los decoradores sería, una función que recibe como parámetro otra función y devuelve una función, con lo que tenemos:
+	
+	    El decorador que es una función.
+	    La función a decorar que se recibe como un parámetro.
+	    La función decorada que es la función que devuelve el decorador.
+	    Con un decorador podemos cambiar el comportamiento de un función, método o clase sin modificar su código, esa es la ventaja de utilizar un decorador. Se crea un “envoltura” alrededor de la función a decorar donde se encuentra el código que deseamos añadir, esta envoltura y la función original, es la nueva función que obtenemos
+}
+*¿Qué es un docstring?
+{
+  The doc string line should begin with a capital letter and end with a period. 
+
+  The first line should be a short description.
+
+  Don't write the name of the object. 
+  }
+*¿Para qué sirve la función map?
+{
+  	def doblar(numero):
+        return numero*2
+
+        numeros = [2, 5, 10, 23, 50, 33]
+
+        map(doblar, numeros)
+  }
+*¿Cuál es la diferencia entre una tupla y una lista? -no
+{
+Una lista puede ser alterada, no así una tupla. Una tupla puede ser utilizada como clave en un diccionario, no así una lista. Una tupla consume menos espacio que una lista.
+}
+*Demuestra el uso de control de excepciones en Python.
+*¿Cuáles son las reglas para las variables locales y globales en Python?
+{
+Si una variable es definida fuera de una función entonces es implícitamente global. Si la variable se asigna a un nuevo valor dentro de la función significa que es local. Si queremos que sea global tenemos que definirla explícitamente como global. La variable referenciada dentro de la función están implícitas como global.
+}
+*¿Qué es GIL?
+{
+Es el mecanismo utilizado en CPython para impedir que múltiples threads modifiquen los objetos de Python a la vez en una aplicación multi hilo. Esto no evita que tengamos que utilizar primitivas de sincronización en nuestras aplicaciones en Python, no van por ahí los tiros. Si en nuestras aplicaciones tenemos varios threads accediendo a una sección de código con datos mutables, tendremos un problema si no utilizamos primitivas de sincronización.
+}
+*¿Cómo utilizas una Cookie en Python?
+*¿Python soporta la herencia múltiple?, ¿Si o no? y explica tu respuesta.
+
+*Explica cómo copiar en python.
+{
+Hay dos formas en las que los objetos pueden ser copiados en python, ya sea la superficial o profunda. En una copia superficial, el objeto B puntos al objeto de Una ubicación en la memoria. En lo profundo de la copia, de todas las cosas en el objeto a la ubicación de memoria se copian a B objeto de la ubicación de la memoria.
+}
+1.- que es srping?
+	-spring-boot
+	-spring-batch
+	-cloud
+
+2.- listame caracteristicas de spring
+	-
+	a) contenedor
+		-no.
+	b) framework-mvc
+		-
+	c) inversion de control
+		c.1) que es la inyeccion de dependencias?
+			-ok
+		c.2) Liste algunos tipos de inyeccion de dependencias.
+	d) transacciones - no
+		d.1) en que capa se manejan las transacciones?
+			 - ok
+	e) programacion orientada a aspectos
+		-ok.
+	f) manejo de excepciones jdbc
+		
+
+1. Cual es el usuario administrador por defecto en unix?
+	-
+2. Como renombro un archivo en unix?
+	- ok.
+3. Estoy parado en una carpeta con 10 archivos, quiero buscar la palabra error en esos 10 archivos.
+	- ok.
+4. Quiero copiar la carpeta logs al directorio inferior al que estoy que comando usaria?
+5. Que hace y como funciona el comando ssh.
+	-ok.
+6. Que hace y como funciona el comando scp.
+	-ok.
+7. Tengo una apllicacion logeando en el archivo log.txt, como hago para ver que escribe la aplicacion en ese file en tiempo real?
+8. Que utilizarias para modificar un archivo desde la consola?
+	-nano.
+postgre, mongo, oracle, mysql
+
+Una empresa quiere liquidar sueldos, para eso utiliza sus dos tablas "empleado" y "salario".
+ La tabla "empleado" contiene: legajo, nombre, apellido y sexo.
+ La tabla "salario" contiene: legajo, salario.
+ Se quiere saber quienes ganan mas de 50.000.
+ 	ok.
+

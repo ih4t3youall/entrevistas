@@ -1,0 +1,23 @@
+1. un poco de tu experiencia pasada?
+	- empresa incubadora, para ver si habia que regar o no.
+	- django. 
+	- python.
+	- plataforma donde las aseguradoras tenian la cartera de clientes. (django). 
+	- siglo 21, plataforma educativa.
+	- Microservicios en Spring-boot, el front end es en .net.
+	- jenkins, integracion continua, unit tests, integration tests.
+	
+2. cual fue el problema mas complicado que tuviste que resolver en temas de programacion?
+	- banco, sobredosis de transacciones, y store procedures, acomodarlos, etc.
+	- la parte de organizacion.
+	- 
+
+3. Que rasgos destacas de tu personalidad?
+	- perserverante, pide ayuda, conocimiento de sus limitaciones, hace lo que le den para a hacer como sea.
+	- buena comunicacion.
+
+4. Cual es tu mayor defecto?
+	-  en el hacer se pierde en lo teorico.
+
+5. trabajaste en ambientes con diversidad cultural
+	- si.

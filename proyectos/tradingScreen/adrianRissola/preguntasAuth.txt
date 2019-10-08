@@ -1,0 +1,57 @@
+Conoces IAM?
+Porque usarias IAM siendo una solucion muy costosa?
+
+LDAP Oracle
+
+OAth
+que es y para que srive?
+es un single sing-on? 
+
+
+1.2.  Protocol Flow
+
+     +--------+                               +---------------+
+     |        |--(A)- Authorization Request ->|   Resource    |
+     |        |                               |     Owner     |
+     |        |<-(B)-- Authorization Grant ---|               |
+     |        |                               +---------------+
+     |        |
+     |        |                               +---------------+
+     |        |--(C)-- Authorization Grant -->| Authorization |
+     | Client |                               |     Server    |
+     |        |<-(D)----- Access Token -------|               |
+     |        |                               +---------------+
+     |        |
+     |        |                               +---------------+
+     |        |--(E)----- Access Token ------>|    Resource   |
+     |        |                               |     Server    |
+     |        |<-(F)--- Protected Resource ---|               |
+     +--------+                               +---------------+
+
+
+SSO
+tipos de SSO
+enterprice SSO (E-SSO)
+Este tipo de sistema opera como una autenticación primaria interceptando los requisitos de login que se requieren por las aplicaciones secundarias con el fin de completar los campos de usuario y contraseña. El sistema E-SSO permite la interacción con otros sistemas que pueden deshabilitar la pantalla de login.
+
+web SSO (W-SSO)
+Este tipo de solución opera solo con aplicaciones a las que es posible acceder a través de la web y que tienen como objetivo la autenticación de un usuario en diversas aplicaciones sin la necesidad de volver a introducir una identificación.
+
+Los datos de acceso son interceptados a través de un servidor proxy, quien realiza la comunicación y a continuación traslada el resultado al equipo que la solicitó. Los usuarios no identificados son redireccionados a un servicio de autenticación regresando con un acceso exitoso.
+
+identidad federada
+Este tipo de Single Sign On corresponde a una solución de gestión de identidad que utiliza estándares para habilitar que las aplicaciones puedan identificar a los clientes sin la necesidad de una autenticación redundante.
+
+Open ID
+es un proceso de SSO descentralizado en el que la identidad del usuario se compila en una URL que cualquier servidor puede verificar.
+
+
+ventajas 
+Acelera el acceso de los usuarios a sus aplicaciones
+Reduce la carga de memorizar diversas contraseñas
+Fácil de implementar y conectar a nuevas fuentes de datos
+
+desventajas
+Utilizar una única combinación aumenta las probabilidades de vulnerabilidad de contraseñas
+Al fallar SSO se pierde acceso a todos los sistemas relacionados
+Suplantación de identidades en los accesos externos de los usuarios

@@ -1,0 +1,20 @@
+1. un poco de tu experiencia pasada?
+	-HP, hace 8 anios, nextel y AA. (Swing)
+	-jsb, ejb.
+	-huenei (?) todoPago (previamente bonton pago). backend java7 con spring.
+		credicop, peticiones a la afip.
+
+2. cual fue el problema mas complicado que tuviste que resolver en temas de programacion?
+	- Hacer cosas de cero.
+		-spring-mvc.
+	- Le asignaron un proyecto con contacto directo y quedo como owner, con mucha responsabilidad a pesar de que era junior.
+
+3. Que rasgos destacas de tu personalidad?
+	-no tiene problema en trabajar solo ni en trabajar en equipo, y tambien trabajo en equipo distribuido.
+	-Trabajar en oficina no molesta.
+
+4. Cual es tu mayor defecto?
+	-Aprender a estimar mejor.
+
+5. trabajaste en ambientes con diversidad cultural
+	-No.

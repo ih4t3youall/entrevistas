@@ -1,0 +1,17 @@
+1. un poco de tu experiencia pasada?
+	-wala (uala (?)), tienen todo en amazon serverless, se autentican con no se que.
+	-base de dato no relacionales.
+	-github.
+	-framework propio.
+	-las librerias eran internas.
+	
+2. cual fue el problema mas complicado que tuviste que resolver en temas de programacion?
+	-multiple servicio por hilo, problemas de sincronizacion, multiples request simultaneos.
+	java8.
+
+3. Que rasgos destacas de tu personalidad?
+	-Extrovertido y tratar siempre de proponer nuevas soluciones.
+4. alto que trates de mejorar?
+	-otros lenguajes y frameworks.
+5. trabajaste en ambientes con diversidad cultural
+	-Si.

@@ -1,0 +1,28 @@
+Qué es la consola de desarrollo?
+	-
+Qué significa que Javascript sea Dynamic Typed?
+	- no.
+Cuál es la diferencia entre == y ===?
+	- ok.
+Qué es una promesa en Javascript?
+	- no.
+Qué es un callback?
+	- ok.
+Que es un callbackHell y como lo solucionarias?
+	- 
+
+
+
+
+==
+compara dos variables
+===
+compara dos pero ademas busca que el tipo de la variable sea el mismo
+ejemplo
+1 == ‘1’ // verdadero
+1 === ‘1’ // falso
+
+
+dynamicTyped
+las variables no necesitan tener un tipo declarado.
+

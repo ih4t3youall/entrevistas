@@ -1,0 +1,22 @@
+1. un poco de tu experiencia pasada?
+	- trabajo en empresas de soluciones de usuarios.
+	- workflows con reglas y actividads, gestion de procesos
+	- generaban redirecciones mediante el sistema de access managment.
+
+2. cual fue el problema mas complicado que tuviste que resolver en temas de programacion?
+	- programar en java (?)
+	- aprendio mvc, spring, maven, git.
+	- subirse a la vanguardia de la programacion
+
+3. Que rasgos destacas de tu personalidad?
+	- muy detallista, no se conforma con soluciones mediocres.
+	- habla raro , pero buena comunicacion.
+
+4. Cual es tu mayor defecto?
+	- disciplina perosnal, organizacion personal, establecer conjunto de prioridades etc.
+	- Seguir mejorando la calidad de codigo.
+	- trabaja mejor bajo presion.
+	- no le gusta ver el codigo feo.
+
+5. trabajaste en ambientes con diversidad cultural
+	- Si.

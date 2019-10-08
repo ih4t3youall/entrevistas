@@ -1,0 +1,20 @@
+•Knowledge of application, data and infrastructure architecture disciplines.
+
+•Understanding of architecture and design across all systems .
+
+•Working proficiency in developmental toolsets.
+
+•Knowledge of industry wide technology strategies and best practices.
+•Ability to work in large, collaborative teams to achieve organizational goals, and passionate about building an innovative culture.
+
+•Experience using Core Java and Python to develop robust pricing, trading and risk systems including building new applications & enriching existing applications using the most suitable technology choices and align development with the overall Credit trading strategy.
+	-no
+
+•Work closely with the Quant team to develop pricing and analytic components in Python, leveraging the Athena platform.
+
+•Strong grasp of object oriented design and programming, multi-threaded programming and middleware technologies (e.g. Informatica LBM or Tibco).
+	tibco - no
+•	Experience with Spring, Maven, Git.
+•	Unix/Linux command line and shell scripting.
+•	Prior experience working in electronic trading is preferred.
+

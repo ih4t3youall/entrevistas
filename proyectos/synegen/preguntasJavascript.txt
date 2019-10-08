@@ -1,0 +1,34 @@
+Qué es la consola de desarrollo?
+Qué significa que Javascript sea Dynamic Typed?
+Cuál es la diferencia entre == y ===?
+Qué es una promesa en Javascript?
+Qué es un callback?
+Que es un callbackHell y como lo solucionarias?
+
+
+
+Angular js
+
+como crear un proyecto en angular?
+como levantar un proyecto en agular? (instalar dependencias)
+como inyectar un servicio en angular? (creacion e inyectacion)
+que es y para que sirve el app.module.ts?
+supongamos que creo un component, como lo declaro donde? de que forma lo creo?
+cual es la diferencia entre las declarations, imports y providers ?
+ngIf -> donde se usa como y para que?
+variable binding
+
+
+
+==
+compara dos variables
+===
+compara dos pero ademas busca que el tipo de la variable sea el mismo
+ejemplo
+1 == ‘1’ // verdadero
+1 === ‘1’ // falso
+
+
+dynamicTyped
+las variables no necesitan tener un tipo declarado.
+

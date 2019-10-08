@@ -1,0 +1,15 @@
+1. un poco de tu experiencia pasada?
+	- Aplicacion en back end en grails.
+
+2. cual fue el problema mas complicado que tuviste que resolver en temas de programacion?
+	- Lenguaje para evaluacion gramatical, arboles.
+	- hizo un compilador para la facultad (a lenguaje maquina).
+
+3. Que rasgos destacas de tu personalidad?
+	- Orientado a resolver problemas, le gusta estar solo para pensar y ver como resolverlo. 
+
+4. Cual es tu mayor defecto?
+	- Interactuar mas con las demas personas. no le gustan las charlas repetitivas negativas, como por ejemplo el dolar
+
+5. trabajaste en ambientes con diversidad cultural
+	-  

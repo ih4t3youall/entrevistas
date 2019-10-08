@@ -1,0 +1,134 @@
+a) Herramientas
+1. maven
+	Conoces maven? como funciona y para que sirve?
+	Como resuelvo un problema de dependencias con maven?
+	Cuales son los scope de las dependencias de maven?
+
+2. git
+	2.1 Que es un branch?
+	2.2 Estas en rama master, creas un branch llamado 'branch1', efectuas cambios en el,como son los pasos para que tus cambios se reflejen en master.
+	2.3 Como cambio un typo en un mensaje ya commiteado.
+	3.4 Cherry picking.
+	3.5 Que es un pull request?
+	3.6 Diferencia entre fork, branch, clone.
+
+3. Servidor de colas externos, activemq.
+
+4. Bamboo
+	*para que sirve.
+5. Jira 
+	* conta un poco de tu expreiencia con jira
+6. jenkins
+
+7. cucumer
+
+8. Gradle
+	* Que es y para que sirve?
+	* Ventajas y desventajas con respecto a maven
+	* Que es una task en gradle y que ventajas me da.
+	* como se manejan las dependencias de las taks y como puedo hacer que una dependa de otra.
+9. Webservices
+	*REST
+	*SOAP wsdl 
+	
+b) Java
+
+1. diferencia entre jdk y jre
+	* Herramientas para debugear la jdk, jconsole, new relic.
+	* como funciona el garbage collector. tipos de garbage collector.
+	
+2.Cuales son los conceptos de POO?
+	*Encapsulamiento
+	*Polymorphism
+	*Inheritance
+
+
+2.a polimorfismo
+
+2.b clase abstracta/interfaz
+	b1. como instancio una clase abstracta. 
+	b2. ¿Cuántas clases puede extender una clase abstracta?  
+	 ¿Cuántas interfaces? 
+	
+2.c encapsulamiento, definir.
+	private
+	public
+	protected
+	default
+
+2.d clase/objeto/instancia
+
+3. estructuras de datos
+	*nombrar. 
+	*diferencia LinkedList/arrayList 
+	*set. porque el set no asegura el orden? 
+
+3a. map
+	a1. equals y hashcode
+	a2. como implementar un hashcode y un equals.
+	a3. sabes las diferencias entre map, hashmap, hashtable, treemap, concurrentHashMap y linkedHashmap?
+
+4. Final
+	* variable.
+	* método. 
+	* Clase. 
+
+4a. transient
+
+4b. volatile
+
+5. Constructores
+	* ¿Se puede sobrecargar un constructor? 
+	* ¿Se puede sobreescribir un constructor?
+
+6 Exceptions
+usamos bastante las runtime exceptions.
+	* checked
+	* unchecked
+	* ¿El bloqué finally se ejecuta siempre?
+	* ¿Se ejecuta siempre completo?
+
+7 Generics
+	* ventajas
+	* Como implementar una clase con generics.
+
+8 reflexion
+	* para que sirve?
+	* ventajas y desventajas
+
+9 Threads
+	9.a diferentes formas de crear threads, cual te gusta mas y porque?
+		-extends thread
+		-implement runnable
+		-use Executors
+	9.b que es un deadlock?
+	9.c synchronized
+
+10. logging
+	10a. info,debug,error,fatal.
+	10b. Como manejarias el logging para 20 aplicaciones en paralelo. (elk, logstash, elastic search, kivana).
+
+11. Patrones de diseño
+	10.1 que patrones de disenio conoces.
+		* template method
+		* singleton 
+		* builder 
+		* factory
+
+	10.2 Como se implementa singleton.
+	10.3 como se implementa factory/builder
+
+12. websocket/jetty
+	* como funcionan los websockets. 
+	* jetty
+
+13.  messaging
+	9.1 reactor pattern
+	9.2 kafka
+
+14. Junit/mockito/tdd
+	9.1 herramientas de stress test. jmetter
+	9.2 como probas tu codigo.
+	9.3 defini a grandes rasgos como funciona junit.
+	9.4 como usarias mockito para mockear un metodo.
+	9.5 TDD
