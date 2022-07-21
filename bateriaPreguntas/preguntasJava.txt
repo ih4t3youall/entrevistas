@@ -47,8 +47,8 @@ b) Java
 
 2.b clase abstracta/interfaz
 	b1. como instancio una clase abstracta. 
-	b2. ¿Cuántas clases puede extender una clase abstracta?  
-	 ¿Cuántas interfaces? 
+	b2. Â¿CuÃ¡ntas clases puede extender una clase abstracta?  
+	 Â¿CuÃ¡ntas interfaces? 
 	
 2.c encapsulamiento, definir.
 	private
@@ -57,6 +57,8 @@ b) Java
 	default
 
 2.d clase/objeto/instancia
+
+2.e Que 2 formas existen de reutilizar cÃ³digo: Herencia y ComposiciÃ³n
 
 3. estructuras de datos
 	*nombrar. 
@@ -70,7 +72,7 @@ b) Java
 
 4. Final
 	* variable.
-	* método. 
+	* mÃ©todo. 
 	* Clase. 
 
 4a. transient
@@ -78,15 +80,15 @@ b) Java
 4b. volatile
 
 5. Constructores
-	* ¿Se puede sobrecargar un constructor? 
-	* ¿Se puede sobreescribir un constructor?
+	* Â¿Se puede sobrecargar un constructor? 
+	* Â¿Se puede sobreescribir un constructor?
 
 6 Exceptions
 usamos bastante las runtime exceptions.
 	* checked
 	* unchecked
-	* ¿El bloqué finally se ejecuta siempre?
-	* ¿Se ejecuta siempre completo?
+	* Â¿El bloquÃ© finally se ejecuta siempre?
+	* Â¿Se ejecuta siempre completo?
 
 7 Generics
 	* ventajas
@@ -108,7 +110,7 @@ usamos bastante las runtime exceptions.
 	10a. info,debug,error,fatal.
 	10b. Como manejarias el logging para 20 aplicaciones en paralelo. (elk, logstash, elastic search, kivana).
 
-11. Patrones de diseño
+11. Patrones de diseÃ±o
 	10.1 que patrones de disenio conoces.
 		* template method
 		* singleton 
