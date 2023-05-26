@@ -6,13 +6,18 @@ a) Herramientas
 
 2. git
 	2.1 Que es un branch?
+	- 
 	2.2 Estas en rama master, creas un branch llamado 'branch1', efectuas cambios en el,como son los pasos para que tus cambios se reflejen en master.
-	2.3 Como cambio un typo en un mensaje ya commiteado.
+	- git add . ; git commit -m "asd" ; git push
+	2.3 Como cambio un typo en un mensaje ya commiteado. 
+	- git commit --amend
 	3.4 Cherry picking.
+	-
 	3.5 Que es un pull request?
+	-
 	3.6 Diferencia entre fork, branch, clone.
 
-3. Servidor de colas externos, activemq.
+3. Servidor de colas externos, activemq/kafka
 
 4. Bamboo
 	*para que sirve.
@@ -20,7 +25,7 @@ a) Herramientas
 	* conta un poco de tu expreiencia con jira
 6. jenkins
 
-7. cucumer
+7. cucumber
 
 8. Gradle
 	* Que es y para que sirve?
@@ -38,9 +43,10 @@ b) Java
 	* como funciona el garbage collector. tipos de garbage collector.
 	
 2.Cuales son los conceptos de POO?
-	*Encapsulamiento
-	*Polymorphism
-	*Inheritance
+	Encapsulation
+	Abstraction
+	Inheritance
+	Polymorphism
 
 
 2.a polimorfismo
@@ -60,15 +66,23 @@ b) Java
 
 2.e Que 2 formas existen de reutilizar código: Herencia y Composición
 
-3. estructuras de datos
+3. Estructuras de datos
 	*nombrar. 
 	*diferencia LinkedList/arrayList 
 	*set. porque el set no asegura el orden? 
+	* complejidad algoritmica de add y remove en Treeset
+	 - O(log n), porque la estructura de un treeset es un binary tree
 
 3a. map
 	a1. equals y hashcode
 	a2. como implementar un hashcode y un equals.
 	a3. sabes las diferencias entre map, hashmap, hashtable, treemap, concurrentHashMap y linkedHashmap?
+	a4. Cual de estas key es mejor para un HashMap? (String, Integer, Double)
+	 - String, porque String es inmutable, y java cachea el hashcode, de manera que no tiene que calcular el hashcode en cada busqueda
+
+3b. Streams
+ - Java Stream API. Filter y map son operaciones terminales o intermedias?
+  > intermedias.
 
 4. Final
 	* variable.
@@ -89,6 +103,8 @@ usamos bastante las runtime exceptions.
 	* unchecked
 	* ¿El bloqué finally se ejecuta siempre?
 	* ¿Se ejecuta siempre completo?
+	* Que pasa si ambos bloques catch y finally tienen un return?
+	 - El return del finally overridea el del catch.
 
 7 Generics
 	* ventajas
