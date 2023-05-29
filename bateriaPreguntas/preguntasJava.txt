@@ -110,10 +110,52 @@ usamos bastante las runtime exceptions.
 	* ventajas
 	* Como implementar una clase con generics.
 
-8 reflexion
-	* para que sirve?
-	* ventajas y desventajas
-
+8 Core questions
+	* Why is String immutable in Java? 
+	- Varias razones. Una de ellas es que java tiene un string pool en el cache de cada thread. Este string pool almacena cada string que se crea.
+          Si el string fuese mutable, creo un string "Hola", y despues creo otro String "Hola", pero este segundo lo modifico (Ej: toUpperCase()), entonces 
+	  tambien estaría modificando el primer string.
+	- Tambien es inmutable porque tiene un uso interesante para los hashmaps. Cada vez que se crea un string se cachea su hashcode, entonces cada vez que
+	  usas el string como key en un hashmap, no hace falta calcular el hashcode.
+	  
+	* Why char array is preferred to store passwords than a String in Java?
+	- Since Strings are immutable in Java if you store the password as plain text it will be available in memory until the Garbage collector clears it and since String is used in the String pool for reusability there 	       is a pretty high chance that it will remain in memory for a long duration, which poses a security threat. 
+	Since anyone who has access to memory dump can find the password in clear text and that's another reason you should always use an encrypted password than plain text. Since Strings are immutable there is no way t	   the contents of Strings can be changed because any change will produce new String, while if you char[] you can still set all his elements as blank or zero. So Storing the password in a character array clearly             mitigates security risk of stealing passwords.
+	* What is a deadlock?" When two or more threads are waiting for each other to release the resource they need (lock) and get stuck for infinite time
+	
+	* https://www.baeldung.com/java-wait-notify
+	* https://stackoverflow.com/questions/38213467/what-does-intrinsic-lock-actually-mean-for-a-java-class
+	* https://jenkov.com/tutorials/java-concurrency/starvation-and-fairness.html
+	* https://www.java67.com/2012/09/top-10-tough-core-java-interview-questions-answers.html
+	* https://stackoverflow.com/questions/9848616/whats-the-meaning-of-an-objects-monitor-in-java-why-use-this-word
+	* https://jenkov.com/tutorials/java-concurrency/synchronized.html#synchronized-blocks-instance-methods
+	  - Synchronized blocks in Java are marked with the synchronized keyword. A synchronized block in Java is synchronized on some object.
+            Osea, si en una clase tengo 2 metodos distintos syncrhonized, entonces no importa que sean 2 metodos distintos, solo 1 thread va a poder ejecutar uno de estos metodos a la vez.
+	    Ejemplo:
+	    In case a class contains more than one static synchronized method, only one thread can execute inside any of these methods at the same time. Look at this static synchronized method example:
+		public static MyStaticCounter{
+		  private static int count = 0;
+		  public static synchronized void add(int value){
+		    count += value;
+		  }
+		  public static synchronized void subtract(int value){
+		    count -= value;
+		  }
+		}
+		Only one thread can execute inside any of the two add() and subtract() methods at any given time. 
+		If Thread A is executing add() then Thread B cannot execute neither add() nor subtract() until Thread A has exited add().
+	    Also very interesting:
+		When a thread enters a synchronized block it will refresh the values of all variables visible to the thread. 
+		When a thread exits a synchronized block all changes to variables visible to the thread will be committed to main memory. This is similar to how the volatile keyword works.
+		
+ Conclusiones:
+  - syncronized methods: El thread que llama al método adquiere el lock del objeto al cual pertenece el método (Conocido como lock intrinseco, ya que no cree un objeto especial para usar como lock, si no que uso
+    el objeto del método como lock)
+  - syncronized blocks: cuando uso esto, tengo que especificar un objeto del cual agarrar el lock. Puede ser "this" (uso el objeto actual como lock), o puede ser cualquier otro objeto.
+  - usar un Lock en vez de syncronized tiene ventajas ya que el lock implementa un mecanismo de fairness (si hay varios threads esperando agarrar el lock, el lock
+    va a ser agarrado por el thread que haya esperado mas tiempo, esto asegura que todos los threads eventualmente accedan al lock (fairness). Con el keyword syncrhonized, el lock del objeto
+    se asigna de forma random, lo que puede causar que si varios threads estan tratando de agarrar el lock, puede que 1 o varios jamas lo agarren, o tarden demasiado.
+	 
 9 Threads
 	9.a diferentes formas de crear threads, cual te gusta mas y porque?
 		-extends thread
