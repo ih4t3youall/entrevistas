@@ -111,6 +111,11 @@ usamos bastante las runtime exceptions.
 	* Como implementar una clase con generics.
 
 8 Core questions
+        * Como funciona el paquete atomic que provee java?
+	- Las clases atomicas te dan una opcion lock-free thread-safe.
+	  They use a combination of volatile & CAS (compare and swap) to achieve thread-safety.
+          It is non-blocking in nature and thus highly usable in writing high throughput concurrent data structures
+   	  Compare-and-swap (CAS) is an atomic instruction, it compares the contents of a memory location to a given value             and, only if they are the same, modifies the contents of that memory location to a given new value.
 	* Why is String immutable in Java? 
 	- Varias razones. Una de ellas es que java tiene un string pool en el cache de cada thread. Este string pool almacena cada string que se crea.
           Si el string fuese mutable, creo un string "Hola", y despues creo otro String "Hola", pero este segundo lo modifico (Ej: toUpperCase()), entonces 
