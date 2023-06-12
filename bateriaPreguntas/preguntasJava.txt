@@ -175,10 +175,18 @@ usamos bastante las runtime exceptions.
 
 11. Patrones de diseño
 	10.1 que patrones de disenio conoces.
-		* template method
-		* singleton 
-		* builder 
-		* factory
+		* Template: The Template Pattern is used to defer or delegate some or all steps of an algorithm to a subclass. 
+		            Common behavior can be defined in a superclass, and then specific variants are written in a subclass.
+		            For example, in a super class we define a method that involves a series
+		            of steps, and those steps are defined in abstract methods in the super class.
+			    The subclasses will have to implement steps. 
+		* Singleton: This pattern is useful when we only need a single instance of a class in the jvm.
+		* Strategy: This pattern enables us to easily swap specific implementation of an algorithm at run time. Simply create an interface "Strategy" with a method like execute(), create subclasses with different
+		            execute implementations, and then create a class that uses the Strategy interface. The subclasses can be swapped at runtime.
+		* Builder 
+		* Factory
+		* Flyweight: Useful in situations where you have several inmmutable objects, and many may represent the same value. Instead of creating a new object that already exists in the heap, 
+		             we re-use the existing object. Java uses the flyweight pattern, for example, in the Integer class valueOf method. The valueOf method checks the value of the given parameter, and if it is a                                precached value, the method returns the constructed instance rather than creating a new copy.
 
 	10.2 Como se implementa singleton.
 	10.3 como se implementa factory/builder
