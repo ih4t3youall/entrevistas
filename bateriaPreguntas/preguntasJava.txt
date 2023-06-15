@@ -205,3 +205,31 @@ usamos bastante las runtime exceptions.
 	9.3 defini a grandes rasgos como funciona junit.
 	9.4 como usarias mockito para mockear un metodo.
 	9.5 TDD
+
+15. Patrones de Diseño para arquitectura de  microservicios
+Sources: 
+https://www.tutorialspoint.com/microservices_design_patterns/microservices_design_patterns_proxy.htm
+https://medium.com/@madhukaudantha/microservice-architecture-and-design-patterns-for-microservices-e0e5013fd58a
+
+Integration Patterns
+
+(A) Aggregator pattern: Its helpful when a consumer needs data from many different microservices. Instead of making the consumer client to call many microservices, it could call an aggregator microservice that will collect the required data from the different microservices, aggregate the data and build a final response to the consumer. This can be done in two ways:
+ - A composite microservice will make calls to all the required microservices, consolidate the data, and transform the data before responding to the client.
+ - An API Gateway can also partition the request to multiple microservices and aggregate the data before sending it to the consumer.
+If any business logic needs to be applied, the composite microservice is recommended, otherwise, the API Gateway is the established solution.
+
+(B) API Gateway: When there are many microservices in the system, the API Gateway works as the single point of entry for any microservice call. It can also aggregate the results, or take care the authentication and authorization. It can also have features like rate limiting, api monitoring, etc.
+The difference with the Aggregator pattern is that API Gateway is always at the gate, its the entry point to the system, and its only one, while the aggregegator microservice could be somewhere in the middle layer.
+
+(C) Proxy Pattern: Its the same as the API Gateway but the only thing that it does is to re-route the requests to the desired microservice.
+
+(D) Chained Pattern: It has a single entry point, lets say microservice A. Microservice A will call microservice B, and B will call C, and so on in a manner of syncrhonous calls to get the task done. This is slow, but its secure given we have just one entry point.
+
+(E) Is a hybrid of chain and aggregator pattern. Service A -> Service C -> Service D
+                                                           -> Service B
+
+Service A is acting like an aggregator and it is branching out into two branches. One branch contains a single autonomous service (Service B) and the other branch contains a chain of services (Service D is accessible from Service C). This type of design is useful when a large monolithic application is needed to be converted into an application with microservice type of architecture.
+
+Database Patterns
+
+
