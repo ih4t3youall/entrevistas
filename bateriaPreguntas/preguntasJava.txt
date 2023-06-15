@@ -232,4 +232,5 @@ Service A is acting like an aggregator and it is branching out into two branches
 
 Database Patterns
 
+(A) The Database-per-Service Pattern: In order to keep the loose coupling between services, each microservice should have its own private database. Separating databases can gives us to abilities to pick the best optimized database for our microservices.
 
