@@ -232,5 +232,19 @@ Service A is acting like an aggregator and it is branching out into two branches
 
 Database Patterns
 
-(A) The Database-per-Service Pattern: In order to keep the loose coupling between services, each microservice should have its own private database. Separating databases can gives us to abilities to pick the best optimized database for our microservices.
+(A) The Database-per-Service Pattern: In order to keep the loose coupling between services, each microservice should have its own private database. Separating databases per app has the advantage that we can pick the best optimized database for each microservice.
 
+(B) Command Query Responsibility Segregation (CQRS): This pattern is meant to separate the read(query) and write(command) logic of our applications in regards to the database. This is sometimes a good idea when we have a database with a lot of reads and writes that are producing a lock contention, maybe because the read queries involve the join of multiple tables. 
+
+There are many ways to implement this. 
+In a single database (Having tables for writes and materialized views for reads)
+In two databases: One for writing and another for reading.
+Etc.
+
+The event sourcing pattern is generally used along with it to create events for any data change. Materialized views are kept updated by subscribing to the stream of events.
+
+Materialized view: A materialized view is a database object that contains the results of a query. For example, it may be a local copy of data located remotely, or may be a subset of the rows and/or columns of a table or join. The query result is cached as a concrete ("materialized") table (rather than a view as such) that may be updated from the original base tables from time to time. This enables much more efficient access, at the cost of extra storage and of some data being potentially out-of-date. 
+
+(C) Event sourcing: Event Sourcing gives us a new way of persisting application state as an ordered sequence of events. We can selectively query these events and reconstruct the state of the application at any point in time. To make this work, we need to think every change to the state of the application as events. The event log becomes our primary source of truth
+
+Great web for CQRS and Event sourcing: https://www.baeldung.com/cqrs-event-sourcing-java
