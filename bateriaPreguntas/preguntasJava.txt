@@ -245,6 +245,40 @@ The event sourcing pattern is generally used along with it to create events for 
 
 Materialized view: A materialized view is a database object that contains the results of a query. For example, it may be a local copy of data located remotely, or may be a subset of the rows and/or columns of a table or join. The query result is cached as a concrete ("materialized") table (rather than a view as such) that may be updated from the original base tables from time to time. This enables much more efficient access, at the cost of extra storage and of some data being potentially out-of-date. 
 
-(C) Event sourcing: Event Sourcing gives us a new way of persisting application state as an ordered sequence of events. We can selectively query these events and reconstruct the state of the application at any point in time. To make this work, we need to think every change to the state of the application as events. The event log becomes our primary source of truth
+(C) Event sourcing: This pattern involves sending a continuous stream of messages to some event storage. Each message describes an event in the system. Examples include: A write to the database, request to a web server, or logging activity. Applications then query the event store in a way that suits their needs. The event store becomes our primary source of truth
 
 Great web for CQRS and Event sourcing: https://www.baeldung.com/cqrs-event-sourcing-java
+
+When to use Event sourcing? 
+- If the business requires it, for audit purposes
+- When the ability to re-build the system state at certain point on time is needed
+- Etc.
+
+Observability Patterns
+
+(A) Log Aggregation
+Consider a use case where an application consists of multiple services. Each service instance generates a log file in a standardized format. We need a centralized logging service that aggregates logs from each service instance.
+
+(B) Performance Metrics
+When a metrics service is required to gather statistics about individual operations. It should aggregate the metrics of an application service, which provides reporting and alerting.
+There are two models for aggregating metrics:
+Push — the service pushes metrics to the metrics service e.g. NewRelic, AppDynamics
+Pull — the metrics services pulls metrics from the service e.g. Prometheus
+
+
+Cross-Cutting Concern Patterns
+
+(A) Service Discovery Pattern
+
+When microservices come into the picture, we need to address a few issues in terms of calling services.
+With container technology, IP addresses are dynamically allocated to the service instances. Every time the address changes, a consumer service can break and need manual changes.
+Each service URL has to be remembered by the consumer and become tightly coupled.
+A service registry needs to be created which will keep the metadata of each producer service and specification for each. A service instance should register to the registry when starting and should de-register when shutting down. There are two types of service discovery
+
+(B) Circuit Breaker Pattern
+
+A service generally calls other services to retrieve data, and there is the chance that the downstream service may be down. There are two problems with this: first, the request will keep going to the down service, exhausting network resources, and slowing performance. Second, the user experience will be bad and unpredictable.
+
+The consumer should invoke a remote service via a proxy that behaves in a similar fashion to an electrical circuit breaker. When the number of consecutive failures crosses a threshold, the circuit breaker trips, and for the duration of a timeout period, all attempts to invoke the remote service will fail immediately. After the timeout expires the circuit breaker allows a limited number of test requests to pass through. If those requests succeed, the circuit breaker resumes normal operation. Otherwise, if there is a failure, the timeout period begins again.
+
+
