@@ -252,7 +252,8 @@ Great web for CQRS and Event sourcing: https://www.baeldung.com/cqrs-event-sourc
 When to use Event sourcing? 
 - If the business requires it, for audit purposes
 - When the ability to re-build the system state at certain point on time is needed
-- Etc.
+- Good for debugging.
+- ETC.
 
 Observability Patterns
 
