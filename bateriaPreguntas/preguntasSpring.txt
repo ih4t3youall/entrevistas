@@ -65,3 +65,30 @@ Annotation questions:
 
 	- Q: What does @PostConstruct do?
 	  A: It tells spring that the current method has to be called after dependency injection is done. Usually used for initialization.
+
+	- Q: What does @PathVariable do?
+	  A: Tells spring that the argument value has to be taken from the Mapping Path
+		@GetMapping("/{id}")
+		public Integer findById(@PathVariable Integer id) {
+                	...
+		}
+
+	- Q: What does @ResponseStatus do?
+	  A: Sets the response HTTP code of a controller method. The status will be set if no exception is thrown.
+
+	- Q: What does @RequestBody do?
+	  A: Maps the HttpRequest body to a java object, enabling automatic deserialization. In the example, the LoginForm object is created
+		@PostMapping("/request")
+		public ResponseEntity postController(@RequestBody LoginForm loginForm) {
+		    ....
+		}
+	  Q: How do we validate that the given LoginForm is ok?
+          A: We use a validator. First, we tell spring using the @Valid annotation that it has to validate the LoginForm
+		@PostMapping("/request")
+		public ResponseEntity postController(@Valid @RequestBody LoginForm loginForm) {
+		    ....
+		}
+  	     Then, in the LoginForm class, we can annotate each field to define what validations we want. Like @NotNull, @NotBlank, etc.
+
+
+	
