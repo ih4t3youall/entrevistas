@@ -43,7 +43,25 @@ Spring MVC
 	Provides a decoupled way of developing web applications, separating the model, the view and the controller(a.k.a dispatcher servlet)
 
 
-Questions:
+Annotation questions:
 	- Q: Let's say I have a class that I don't own because its in an external library, how do I inject an instance of that class into the ApplicationContext?
 	  A: We create a class with the @Configuration annotation. Inside that class, we create a method that returns an instance of the class we want to inject, and we mark the method
              with the @Bean annotation. @Bean indicates that a method produces a bean that will be managed by the Spring Container. The name of the bean wil be the method name
+
+	- Q: What does @Controller and @RestController do?
+	  A: @Controller is used to create web controllers that return views, which is further resolved by view resolver, while @RestController is used to create web services that return JSON or XML data
+
+	- Q: What does @RequestMapping do?
+	  A: It tells Spring whats the path to arrive to the current controller.
+
+	- Q: What does @GetMapping do?
+	  A: Its a method annotation that tells spring to call the current method for GET requests for a certain path.
+
+	- Q: What does @Repository do?
+	  A: It tells Spring that the class provides a mechanism for storage, retrieval, search, update and delete operation on objects.
+
+	- Q: What does @Autowired do?
+	  A: It tells Spring to assign a variable with an instance that is living in the application context.
+
+	- Q: What does @PostConstruct do?
+	  A: It tells spring that the current method has to be called after dependency injection is done. Usually used for initialization.
