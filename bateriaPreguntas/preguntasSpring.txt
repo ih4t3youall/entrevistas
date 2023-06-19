@@ -1,4 +1,6 @@
-1.- que es srping?
+Spring is a framework focused on the inversion of control principle. To achieve this it uses the dependency Injection pattern.
+Because of this, it makes it easy to develop loosely coupled applications. It makes applications testable.
+
 2.- listame caracteristicas de spring
 	a) contenedor
 	b) framework-mvc
@@ -10,4 +12,9 @@
 	e) programacion orientada a aspectos
 	f) manejo de excepciones jdbc
 		
+
+
+Spring Boot
+Spring based applications have a lot of configuration. When we use Spring MVC, we need to configure component scan, dispatcher servlet, a view resolver, web jars(for delivering static content) among other things. When we use Hibernate/JPA, we would need to configure a datasource, an entity manager factory, a transaction manager among a host of other things. 
+Spring Boot can auto configure some beans automatically
 
