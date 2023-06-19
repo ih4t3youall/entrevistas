@@ -13,9 +13,37 @@ Because of this, it makes it easy to develop loosely coupled applications. It ma
 	f) manejo de excepciones jdbc
 		
 
+Spring Core
+	Inversion of control 
+        Application Context 
+        Beans 
+
+Spring MVC
+	Models
+	Annotations
+	CRUD REST API
+	CDRS
+	Data Validation
+
+Spring Data
+	- JDBC
+	- ...
 
 Spring Boot
-Spring based applications have a lot of configuration. When we use Spring MVC, we need to configure component scan, dispatcher servlet, a view resolver, web jars(for delivering static content) among other things. When we use Hibernate/JPA, we would need to configure a datasource, an entity manager factory, a transaction manager among a host of other things. 
-Spring Boot can auto configure some beans automatically
+	Spring based applications have a lot of configuration. When we use Spring MVC, we need to configure component scan, dispatcher servlet, a view resolver, web jars(for delivering static content) among other things. 	        When we use Hibernate/JPA, we would need to configure a datasource, an entity manager factory, a transaction manager among a host of other things. 
+	Spring Boot can auto configure some beans automatically
+	
+	Spring boot provides:
+	Starters - convenient dependencies that package everything we need for certain scenarios
+	Auto config
+	Production ready - Actuator dependency provides production ready features: Endpoints for health check, beans, etc
+	                                                                           Observability - Logging, metrics, tracing
 
-Spring MVC - Provides a decoupled way of developing web applications, separating the model, the view and the controller(a.k.a dispatcher servlet)
+Spring MVC 
+	Provides a decoupled way of developing web applications, separating the model, the view and the controller(a.k.a dispatcher servlet)
+
+
+Questions:
+	- Q: Let's say I have a class that I don't own because its in an external library, how do I inject an instance of that class into the ApplicationContext?
+	  A: We create a class with the @Configuration annotation. Inside that class, we create a method that returns an instance of the class we want to inject, and we mark the method
+             with the @Bean annotation. @Bean indicates that a method produces a bean that will be managed by the Spring Container. The name of the bean wil be the method name
