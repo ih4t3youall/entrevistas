@@ -18,3 +18,4 @@ Spring Boot
 Spring based applications have a lot of configuration. When we use Spring MVC, we need to configure component scan, dispatcher servlet, a view resolver, web jars(for delivering static content) among other things. When we use Hibernate/JPA, we would need to configure a datasource, an entity manager factory, a transaction manager among a host of other things. 
 Spring Boot can auto configure some beans automatically
 
+Spring MVC - Provides a decoupled way of developing web applications, separating the model, the view and the controller(a.k.a dispatcher servlet)
