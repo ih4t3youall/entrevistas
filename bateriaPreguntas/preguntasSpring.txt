@@ -104,9 +104,20 @@ JDBC Questions
 	- Q: What does the JDBCTemplate interface gives us? Is it part of Spring Data?
 	  A: JDBCTemplate offers an interface to talk to the database. We still have to write the Queries as usual, and the interface asks for a RowMapper method, that Spring will use
 	     to create an Object for every row in the result set.
-	     This is the first layer of abstraction that Spring provides when it comes to the DB. This is not yet Spring Data. Spring data offers more layers of abstraction, where we don't have to write any queries
+	     This is the first layer of abstraction that Spring provides when it comes to the DB. 
+	     JDBCTemploate is not part of Spring Data. Spring data offers more layers of abstraction (JDBCTemplate is not the same as Spring Data JDBC), where we don't have to write any queries
 	     or row mappers.
 
 	- Q: Spring Data JDBC vs Spring Data JPA?
+	  A: Spring Data JPA and Spring Data JDBC use Spring Data Commons as a base library. Both share the same abstractions; the most important one is Repository. 
+             In Spring Data JPA, repositories allow us to use derived methods instead of queries. Such methods transparently convert their invocations to queries using a JPA implementation. 
+             In Spring Data JDBC, method invocations are transformed into pure SQL and executed via JDBC.
+	     Spring Data JDBC is very similar to Spring Data JPA in terms of API. However, JPA provides several useful features that are not present in Spring Data JDBC:
+
+             @*ToOne associations allow us to create bidirectional references between entities.
+	     Automatic ID generation prevents us from manually selecting IDs from sequences or caring about IDENTITY datatype support in an RDBMS.
+             Batch operations. Hibernate groups similar operations into batches automatically. It helps when an application deals with massive insert operations.
+             L1 Cache keeps entities used in one transaction in memory. It allows us not to fetch the same data twice in two services if executed in the same transaction.
+             Etc.
 
 	
