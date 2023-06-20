@@ -1,3 +1,5 @@
+https://www.youtube.com/watch?v=UgX5lgv4uVM
+
 Spring is a framework focused on the inversion of control principle. To achieve this it uses the dependency Injection pattern.
 Because of this, it makes it easy to develop loosely coupled applications. It makes applications testable.
 
@@ -98,4 +100,13 @@ JDBC Questions
 	  A: We can do this programatically or using a .sql file.
 		SQL FILE: Spring JDBC has a DataSource initializer feature enabled by default. It scans the root classpath looking for the files schema.sql and data.sql. 
 			  In addition Spring Boot will load the schema-${platform}.sql and data-${platform}.sql files (if present).
+
+	- Q: What does the JDBCTemplate interface gives us? Is it part of Spring Data?
+	  A: JDBCTemplate offers an interface to talk to the database. We still have to write the Queries as usual, and the interface asks for a RowMapper method, that Spring will use
+	     to create an Object for every row in the result set.
+	     This is the first layer of abstraction that Spring provides when it comes to the DB. This is not yet Spring Data. Spring data offers more layers of abstraction, where we don't have to write any queries
+	     or row mappers.
+
+	- Q: Spring Data JDBC vs Spring Data JPA?
+
 	
