@@ -93,6 +93,12 @@ Annotation questions:
 		}
   	     Then, in the LoginForm class, we can annotate each field to define what validations we want. Like @NotNull, @NotBlank, etc.
 
+	- Q: How can you inject configuration into the application?
+	  A: There are many ways.
+	     On every class variable, add a @Value("${property.name: defaultValue}"
+ 	     With the above, the "property.name" will be lookuped up in the configuration. If the property is not set, then it will default to "defaultValue"
+	
+
 
 JDBC Questions
 
