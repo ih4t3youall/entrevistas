@@ -91,4 +91,10 @@ Annotation questions:
   	     Then, in the LoginForm class, we can annotate each field to define what validations we want. Like @NotNull, @NotBlank, etc.
 
 
+JDBC Questions
+
+	- Q: How can I make Spring run a query or sql script on every startup?
+	  A: We can do this programatically or using a .sql file.
+		SQL FILE: Spring JDBC has a DataSource initializer feature enabled by default. It scans the root classpath looking for the files schema.sql and data.sql. 
+			  In addition Spring Boot will load the schema-${platform}.sql and data-${platform}.sql files (if present).
 	
