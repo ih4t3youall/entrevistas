@@ -62,6 +62,7 @@ Annotation questions:
 
 	- Q: What does @Autowired do?
 	  A: It tells Spring to assign a variable with an instance that is living in the application context.
+	     It is not always needed to write this annotation. For example, if a class has a constructor with just 1 argument, Spring will autowire that argument without the need for the annotation.
 
 	- Q: What does @PostConstruct do?
 	  A: It tells spring that the current method has to be called after dependency injection is done. Usually used for initialization.
