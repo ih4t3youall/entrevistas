@@ -120,4 +120,22 @@ JDBC Questions
              L1 Cache keeps entities used in one transaction in memory. It allows us not to fetch the same data twice in two services if executed in the same transaction.
              Etc.
 
-	
+	- Q: Do we need to add @Repository when we create an interface that extends CrudRepository<>?
+        - A: No. When we extend CrudRepository, or any other repository spring class, Spring, at runtime, will create an implementation from that interface
+
+	- Q: So, extending CrudRepository gives you default queries like findById, findAll, etc. What if I want to implement custom queries?
+        - A: There are at least 2 ways.
+
+             1- Query derivation: Basically you write a method name in the interface, following some convention, and Spring will know how to transform that method into a query.
+                For example, I have a repository with fields Id, name and age. I want a query to get all the names that don't match a string
+		interface UserRepository extends JpaRepository<User, Integer> {
+			List<User> findByNameIsNot(String name);
+		}
+		Spring is clever enough to translate that method name into a query.
+
+	    2- Another option is to write the query ourselves with @Query and @Param
+		@Query("SELECT * FROM Users where name is not :name")
+		interface UserRepository extends JpaRepository<User, Integer> {
+			List<User> findByNameIsNot(@Param("name") String name);
+		}
+
