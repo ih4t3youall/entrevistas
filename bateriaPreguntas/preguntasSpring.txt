@@ -97,7 +97,14 @@ Annotation questions:
 	  A: There are many ways.
 	     On every class variable, add a @Value("${property.name: defaultValue}"
  	     With the above, the "property.name" will be lookuped up in the configuration. If the property is not set, then it will default to "defaultValue"
+	     This while fast, has a downside like no type checking.
+
+	     Another option is to create a class and annotate it with @ConfigurationProperties, for example:
+		@Configuration
+		@ConfigurationProperties(prefix = "mail")
+		public record ConfigProperties(String hostName, int port, String from) {}
 	
+		To make this work we will also have to annotate with @EnableConfigurationProperties(ConfigProperties.class) the class where our main method will execute
 
 
 JDBC Questions
@@ -145,3 +152,10 @@ JDBC Questions
 			List<User> findByNameIsNot(@Param("name") String name);
 		}
 
+
+Production
+	- Profiles
+	  The application.properties file will always be read despite the active profile.
+	  On top of that, we can have separate application properties (application-{profile}.properties) that will be read depending on the active profile.
+          If spring.profiles.active=ut is set, then the application-ut.properties file will be loaded.
+   
