@@ -1,0 +1,2 @@
+Hibernate features:
+  - ORM (Object Relational Mapping) - It provides a mechanism to persist a Java Object to a database table, mapping its fields, and the oppossite as well, read a table and create a Java Object for every row.
