@@ -8,7 +8,7 @@ a) Herramientas
 	2.1 Que es un branch?
 	- 
 	2.2 Estas en rama master, creas un branch llamado 'branch1', efectuas cambios en el,como son los pasos para que tus cambios se reflejen en master.
-	- git add . ; git commit -m "asd" ; git push
+	- git add . ; git commit -m "asd" ; git push; and then we merge to master
 	2.3 Como cambio un typo en un mensaje ya commiteado. 
 	- git commit --amend
 	3.4 Cherry picking.
@@ -64,12 +64,25 @@ b) Java
 
 2.d clase/objeto/instancia
 
-2.e Que 2 formas existen de reutilizar código: Herencia y Composición
+2.e Que 2 formas existen de reutilizar código: Herencia y Composición(Utlizar objetos dentro de otros objetos)
 
 3. Estructuras de datos
-	*nombrar. 
-	*diferencia LinkedList/arrayList 
-	*set. porque el set no asegura el orden? 
+	* Nombrar: Arrays, Lists, Sets, Maps, those would be the main interfaces. Then we have implementations like ArrayList, LinkedList, HashSet, TreeSet, HashMap, TreeMap, LinkedHashMap. 
+	           And we have the concurrent implementations. 
+	* Diferencia LinkedList/arrayList
+	  LinkedList is an ordered collection that consist of independent nodes that are pointing to each other. Every node could be at any memory position, not necessarily consecutive. ArrayList is also an ordered collection, but its implemented with an array data structure, meaning its data is stored in consecutive memory blocks.
+	This two different implementations have pros and cons when it comes to performance and memory usage.
+	
+	Random Access Search: ArrayList has direct references to every element in the list, so it can get the n-th element in constant time. 
+                              LinkedList has to traverse the list from the beginning to get to the n-th element.
+	Delete: ArrayList is slower because once it remove the item, it has to shift the right side of the array to the left. (Unless its removing the last item)
+		For LinkedList, If the deletion is done using the ListIterator.remove() API, LinkedList just has to manipulate a couple of references; if the deletion is done by value or by index, LinkedList has to potentially scan the entire list first to find the element(s) to be deleted.
+	Etc..
+	For time complexity: https://www.w3schools.blog/arraylist-linkedlist-vector-java
+
+
+	*set. porque el set no asegura el orden?  Porque a la interfaz Set solo la interesa asegurar unicidad, no orden.
+		Para un Set ordenado, hay subinterfaces de Set como SortedSet, con implementaciones como TreeSet y LinkedHashSet.
 	* complejidad algoritmica de add y remove en Treeset
 	 - O(log n), porque la estructura de un treeset es un binary tree
 
