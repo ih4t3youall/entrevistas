@@ -75,7 +75,7 @@ b) Java
 	
 	Random Access Search: ArrayList has direct references to every element in the list, so it can get the n-th element in constant time. 
                               LinkedList has to traverse the list from the beginning to get to the n-th element.
-	Delete: ArrayList is slower because once it remove the item, it has to shift the right side of the array to the left. (Unless its removing the last item)
+	Delete: ArrayList is slower because once the item is removed, it has to shift the right side of the array to the left. (Unless its removing the last item) O(1) if removes last item, else O(n)
 		For LinkedList, If the deletion is done using the ListIterator.remove() API, LinkedList just has to manipulate a couple of references; if the deletion is done by value or by index, LinkedList has to potentially scan the entire list first to find the element(s) to be deleted.
 	Etc..
 	For time complexity: https://www.w3schools.blog/arraylist-linkedlist-vector-java
