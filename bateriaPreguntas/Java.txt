@@ -118,6 +118,10 @@ b) Java
 	* Como implementar una clase con generics.
 
 8 Core questions
+ --- Memory Management ---
+https://www.baeldung.com/java-stack-heap
+Poner tambien lo del GC y eden space y todo eso. donde se asignan las variables primitivas y donde los objetos (stack vs heap)
+
         * Como funciona el paquete atomic que provee java?
 	- Las clases atomicas te dan una opcion lock-free thread-safe.
 	  They use a combination of volatile & CAS (compare and swap) to achieve thread-safety.
