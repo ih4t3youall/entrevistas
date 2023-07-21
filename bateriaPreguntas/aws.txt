@@ -1,0 +1,13 @@
+Serverless Framework 
+- Allows us to create and deploy Lambda function 
+- Serverless means you dont need to manage the server, AWS does it for you.
+
+EC2: A virtual server that runs continuosly and you get billed by runtime.
+
+AWS Lambda: Virtual functions, no servers to manage.
+- Limited by time: short executions
+- Run on-demand, so you dont get billed while its not running.
+
+
+AWS CloudWatch: Service that allows you to go and see what's happening in the back end.
+AWS S3 - Simple Storage Service
