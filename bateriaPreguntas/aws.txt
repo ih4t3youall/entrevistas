@@ -1,13 +1,43 @@
-Serverless Framework 
-- Allows us to create and deploy Lambda function 
-- Serverless means you dont need to manage the server, AWS does it for you.
+AWS Services:
+  
+  EC2: A virtual server that runs continuosly and you get billed by runtime.
+  
+  AWS Lambda: Virtual functions, no servers to manage.
+  - Limited by time: short executions
+  - Run on-demand, so you dont get billed while its not running.
+  Concepts:  
+    - Function: A piece of code that does a single job, short and fast.
+    - Events: Something that triggers a lambda function to execute (HTTP, S3 File upload, etc)
+    - Resources: AWS Infraestructure components which the function use (AWS DynamoDB, and S3 Bucket, etc)
+    - Services: Where we define the functions, the events that trigger them and the resources that the functions use. 
+      A service can be described in yaml or json. (The hole stack) This is good so we can centralize the configuration and flow in 1 place.
+    - Timeout and Memory for each function can be speicified in the serverless.yml aswell
+    - VPC (Virtual Private Network) - Lambda functions always run inside VPCs(Subnets) owned by the Lambda service.
+    - AWS SAM (Serverless Application Modle): Framework to define serverless apps. Its almost the same as Serverless Framework, 
+      but specific to AWS. Lets you define the whole project structure through configuration yaml files.)
+      AWS SAM has:
+        - Template specs to write function, API, permissions, etc
+        - CLI to invoke functions (local/remote), package and deploy,etc.
+        - Single deployment configuration.
+        - Uses AWS CloudFormation for the stack deployment
 
-EC2: A virtual server that runs continuosly and you get billed by runtime.
+  
+  
+  AWS CloudWatch: Service that allows you to go and see what's happening in the back end.
+  AWS S3 - Simple Storage Service
 
-AWS Lambda: Virtual functions, no servers to manage.
-- Limited by time: short executions
-- Run on-demand, so you dont get billed while its not running.
 
 
-AWS CloudWatch: Service that allows you to go and see what's happening in the back end.
-AWS S3 - Simple Storage Service
+Serverless Framework(Not an AWS tool): Its a cloud agnostic framework that allows us to create deploy and delete and manage a Lambda functions (among other things) 
+- "sls" or "serverless" is the command in the command line
+  Create
+  - sls create --template aws-java-maven --path aws-java-lamda-example
+  Deploy
+  - sls deploy deploys the hole stack
+  - sls deploy function -f {function_name} : just deploys the function. much faster for incremental upgrades.
+  Invoking the function
+  - sls invoke -f {function_name} : invokes the function from aws
+  - sls invoke -f function_name --log : for more details
+  Remove the function from the back-end (from aws in this case)
+   - To remove the function - dependencies of the function - CloudWatch logs - IAM Roles - everything else the framework has created, serverless is GREAT
+     sls remove 
