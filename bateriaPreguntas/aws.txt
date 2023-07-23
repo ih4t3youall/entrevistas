@@ -20,7 +20,7 @@ AWS Services:
         - CLI to invoke functions (local/remote), package and deploy,etc.
         - Single deployment configuration.
         - Uses AWS CloudFormation for the stack deployment
-
+    - Step Function: A service to build workflows composed by step functions and services. (like uc4)
   
   
   AWS CloudWatch: Service that allows you to go and see what's happening in the back end.
