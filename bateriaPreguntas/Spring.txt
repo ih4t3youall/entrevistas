@@ -48,6 +48,13 @@ Bean lifecycle: When we run a spring program, first of all, the spring container
 
 
 Annotation questions:
+	- Q: If more than one bean of the same type(class or interface) is available in the container, the framework will throw NoUniqueBeanDefinitionException, 
+             indicating that more than one bean is available for autowiring. How do you solve this?
+	  A: Use @Qualifier annotation together with the name of the specific implementation we want to use, we fix the ambiguity situation.
+	     Two other options are:
+		- Autowiring by Name: Set the name of the variable that will be wired equal to the bean name. Doing this will make the autowire mechanism to solve the ambiguity. 
+		- @Primary annotation. 
+		More info: https://www.baeldung.com/spring-qualifier-annotation
 	- Q: Let's say I have a class that I don't own because its in an external library, how do I inject an instance of that class into the ApplicationContext?
 	  A: We create a class with the @Configuration annotation. Inside that class, we create a method that returns an instance of the class we want to inject, and we mark the method
              with the @Bean annotation. @Bean indicates that a method produces a bean that will be managed by the Spring Container. The name of the bean wil be the method name
