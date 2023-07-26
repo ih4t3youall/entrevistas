@@ -99,7 +99,8 @@ b) Java
 
 3b. Streams
  - Java Stream API. Filter y map son operaciones terminales o intermedias?
-  > intermedias.
+  > Intermedias: filter, map, distinct, sorted, limit. 
+  > Terminal(End of stream): forEach, collect, reduce, count, min, max, anyMatch, allMatch, noneMatch.
 
 4. Final
 	* variable.
