@@ -108,8 +108,8 @@ b) Java
 	* Clase. 
 
 5. Constructores
-	* ¿Se puede sobrecargar un constructor? 
-	* ¿Se puede sobreescribir un constructor?
+	* ¿Se puede sobrecargar un constructor? Si, podes tener varios constructores en una clase con diferentes firmas.
+	* ¿Se puede sobreescribir un constructor? No, si tenes una subclase, no podes sobreescribir el constructor de la clase padre. El constructor de la clase padre siempre se llama
 
 6 Exceptions: https://www.geeksforgeeks.org/checked-vs-unchecked-exceptions-in-java/
 	* Checked -> Is caught at compile time
