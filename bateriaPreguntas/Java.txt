@@ -89,7 +89,9 @@ b) Java
              Ordering : HashSet does not maintain any order while LinkedHashSet maintains insertion order of elements much like List interface and TreeSet maintains sorting order or elements.
 
 3a. map
-	a1. equals y hashcode
+	a1. equals y hashcode:
+		If two objects are equal according to equals() method, then their hash code must be same. 
+		If two objects are unequal according to equals() method, their hash code are not required to be different.
 	a2. como implementar un hashcode y un equals.
 	a3. sabes las diferencias entre map, hashmap, hashtable, treemap, concurrentHashMap y linkedHashmap?
 	a4. Cual de estas key es mejor para un HashMap? (String, Integer, Double)
