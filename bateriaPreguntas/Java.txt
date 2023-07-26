@@ -137,8 +137,9 @@ Poner tambien lo del GC y eden space y todo eso. donde se asignan las variables 
 	- Serialization is the conversion of the state of an object into a byte stream. The object has to implement Serializable interface.
 	  static variables, since they belong to the class and not the object, are not serialized. There are a few more caveats related with inheritance.
 	* transient keyword: transient keyword is used along with instance variables to exclude them from the serialization process.
-        * volatile keyword:  volatile keyword can be used in variables to indicate the compiler and JVM to always read its value from the main memory instead of the thread heap. 
+        * volatile keyword:  volatile keyword can be used in variables to indicate the compiler and JVM to always read its value from the main memory instead of the thread heap or stack. 
 	  This way, in multithreading scenarios, you make the variable visible to all threads.
+	  Good reading: https://stackoverflow.com/questions/62914811/java-multi-threading-why-do-we-need-to-look-into-main-memoryram-if-we-have
 	* Why is String immutable in Java? 
 	- Varias razones. Una de ellas es que java tiene un string pool en el cache de cada thread. Este string pool almacena cada string que se crea.
           Si el string fuese mutable, creo un string "Hola", y despues creo otro String "Hola", pero este segundo lo modifico (Ej: toUpperCase()), entonces 
