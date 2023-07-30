@@ -7,7 +7,13 @@ AWS Services:
       IAM Roles: Are like users but are meant to be used by Services. 
                  e.g grant a EC2 instance an IAM Role to access an EC2 Bucket.
        
-  EC2: A virtual server that runs continuosly and you get billed by runtime.
+  EC2 (Elastic Compute Cloud): A virtual server that runs continuosly and you get billed by runtime.
+    EC2 mainly consist of:
+    - Renting Virtual Machines(EC2)
+    - Storing data on virtual drives (EBS)
+    - Distributing load across machines (ELB)
+    - Scaling the services using auto-scaling group (ASG)
+
   S3: Simple storage service
   AWS Lambda: Virtual functions, no servers to manage.
   - Limited by time: short executions
