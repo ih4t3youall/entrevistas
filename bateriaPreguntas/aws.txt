@@ -1,5 +1,12 @@
 AWS Services:
-  
+  IAM: Identity and Access Management, a global service.
+       You can grant permissions to:
+        - A single User
+        - To a group (All users in the group will inherit the permission)
+       A user could be in a group or not.
+      IAM Roles: Are like users but are meant to be used by Services. 
+                 e.g grant a EC2 instance an IAM Role to access an EC2 Bucket.
+       
   EC2: A virtual server that runs continuosly and you get billed by runtime.
   S3: Simple storage service
   AWS Lambda: Virtual functions, no servers to manage.
@@ -25,6 +32,8 @@ AWS Services:
   
   AWS CloudWatch: Service that allows you to go and see what's happening in the back end.
   AWS S3 - Simple Storage Service
+  AWS Cloudshell: Its a terminal in the cloud, free to use.. It uses the region and credentials of the user you are logged in with. Whatever you do in Cloudshell will stay after you closed it (files, cfg)
+  
 
 
 Other stuff:
