@@ -8,3 +8,7 @@ Idempotent implies that a certain operation can be done many times without chang
 HATEOAS (Hypermedia As The Engine Of Application State)
 Essentially it means that given an entry point in our REST API, we should be able to discover other resources based only on the server responses.
 In other words, whenever the server returns a resource (json or xml), part of the response will contain hyperlinks to other related resources.
+---
+
+
+HTTP Response Codes
