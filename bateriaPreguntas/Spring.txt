@@ -3,6 +3,13 @@ https://www.youtube.com/watch?v=UgX5lgv4uVM
 Spring is a framework focused on the inversion of control principle. To achieve this it uses the dependency Injection pattern.
 Because of this, it makes it easy to develop loosely coupled applications. It makes applications testable.
 
+Spring stereotypes - There are ONLY 4.
+
+@Component: Most generic stereotype. A class with this annotation makes it visible to the Spring IoC Container.
+@Repository: Indicates that the class deals with CRUD operations against some data store.
+@Service : Indicates that the class contains business logic.
+@Controller : Indicates that the class is a web controller and responsible to handle user requests and return the appropriate response.
+
 2.- listame caracteristicas de spring
 	a) contenedor
 	b) framework-mvc
