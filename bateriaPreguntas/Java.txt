@@ -5,17 +5,15 @@ a) Herramientas
 	Cuales son los scope de las dependencias de maven?
 
 2. git
-	2.1 Que es un branch?
-	- 
-	2.2 Estas en rama master, creas un branch llamado 'branch1', efectuas cambios en el,como son los pasos para que tus cambios se reflejen en master.
+	2.1 Estas en rama master, creas un branch llamado 'branch1', efectuas cambios en el,como son los pasos para que tus cambios se reflejen en master.
 	- git add . ; git commit -m "asd" ; git push; and then we merge to master
-	2.3 Como cambio un typo en un mensaje ya commiteado. 
+	2.2 Como cambio un typo en un mensaje ya commiteado. 
 	- git commit --amend
-	3.4 Cherry picking.
+	2.3 Cherry picking.
 	-
-	3.5 Que es un pull request?
+	2.4 Que es un pull request?
 	-
-	3.6 Diferencia entre fork, branch, clone.
+	2.5 Diferencia entre fork, branch, clone.
 
 3. Servidor de colas externos, activemq/kafka
 
@@ -37,6 +35,13 @@ a) Herramientas
 	*SOAP wsdl 
 	
 b) Java
+
+SOLID Principles: https://www.educative.io/answers/what-are-the-solid-principles-in-java
+Single Responsibility Principle	  : Each class should be responsible for a single part or functionality of the system.
+Open-Closed Principle	          : Classes should be open for extension, but closed for modification. If I want to create a new subclass, that shouldn't impact the superclass in any way.
+Liskov Substitution Principle	  : A superclass should be replaceable with its subclasses without breaking the system.
+Interface Segregation Principle	  : We shouldn't force any client to implement an interface that is irrelevant to them.
+Dependency Inversion Principle	  : States that we should depend on abstractions (interfaces and abstract classes) instead of concrete implementations (classes)
 
 1. diferencia entre jdk y jre
 	* Herramientas para debugear la jdk, jconsole, new relic.
