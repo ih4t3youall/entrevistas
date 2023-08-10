@@ -37,7 +37,7 @@ a) Herramientas
 b) Java
 
 SOLID Principles: https://www.educative.io/answers/what-are-the-solid-principles-in-java
-Single Responsibility Principle	  : Each class should be responsible for a single part or functionality of the system.
+Single Responsibility Principle	  : Each class should have a single responsability in the system.
 Open-Closed Principle	          : Classes should be open for extension, but closed for modification. If I want to create a new subclass, that shouldn't impact the superclass in any way.
 Liskov Substitution Principle	  : A superclass should be replaceable with its subclasses without breaking the system.
 Interface Segregation Principle	  : We shouldn't force any client to implement an interface that is irrelevant to them.
