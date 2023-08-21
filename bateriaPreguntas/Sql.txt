@@ -1,2 +1,5 @@
 - Optimistic Locking vs Perssimistic Locking
  https://stackoverflow.com/questions/129329/optimistic-vs-pessimistic-locking
+
+- Database sharding and partitioning
+https://www.linkedin.com/advice/1/how-do-you-balance-load-distribute-data-across-multiple
