@@ -51,8 +51,8 @@ Dependency Inversion Principle	  : States that we should depend on abstractions 
 2.Cuales son los conceptos de POO?
 	Encapsulation: is a way to restrict the direct access to some components of an object
 	Abstraction: is the concept that “shows” only essential attributes and “hides” unnecessary information.
-	Inheritance
-	Polymorphism
+	Inheritance: allows us to derive a class from another class that share a set of attributes and methods
+	Polymorphism: is the ability of an object to take on many forms. Method overloading and represents a static form of polymorphism.
 
 
 2.a polimorfismo
