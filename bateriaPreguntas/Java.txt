@@ -113,6 +113,11 @@ Dependency Inversion Principle	  : States that we should depend on abstractions 
 	* método: cannot be overriden
 	* Clase: cannot be extended
 
+4.1 Functional Interface:
+	A functional interface is an interface that contains only one abstract method. They can have only one functionality to exhibit. 
+        From Java 8 onwards, lambda expressions can be used to represent the instance of a functional interface. 
+        A functional interface can have any number of default methods.
+
 5. Constructores
 	* ¿Se puede sobrecargar un constructor? Si, podes tener varios constructores en una clase con diferentes firmas.
 	* ¿Se puede sobreescribir un constructor? No, si tenes una subclase, no podes sobreescribir el constructor de la clase padre. El constructor de la clase padre siempre se llama
