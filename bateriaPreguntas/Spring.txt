@@ -51,7 +51,9 @@ Spring Boot
 Spring MVC 
 	Provides a decoupled way of developing web applications, separating the model, the view and the controller(a.k.a dispatcher servlet)
 
-Bean lifecycle: TODO
+Bean lifecycle: 
+Bean life cycle is managed by the spring container. When we run the program then, first of all, the spring container gets started. After that, the container creates the instance of a bean as per the request, and then dependencies are injected. And finally, the bean is destroyed when the spring container is closed.
+We can execute actions after bean creation with @PostConstruct and before its destroyed with @PreDestroy
 
 
 Annotation questions:
