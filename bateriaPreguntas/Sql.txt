@@ -3,3 +3,5 @@
 
 - Database sharding and partitioning
 https://www.linkedin.com/advice/1/how-do-you-balance-load-distribute-data-across-multiple
+
+- Database indexing TODO
