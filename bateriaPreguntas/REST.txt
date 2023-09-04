@@ -12,3 +12,8 @@ In other words, whenever the server returns a resource (json or xml), part of th
 
 
 HTTP Response Codes
+1xx Informational
+2xx Success
+3xx Redirection
+4xx Client Error
+5xx Server Error
