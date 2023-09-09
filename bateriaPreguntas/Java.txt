@@ -161,6 +161,8 @@ Poner tambien lo del GC y eden space y todo eso. donde se asignan las variables 
 	  tambien estaría modificando el primer string.
 	- Tambien es inmutable porque tiene un uso interesante para los hashmaps. Cada vez que se crea un string se cachea su hashcode, entonces cada vez que
 	  usas el string como key en un hashmap, no hace falta calcular el hashcode.
+	* Qué es ThreadLocal?
+	- The ThreadLocal class allows programmers to create variables that are accessible only to the thread that created them.
 	  
 	* Why char array is preferred to store passwords than a String in Java?
 	- Since Strings are immutable in Java if you store the password as plain text it will be available in memory until the Garbage collector clears it and since String is used in the String pool for reusability there 	       is a pretty high chance that it will remain in memory for a long duration, which poses a security threat. 
