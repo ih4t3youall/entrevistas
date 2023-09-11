@@ -47,3 +47,8 @@ Isolation - ensures that the intermediate state of a transaction is invisible to
 Durability - ensures that once the transaction is successfully completed, then the changes it made to the database will be permanent.
 
 - Database indexing TODO
+
+
+CAP bien expplicado https://eamodeorubio.wordpress.com/2010/05/17/nosql-2-no-necesitas-acid/
+
+
