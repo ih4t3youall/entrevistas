@@ -49,6 +49,6 @@ Durability - ensures that once the transaction is successfully completed, then t
 - Database indexing TODO
 
 
-CAP bien expplicado https://eamodeorubio.wordpress.com/2010/05/17/nosql-2-no-necesitas-acid/
+Teorema de CAP bien expplicado https://eamodeorubio.wordpress.com/2010/05/17/nosql-2-no-necesitas-acid/
 
 
