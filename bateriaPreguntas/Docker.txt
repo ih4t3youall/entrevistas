@@ -6,6 +6,6 @@ Docker Image: A file that contains a set of instructions to build a Docker conta
 
 Docker container: A runtime instance of a docker image -> TODO
 
-Docker Swarm: A technology used to orchestrate docker containers
+Docker Swarm: A technology used to orchestrate docker containers, like kubernetes
 
 Dockerfile: A file that contains specific instructions that we pass on to docker so that it creates a docker image.
