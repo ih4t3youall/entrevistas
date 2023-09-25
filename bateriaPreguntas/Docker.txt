@@ -1,0 +1,11 @@
+Docker: Containerization platform that combinines all our apps and dependencies in one package(container) so it can be run in any environment.
+Docker uses the underlying OS to function, thats why its lightweight.
+Hypervirsor technologies create their own OS on top of the existing OS, which makenm them heavy.
+
+Docker Image: A file that contains a set of instructions to build a Docker container.
+
+Docker container: A runtime instance of a docker image -> TODO
+
+Docker Swarm: A technology used to orchestrate docker containers
+
+Dockerfile: A file that contains specific instructions that we pass on to docker so that it creates a docker image.
