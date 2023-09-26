@@ -4,8 +4,11 @@ Hypervirsor technologies create their own OS on top of the existing OS, which ma
 
 Docker Image: A file that contains a set of instructions to build a Docker container.
 
-Docker container: A runtime instance of a docker image -> TODO
+Docker container: A runtime instance of a docker image. we can start a container running docker run -t -i command image_name
 
-Docker Swarm: A technology used to orchestrate docker containers, like kubernetes
+Docker Swarm: A technology used to orchestrate docker containers, like kubernetes. However kubernetes provides more features:
+Kubernetes can create and manage Docker containers, schedule them to run on the appropriate nodes in a cluster, and automatically scaling, manage the storage and networking of Docker containers, self-healing, etc.
 
 Dockerfile: A file that contains specific instructions that we pass on to docker so that it creates a docker image.
+
+Docker Compose: Tool to define multiple containers and their configs via yaml or json. Usually used in development to define many dependencies required by our apps, like kafka, mysql, redis, etc.
