@@ -16,6 +16,10 @@ a) Herramientas
 	2.5 Diferencia entre fork, branch, clone.
 
 3. Servidor de colas externos, activemq/kafka
+	- Kafka topics scales with partitions
+	- Consumer groups  have a unique offset per partition
+	- One partition, many consumers with different group ids: every message will be sent to every consumer
+	- One partition, many consumers with the same group ids: every message will be sent to one consumer of the group.
 
 4. Bamboo
 	*para que sirve.
