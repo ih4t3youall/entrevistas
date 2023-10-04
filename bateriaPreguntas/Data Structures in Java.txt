@@ -1,3 +1,6 @@
+Arrays, Lists, Sets, Maps, those would be the main interfaces. Then we have implementations like ArrayList, LinkedList, HashSet, TreeSet, HashMap, TreeMap, LinkedHashMap. 
+And we have the concurrent implementations.  
+
 ## PriorityQueue ##
 The PriorityQueue is based on the binary heap. 
 The elements of the priority queue are ordered according to the natural ordering, or by a Comparator provided at queue construction time, depending on which constructor is used.  
@@ -6,3 +9,35 @@ A Binary Heap is a Binary Tree with the heap property, either Min Heap or Max He
 Min Heap: the value at the root must be minimum among all values present in Binary Heap. Max Heap is the opposite.
 Time complexity of most opererations: O(log N) 
 
+
+## LinkedList vs ArrayList ##
+LinkedList is an ordered collection that consist of independent nodes that are pointing to each other. Every node could be at any memory position, not necessarily consecutive. 
+ArrayList is also an ordered collection, but its implemented with an array data structure, meaning its data is stored in consecutive memory blocks.
+This two different implementations have pros and cons when it comes to performance and memory usage.
+	
+>Random Access Search 
+- ArrayList has direct references to every element in the list, so it can get the n-th element in constant time. O(1)
+- LinkedList has to traverse the list from the beginning to get to the n-th element. O(N)
+>Delete 
+- ArrayList is slower because once the item is removed, it has to shift the right side of the array to the left. (Unless its removing the last item) O(1) if removes last item, else O(N).
+- LinkedList; If the deletion is done using the ListIterator.remove() API, LinkedList just has to manipulate a couple of references O(1); if the deletion is done by value or by index, LinkedList has to potentially scan the entire list first to find the element(s) to be deleted. O(N)
+>TODO Etc..
+For time complexity: https://www.w3schools.blog/arraylist-linkedlist-vector-java
+
+
+## Set interface ##
+This interface doesn't guarantee order, but it guarantees uniqueness.
+Para un Set ordenado, hay subinterfaces de Set como SortedSet, con implementaciones como TreeSet y LinkedHashSet.
+	     Performance and Speed : First difference between comes in terms of speed. HashSet is fastest, LinkedHashSet is second on performance or almost similar to HashSet but TreeSet is bit slower because of 
+             sorting operation it needs to perform on each insertion. TreeSet provides guaranteed O(log(n)) time for common operations like add, remove and contains, while HashSet and LinkedHashSet offer constant time 
+             performance e.g. O(1) for add, contains and remove given hash function uniformly distribute elements in bucket.
+             Ordering : HashSet does not maintain any order while LinkedHashSet maintains insertion order of elements much like List interface and TreeSet maintains sorting order or elements.
+
+## Map ##
+	a1. equals y hashcode:
+		If two objects are equal according to equals() method, then their hash code must be same. 
+		If two objects hashcode is the same, they are not necessarilly equals()
+	a2. como implementar un hashcode y un equals.
+	a3. sabes las diferencias entre map, hashmap, hashtable, treemap, concurrentHashMap y linkedHashmap?
+	a4. Cual de estas key es mejor para un HashMap? (String, Integer, Double)
+	 - String, porque String es inmutable, y java cachea el hashcode, de manera que no tiene que calcular el hashcode en cada busqueda
