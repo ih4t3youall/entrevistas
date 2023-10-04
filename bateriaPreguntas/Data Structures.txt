@@ -1,0 +1,8 @@
+## PriorityQueue ##
+The PriorityQueue is based on the binary heap. 
+The elements of the priority queue are ordered according to the natural ordering, or by a Comparator provided at queue construction time, depending on which constructor is used.  
+
+A Binary Heap is a Binary Tree with the heap property, either Min Heap or Max Heap.
+Min Heap: the value at the root must be minimum among all values present in Binary Heap. Max Heap is the opposite.
+Time complexity of most opererations: O(log N) 
+
