@@ -33,6 +33,21 @@ Para un Set ordenado, hay subinterfaces de Set como SortedSet, con implementacio
              performance e.g. O(1) for add, contains and remove given hash function uniformly distribute elements in bucket.
              Ordering : HashSet does not maintain any order while LinkedHashSet maintains insertion order of elements much like List interface and TreeSet maintains sorting order or elements.
 
+# HashSet
+HashSet is implemented using a hash table. Elements are not ordered. The add, remove, and contains methods have constant time complexity O(1).
+
+# Tree Set
+TreeSet is implemented using a tree structure(red-black tree). The elements are sorted, but the add, remove, and contains methods has time complexity O(log (n)). 
+It offers several methods to deal with the ordered set like first(), last(), headSet(), tailSet()
+It can provide order either by providing a Comparator on the constructor, or by implementing the Comparable interface and implementing the CompareTo method.
+
+# HashSet VS TreeSet
+1) Performance: HashSet is faster than TreeSet and should be preferred choice if sorting of elements is not required.
+2) HashSet allows null objects but TreeSet doesn't and throws NullPointerException, because TreeSet uses compareTo() method to compare keys, and if one of the keys is null the exception will occur.
+3) HashSet is backed by HashMap while TreeSet is backed by NavigableMap in Java.
+4) HashSet uses equals() method to compare two object in Set and for detecting duplicates while TreeSet uses compareTo() method for same purpose. if equals() and compareTo() are not consistent, i.e. for two equal object equals should return true while compareTo() should return zero, than it will break contract of Set interface and will allow duplicates in Set implementations like TreeSet
+5) Now most important difference between HashSet and TreeSet is ordering. HashSet doesn't guaranteed any order while TreeSet maintains objects in Sorted order defined by either Comparable or Comparator method in Java.
+
 ## Map ##
 	a1. equals y hashcode:
 		If two objects are equal according to equals() method, then their hash code must be same. 
