@@ -57,11 +57,23 @@ It can provide order either by providing a Comparator on the constructor, or by 
 4) HashSet uses equals() method to compare two object in Set and for detecting duplicates while TreeSet uses compareTo() method for same purpose. if equals() and compareTo() are not consistent, i.e. for two equal object equals should return true while compareTo() should return zero, than it will break contract of Set interface and will allow duplicates in Set implementations like TreeSet
 5) Now most important difference between HashSet and TreeSet is ordering. HashSet doesn't guaranteed any order while TreeSet maintains objects in Sorted order defined by either Comparable or Comparator method in Java.
 
+
+# LinkedHashSet
+LinkedHashSet is an extended version of HashSet. HashSet doesn’t follow any order where as LinkedHashSet maintains insertion order.
+HashSet uses HashMap object internally to store it’s elements where as LinkedHashSet uses LinkedHashMap object internally to store and process it’s elements.
+
+$ LinkedHashMap
+It is the same as HashMap with an additional feature that it maintains insertion order.
+Every node has two pointers, before and after, simulating a doubly linked list.
+LinkedHashMap will take more memory than HashMap. 
+Each entry in a normal HashMap just has the key and the value. 
+Each LinkedHashMap entry has those references and references to the next and previous entries.
+
 ## Map ##
-	a1. equals y hashcode:
-		If two objects are equal according to equals() method, then their hash code must be same. 
-		If two objects hashcode is the same, they are not necessarilly equals()
-	a2. como implementar un hashcode y un equals.
-	a3. sabes las diferencias entre map, hashmap, hashtable, treemap, concurrentHashMap y linkedHashmap?
-	a4. Cual de estas key es mejor para un HashMap? (String, Integer, Double)
-	 - String, porque String es inmutable, y java cachea el hashcode, de manera que no tiene que calcular el hashcode en cada busqueda
+a1. equals y hashcode:
+	If two objects are equal according to equals() method, then their hash code must be same. 
+	If two objects hashcode is the same, they are not necessarilly equals()
+a2. como implementar un hashcode y un equals.
+a3. sabes las diferencias entre map, hashmap, hashtable, treemap, concurrentHashMap y linkedHashmap?
+a4. Cual de estas key es mejor para un HashMap? (String, Integer, Double)
+ - String, porque String es inmutable, y java cachea el hashcode, de manera que no tiene que calcular el hashcode en cada busqueda
