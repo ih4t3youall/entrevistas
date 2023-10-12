@@ -46,7 +46,36 @@ Consistency - ensures that the database data is in a consistent state before the
 Isolation - ensures that the intermediate state of a transaction is invisible to other transactions. The Data modifications made by one transaction must be isolated from the data modifications made by all other transactions. Most databases use locking to maintain transaction isolation.
 Durability - ensures that once the transaction is successfully completed, then the changes it made to the database will be permanent.
 
-- Database indexing TODO
+- Database indexing 
+A database index allows a query to retrieve data from a database in an efficient manner.
+When a database table is unindexed, there won’t be any clear order of the rows, thus, to fulfill any query, it will need to search through the rows linearly, that is, the query will have to search through each row to find the rows with the matching condition. As you can imagine, this isn’t ideal and can be a problem when looking inside a database table with huge amount of data.
+A database index is a data structure that allows quick access to specific pieces of information without having to read all data stored in a particular table.
+Adding an index takes up extra space, and every time a write occurs, the index has to be updated.
+
+What data structures are used for indexing?
+B-Trees
+B-trees are the most often used index data structures because they are fast for lookups, deletions, and insertions. All of these operations are possible in logarithmic time and the data contained within a B-tree can be sorted easily.
+
+Hash Tables
+Hash indexes are commonly used to describe indexes that utilize hash tables. Because hash tables are particularly efficient at looking up data, queries that look for an exact match may be processed rapidly. The key in a hash index is the column value, and the value in a hash table is a reference to the table's row data.
+Hash tables, on the other hand, are not ordered data structures; therefore, they may be inefficient for other types of searches.
+
+R-Tree
+R-tree is frequently used in spatial databases, usually used to index multi-dimensional information such as geographical coordinates, rectangles, polygons, etc. It is useful for searches such as "find all the coffee shops within 2 miles of my location."
+
+Bitmap Index
+Bitmap indexes are useful for columns that have a high number of occurrences of such values, i.e. columns with low selectivity. For instance, consider a column having boolean values.
+
+Si Btree es log(n) y hash es o(1), porque no siempre usar hash tables? -> Respuesta: Cuando necesitas filtrar por rango u orden
+You can only access elements by their primary key in a hashtable. This is faster than with a tree algorithm (O(1) instead of log(n)), but you cannot select ranges (everything in between x and y). Tree algorithms support this in Log(n) whereas hash indexes can result in a full table scan O(n). Also the constant overhead of hash indexes is usually bigger (which is no factor in theta notation, but it still exists). Also tree algorithms are usually easier to maintain, grow with data, scale, etc.
+
+
+How to select the columns to index: https://stackoverflow.com/questions/212264/how-to-choose-and-optimize-oracle-indexes
+Consider indexing keys that are used frequently in WHERE clauses.
+Consider indexing keys that are used frequently to join tables in SQL statements. 
+Choose index keys that have high selectivity. Selectivity is a measure of how much the index narrows the search for values. A lower selectivity value is better: it means fewer rows to scan and filter. Oddly, though, we say an index is “highly” selective if it has a low selectivity value. 
+Do not index columns that are modified frequently. UPDATE statements that modify indexed columns and INSERT and DELETE statements that modify indexed tables take longer than if there were no index.
+Etc..
 
 
 Teorema de CAP bien expplicado https://eamodeorubio.wordpress.com/2010/05/17/nosql-2-no-necesitas-acid/
