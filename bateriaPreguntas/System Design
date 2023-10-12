@@ -1,0 +1,14 @@
+https://www.testgorilla.com/blog/system-design-interview-questions/?utm_term=&utm_campaign=Performance+Max+%7C+RoW+Old&utm_source=google&utm_medium=cpc&hsa_acc=4932434860&hsa_cam=13402555368&hsa_grp=&hsa_ad=&hsa_src=x&hsa_tgt=&hsa_kw=&hsa_mt=&hsa_net=adwords&hsa_ver=3&gclid=Cj0KCQjwj5mpBhDJARIsAOVjBdp_IJK66rHe5WRgl_F3cFi0VJFYzIkBjFQddWu1rU_wgU7h1XLfE-waAiLGEALw_wcB
+
+- Explain what the CAP theorem is.
+A la hora de elegir una base de datos distribuida en un proyecto, hay que tener en cuenta tres atributos (Que son los atributos de los que habla este teorema):
+
+Consistency: La consistencia nos garantiza que una lectura nos retornará la escritura mas reciente de un registro dado. Lo que esto implica es que siempre que se haga alguna modificación a un dato dicho cambio debe reflejarse en todos los nodos de la base de datos, esto garantiza que siempre que se acceda a la información cualquiera de los nodos puede responder y la información siempre será la misma.
+Availability: Un nodo en funcionamiento nos debe retornar una respuesta razonable en un periodo razonable de tiempo (Ni error ni timeout).
+Partition tolerance: El sistema nos debe seguir funcionando aunque algunos nodos no se encuentren disponibles ya que la información es consistente en todos los nodos.
+
+Lo que dice el teorema es que solo puedes garantizar dos de estos tres atributos,
+CP (Consistencia y Tolerancia al particionamiento): Esto quiere decir que no se garantiza la disponibilidad, hay clientes que por ejemplo requieren que el sistema esté disponible 100% del tiempo o muy cerca, con bases de datos que cumplan con CP no es posible garantizar esto, no quiero decir que no se pueda lograr en cierto nivel, pero el sistema está enfocado en aplicar los cambios de forma consistente aunque se pierda comunicación con algunos nodos.
+AP (Disponibilidad y Tolerancia al particionamiento): En este caso no se garantiza que los datos sean iguales en todos los nodos todo el tiempo, en este caso el sistema siempre estará disponible para las peticiones aunque se pierda la comunicación entre los nodos.
+CA (Consistencia y disponibilidad): En este caso no se puede permitir el particionado de los datos, porque se garantiza que los datos siempre son iguales y el sistema estará disponible respondiendo todas las peticiones.
+Por ejemplo, los sistemas de bases de datos relacionales (SQL de toda la vida) son CA porque todas las escrituras y lecturas se hacen sobre la misma copia de los datos.
