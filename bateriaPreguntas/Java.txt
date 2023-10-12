@@ -185,6 +185,8 @@ Poner tambien lo del GC y eden space y todo eso. donde se asignan las variables 
 	9.b que es un deadlock?
 	9.c synchronized
 
+	context switch is the process of storing the state of a process or thread, so that it can be restored and resume execution at a later point, and then restoring a different, previously saved, state
+
 10. logging
 	10a. info,debug,error,fatal.
 	10b. Como manejarias el logging para 20 aplicaciones en paralelo. (elk, logstash, elastic search, kibana).
