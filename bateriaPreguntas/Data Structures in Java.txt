@@ -22,6 +22,13 @@ This two different implementations have pros and cons when it comes to performan
 - ArrayList is slower because once the item is removed, it has to shift the right side of the array to the left. (Unless its removing the last item) O(1) if removes last item, else O(N).
 - LinkedList; If the deletion is done using the ListIterator.remove() API, LinkedList just has to manipulate a couple of references O(1); if the deletion is done by value or by index, LinkedList has to potentially scan the entire list first to find the element(s) to be deleted. O(N)
 >TODO Etc..
+
+Also a great video for benchmark: https://www.youtube.com/watch?v=ul4wHrbJ8Fk
+Traversing an arrayList is actually much faster than a linked list because of something called pointer chasing.
+CPU's have caches (L1,L2,L3). Ideally those caches have data ready before the CPUs require it.
+The blocks of main memory are transferred to the caches. Since arraylist contents are all next to each other memory wise, its likely that when the CPU asks for an item,
+the cache will have already brought the following items.
+This is not the case for linked lists because the contents can be at any memory position, you have to point one node after the other to traverse the hole list, and this is pointer chasing.
 For time complexity: https://www.w3schools.blog/arraylist-linkedlist-vector-java
 
 
