@@ -21,7 +21,9 @@ This two different implementations have pros and cons when it comes to performan
 >Delete 
 - ArrayList is slower because once the item is removed, it has to shift the right side of the array to the left. (Unless its removing the last item) O(1) if removes last item, else O(N).
 - LinkedList; If the deletion is done using the ListIterator.remove() API, LinkedList just has to manipulate a couple of references O(1); if the deletion is done by value or by index, LinkedList has to potentially scan the entire list first to find the element(s) to be deleted. O(N)
->TODO Etc..
+>Insert:
+- ArrayList: O(N) because it has to shift the contents of the array to the right. Also, if the array reached maximum size, it has to allocate a bigger array in memory, and copy the contents of the current array to the new one. This is very expensive.
+- LinkedList: Also O(N) if you are traversing the list. If you are already at the index where you want to mke the insertion, then its O(1) becuse you only have to manipulate a couple pointers
 
 Also a great video for benchmark: https://www.youtube.com/watch?v=ul4wHrbJ8Fk
 Traversing an arrayList is actually much faster than a linked list because of something called pointer chasing.
