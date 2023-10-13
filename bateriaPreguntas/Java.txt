@@ -224,6 +224,22 @@ Poner tambien lo del GC y eden space y todo eso. donde se asignan las variables 
 	9.4 como usarias mockito para mockear un metodo.
 	9.5 TDD
 
+## Garbage Collector ##
+Java objects are created on the heap, which is a section of memory dedicated to a program. When objects are no longer needed, the garbage collector finds and tracks these unused objects and deletes them to free up space. Without garbage collection, the heap would eventually run out of memory, leading to a runtime OutOfMemoryError.
+
+During the garbage collection process, the collector scans different parts of the heap, looking for objects that are no longer in use. If an object no longer has any references to it from elsewhere in the application, the collector removes the object, freeing up memory in the heap.
+
+To work efficiently, the JVM separates the heap into separate spaces called generations.
+
+- Eden: The eden space in Java is a memory pool where objects are created. When the eden space is full, the garbage collector either removes objects if they are no longer in use or stores them in the survivor space if they are still being used. This space is considered part of the young generation in the memory heap.
+- Survivor: There are two survivor spaces in the JVM: survivor zero and survivor one. This space is also part of the young generation.
+- Tenured: The tenured space is where long-lived objects are stored. Objects are eventually moved to this space if they survive a certain number of garbage collection cycles. This space is much larger than the eden space and the garbage collector checks it less often. This space is considered the old generation in the heap.
+
+The garbage collection occurs most frequently in the eden space because many new objects don’t need to stay in memory for very long. 
+By moving objects into survivor and tenured spaces, the garbage collector knows that there is a higher likelihood that the objects there will need to remain in memory, so it checks those areas less frequently. 
+
+That heap division is not true for all garbage collectors. Some split the heap in different ways.
+
 15. Patrones de Diseño para arquitectura de  microservicios
 Sources: 
 https://www.tutorialspoint.com/microservices_design_patterns/microservices_design_patterns_proxy.htm
