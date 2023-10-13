@@ -73,7 +73,7 @@ You can only access elements by their primary key in a hashtable. This is faster
 How to select the columns to index: https://stackoverflow.com/questions/212264/how-to-choose-and-optimize-oracle-indexes
 Consider indexing keys that are used frequently in WHERE clauses.
 Consider indexing keys that are used frequently to join tables in SQL statements. 
-Choose index keys that have high selectivity. Selectivity is a measure of how much the index narrows the search for values. A lower selectivity value is better: it means fewer rows to scan and filter. Oddly, though, we say an index is “highly” selective if it has a low selectivity value. 
+Choose index keys that have high selectivity. Selectivity is a measure of how much the index narrows the search for values. A lower selectivity value is better: it means fewer rows to scan and filter. Oddly, though, we say an index is “highly” selective if it has a low selectivity value. An index's selectivity is optimal if few rows have the same value, because that index will narow down the search a lot.
 Do not index columns that are modified frequently. UPDATE statements that modify indexed columns and INSERT and DELETE statements that modify indexed tables take longer than if there were no index.
 Etc..
 
