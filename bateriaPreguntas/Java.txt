@@ -240,6 +240,11 @@ By moving objects into survivor and tenured spaces, the garbage collector knows 
 
 That heap division is not true for all garbage collectors. Some split the heap in different ways.
 
+What to do when we encounter frequent/Long GC pauses: https://dzone.com/articles/how-to-reduce-long-gc-pause
+- Check For High Object Creation Rate
+- Check if the Young Generation Size should be increased
+- Check for Process Swapping (Maybe there is not enough RAM and its allocating part of the heap on disk)
+
 15. Patrones de Diseño para arquitectura de  microservicios
 Sources: 
 https://www.tutorialspoint.com/microservices_design_patterns/microservices_design_patterns_proxy.htm
