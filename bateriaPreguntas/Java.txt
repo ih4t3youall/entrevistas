@@ -225,7 +225,7 @@ Poner tambien lo del GC y eden space y todo eso. donde se asignan las variables 
 	9.5 TDD
 
 ## Garbage Collector ##
-Java objects are created on the heap, which is a section of memory dedicated to a program. When objects are no longer needed, the garbage collector finds and tracks these unused objects and deletes them to free up space. Without garbage collection, the heap would eventually run out of memory, leading to a runtime OutOfMemoryError.
+Java objects are created on the heap, which is a section of RAM memory dedicated to a program. When objects are no longer needed, the garbage collector finds and tracks these unused objects and deletes them to free up space. Without garbage collection, the heap would eventually run out of memory, leading to a runtime OutOfMemoryError.
 
 During the garbage collection process, the collector scans different parts of the heap, looking for objects that are no longer in use. If an object no longer has any references to it from elsewhere in the application, the collector removes the object, freeing up memory in the heap.
 
