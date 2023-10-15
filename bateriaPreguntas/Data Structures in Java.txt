@@ -49,6 +49,8 @@ HashSet is implemented using a hash table. Elements are not ordered. The add, re
 TreeSet is implemented using a tree structure(red-black tree). The elements are sorted, but the add, remove, and contains methods has time complexity O(log (n)). 
 It offers several methods to deal with the ordered set like first(), last(), headSet(), tailSet()
 It can provide order either by providing a Comparator on the constructor, or by implementing the Comparable interface and implementing the CompareTo method.
+TreeSet uses equals() to determine whether an object can be added or not in the set (as Set maintains collection of unique objects) and comparable/ Comparator to determine the order in which the objects are to be added.
+It doesn't use hashcode.
 
 # HashSet VS TreeSet
 1) Performance: HashSet is faster than TreeSet and should be preferred choice if sorting of elements is not required.
