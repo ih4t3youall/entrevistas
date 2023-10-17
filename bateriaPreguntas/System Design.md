@@ -13,11 +13,19 @@ How many requests should the server handle?
 Are most use cases read-only?
 
 
-Step 2: Design the system.  Outline the most essential parts of the system and show how they work together to achieve the desired function.
+Step 2: Design the system.  Outline the most essential parts of the system and show how they work together to achieve the desired function. 
+START DESIGNING APIs (REST/RPC/GRAPHQL) WITH ITS REQUEST PARAMETERS AND RESPONSES. 
+DATA MODELING: Simple schema that lists most important fields, Discuss data access patterns and read-write ratio, Discuss indexing, and which database to use
 
 Step 3: Explore the design. You or your interviewer will choose an interesting component and discuss its details.
+Consider how non-functional requirements impact design choices.
+Transactions: If the system requires transactions, consider a database that offers the ACID
+Data size, Partitioning, Offline processing, etc
 
-Step 4: Improve the design. Consider the current design's issues and how to fix them and support more users.
+Step 4: Improve the design: Bottlenecks and Scale
+Single points of failure: How could the system be more robust and maintain uptime?
+Data replication: Is the data important enough to make copies? How important is it to keep all copies the same?
+CDNs: Does it provide a service for people all over the world? Would data centers in different parts of the world make it faster?
 
 Step 5: Wrap up. Check that the design meets all requirements and suggest ways to improve it.
 
