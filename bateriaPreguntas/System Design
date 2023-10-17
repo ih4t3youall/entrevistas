@@ -1,3 +1,0 @@
-Horizontal vs Vertical Scaling
-Horizontal scaling refers to increasing the capacity by adding additional machines. -> Harder to maintain, but improves fault tolerance.
-Vertical scaling refers to increasing the resources of existing machines. -> Easier to maintain, but there is a limit to it, and also there is a single point of failure
