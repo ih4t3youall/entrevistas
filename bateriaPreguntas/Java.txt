@@ -322,3 +322,21 @@ A service generally calls other services to retrieve data, and there is the chan
 The consumer should invoke a remote service via a proxy that behaves in a similar fashion to an electrical circuit breaker. When the number of consecutive failures crosses a threshold, the circuit breaker trips, and for the duration of a timeout period, all attempts to invoke the remote service will fail immediately. After the timeout expires the circuit breaker allows a limited number of test requests to pass through. If those requests succeed, the circuit breaker resumes normal operation. Otherwise, if there is a failure, the timeout period begins again.
 
 
+
+el banco ciudad se enfoca en los siguientes temas:
+
+- Java
+- Live Coding
+- Multithreading: 
+  > Atomics and why they are better than syncronized: Atomics use a combination of volatile (for reading the latest from main memory) and CAS which is a fast hardware level instruction to achieve thread safety.
+    They are better than syncronized because synchronization uses a locking mechanism hence it is slower than atomic variables. https://stackoverflow.com/questions/46092685/cas-vs-synchronized-performance
+  > How concurrent collections work (ConcurrentHashMap): It locks at the segment level (A group of buckets), it doesnt block the hole data structure.
+    It uses pesimistic locking. It only locks for write operations, not reads. 
+  > We have an app that runs calculations in paralell and we need to pick the number of threads we want to dedicate to these calculations, how do we pick this number?
+    I would check how many available threads we have (we could have 1 or more threads per core), and the number I would pick is all the available threads minus 1, so we have one free thread for the main thread.
+    But what if we have 70 threads available,  min 8 11
+
+
+- Messaging
+- Microservices
+
