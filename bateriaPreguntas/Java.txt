@@ -366,8 +366,12 @@ el banco ciudad se enfoca en los siguientes temas:
 	  and we have legacy consumers like old mobile phones, then maybe a RESTful API might be a better choice.
   	  But for communicating internal microservices grpc is good.
 
-- Kubernetes: MUST KNOW: How to make CI/CD pipelines with kubernetes.Essentially how to make the code from my repository gets deployed to kubernetes.
-- Practise LeetCode just in case.
+- Kubernetes: MUST KNOW: How to make CI/CD pipelines with kubernetes.Essentially how to make the code from my repository gets deployed to kubernetes. (Webhooks, jenkins, etc)
+	Know difference between Cdelivery and Cdeployment. Not every pipeline is the same for every project, there are pros and cons.
+	Never say: I did this in my last project. 
+	Do say: If I would have to build a pipeline I would do it like this: pa, pa, pa.
+		
+- Practise LeetCode just in case. On the inverview before start coding, ask questions, verify I understood the problem, and validate my solution. Try to talk, at least a bit.
 
 
 
