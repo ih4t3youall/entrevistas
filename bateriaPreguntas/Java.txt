@@ -334,9 +334,42 @@ el banco ciudad se enfoca en los siguientes temas:
     It uses pesimistic locking. It only locks for write operations, not reads. 
   > We have an app that runs calculations in paralell and we need to pick the number of threads we want to dedicate to these calculations, how do we pick this number?
     I would check how many available threads we have (we could have 1 or more threads per core), and the number I would pick is all the available threads minus 1, so we have one free thread for the main thread.
-    But what if we have 70 threads available,  min 8 11
-
-
-- Messaging
+  > So lets say our app has like 70 threads available. Why would it be a bad thing if our app spins up 100 threads? (So, more threads than we currently have available).
+    We would be having context switching, which is very expensive in terms of time: 
+	First all the process registers have to be saved. 
+	Second, restoring the context for the new process is equally time consuming.
+	Third, memory caches have to be flushed and reloaded for the new process.
+	Fourth, there is overhead in determining what process to execute next.
+  > DeadLock and LiveLock: https://www.tutorialspoint.com/deadlock-starvation-amp-livelock#:~:text=Deadlocks%20can%20be%20resolved%20by,symmetry%2C%20randomness%2C%20and%20timeouts. MUST KNOW.
+- Messaging 
+  KAFKA - 
+	> Lets say we have an app which is consuming from a topic. We have a single consumer, single consumer group and throughput is fine, but we know that in 4 months the load will increase 1000% times.
+            How do I prepare for this?
+            Kafka scales by increasing the number of partitions. Although we have to keep in mind that if we care about the order of the messages order, the order is maintained by partition.
+	    But this can be managed by having a logic for the partition keys. For the same partition key, kafka sends the messages to the same partition.
+	    We should probably also increase the number of consumers to stay as close to 0 lag as possible.
+	> If we increase the number of partitions that might mean that we will end up with one partition bigger than the other.
+   	  What is the proper way of creating new partitions to prevent this?
+ 	- Kafka uses the partitioning key (The key of the message) to determine to which partition the message will go.
+	  So the idea is that we need to pick up certain partitioning keys that is uniformly distributed.
+        > How do we pick such a key so that its uniformly distributed? Because sometimes we dont have a field we can rely on that is uniformly distributed
+ 	- For this kafka supplies a hashing strategy so it can hash any field in an uniformly distribution	
+  
 - Microservices
+   GRPC -
+ 	Its an Remote Procedure Call framework, were the core idea is defining a service with methods that can be remotely called with their parameters and return types. 
+	I have some experience with this but we are using a proprietary version that works on top of protobuf.
+	Pros:
+	  It uses Protobuf (Protocol Buffers) as a protocol for serializing data, which produces a binary format that requires few resources and messages are smaller.
+	Cons:
+	  GRPC is based on HTTP2, which could mean that I might not be able to work with a client that doesn't support HTTP2. So, lets say Im providing a public API,
+	  and we have legacy consumers like old mobile phones, then maybe a RESTful API might be a better choice.
+  	  But for communicating internal microservices grpc is good.
+
+- Kubernetes: MUST KNOW: How to make CI/CD pipelines with kubernetes.Essentially how to make the code from my repository gets deployed to kubernetes.
+- Practise LeetCode just in case.
+
+
+
+
 
