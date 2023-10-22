@@ -358,7 +358,7 @@ el banco ciudad se enfoca en los siguientes temas:
 - Microservices
    GRPC -
  	Its an Remote Procedure Call framework, were the core idea is defining a service with methods that can be remotely called with their parameters and return types. 
-	I have some experience with this but we are using a proprietary version that works on top of protobuf.
+	I have limited experience with this because, although I use it in my current job, we are using a proprietary version that works on top of grpc.
 	Pros:
 	  It uses Protobuf (Protocol Buffers) as a protocol for serializing data, which produces a binary format that requires few resources and messages are smaller.
 	Cons:
