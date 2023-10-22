@@ -50,7 +50,8 @@ Durability - ensures that once the transaction is successfully completed, then t
 A database index allows a query to retrieve data from a database in an efficient manner.
 When a database table is unindexed, there won’t be any clear order of the rows, thus, to fulfill any query, it will need to search through the rows linearly, that is, the query will have to search through each row to find the rows with the matching condition. As you can imagine, this isn’t ideal and can be a problem when looking inside a database table with huge amount of data.
 A database index is a data structure that allows quick access to specific pieces of information without having to read all data stored in a particular table.
-Adding an index takes up extra space, and every time a write occurs, the index has to be updated.
+Adding an index takes up extra space, and every time a write occurs, the index has to be updated. This means INDEXING is not always a good idea, for example, if the table is small, indexing might not be needed.
+Also in services like google cloud spanner, they charge you for storage, and indexes use extra storage..
 
 What data structures are used for indexing?
 B-Trees
