@@ -370,6 +370,13 @@ el banco ciudad se enfoca en los siguientes temas:
 	Know difference between Cdelivery and Cdeployment. Not every pipeline is the same for every project, there are pros and cons.
 	Never say: I did this in my last project. 
 	Do say: If I would have to build a pipeline I would do it like this: pa, pa, pa.
+  GIT-GITHUB: I would use GIT for version control and I would host this on some source code manager like GITHUB.
+  Folder structure of my repo; I would have two folders
+     > One folder for my application. Inside I would have the source code, and also a Dockerfile that describes how to create a docker image of my app.
+     > Another folder with my terraform scripts, which I would use to define the infraestructure of my application, and define things like the provider which is kubernetes,
+	     and some deployment objects to create the containers.
+	     
+  	     
 		
 - Practise LeetCode just in case. On the inverview before start coding, ask questions, verify I understood the problem, and validate my solution. Try to talk, at least a bit.
 
