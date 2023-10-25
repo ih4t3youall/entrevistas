@@ -28,6 +28,14 @@ NoSQL
     Eventual consistency isnt exactly a fault of nosql DBs, but distributed DBs in general.
     A single shard nosql database can be strongly consistent, but to fully take advantage of the scalability benefits
     of nosql, the database should really be setup as a distributed cluster.
+- There are actually several types of NoSQL databases:
+ > A key-value store provides the simplest possible data model and is exactly what the name suggests: it's a storage system that stores values indexed by a key. You're limited to query by key and the values are opaque, 
+   the store doesn't know anything about them. This allows very fast read and write operations (a simple disk access) and I see this model as a kind of non volatile cache (i.e. well suited if you need fast accesses by 
+   key to long-lived data).
+ > A document-oriented database extends the previous model and values are stored in a structured format (a document, hence the name) that the database can understand. For example, a document could be a blog post and the 
+   comments and the tags stored in a denormalized way. Since the data are transparent, the store can do more work (like indexing fields of the document) and you're not limited to query by key. Such 
+   databases allows to fetch an entire page's data with a single query and are well suited for content oriented applications (which is why big sites like Facebook or Amazon like them).
+  > Other kinds of NoSQL databases include column-oriented stores, graph databases and even object databases. TODO
     
 
 - Optimistic Locking vs Perssimistic Locking
