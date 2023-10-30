@@ -340,6 +340,9 @@ el banco ciudad se enfoca en los siguientes temas:
 	Second, restoring the context for the new process is equally time consuming.
 	Third, memory caches have to be flushed and reloaded for the new process.
 	Fourth, there is overhead in determining what process to execute next.
+    Having more threads than currently available is BAD only in CPU-Bound scenarios. If we are IO-Bound, then we can have more threads than currently available.
+    For example, an IO-Bound scenario could be each thread making a database call that usually takes 30 seconds to get resolved. In this case its better to have more threads than available
+    because we will be waiting more on the external resource than context switching. https://stackoverflow.com/questions/24149834/choosing-optimal-number-of-threads-for-parallel-processing-of-data
   > DeadLock and LiveLock: https://www.tutorialspoint.com/deadlock-starvation-amp-livelock#:~:text=Deadlocks%20can%20be%20resolved%20by,symmetry%2C%20randomness%2C%20and%20timeouts. MUST KNOW.
 - Messaging 
   KAFKA - 
