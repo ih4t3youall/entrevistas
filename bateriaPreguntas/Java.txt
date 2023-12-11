@@ -1,0 +1,389 @@
+a) Herramientas
+1. maven
+	Conoces maven? como funciona y para que sirve?
+	Como resuelvo un problema de dependencias con maven?
+	Cuales son los scope de las dependencias de maven?
+
+2. git
+	2.1 Estas en rama master, creas un branch llamado 'branch1', efectuas cambios en el,como son los pasos para que tus cambios se reflejen en master.
+	- git add . ; git commit -m "asd" ; git push; and then we merge to master
+	2.2 Como cambio un typo en un mensaje ya commiteado. 
+	- git commit --amend
+	2.3 Cherry picking.
+	-
+	2.4 Que es un pull request?
+	-
+	2.5 Diferencia entre fork, branch, clone.
+
+3. Servidor de colas externos, activemq/kafka
+	- Kafka topics scales with partitions
+	- Consumer groups  have a unique offset per partition
+	- One partition, many consumers with different group ids: every message will be sent to every consumer
+	- One partition, many consumers with the same group ids: every message will be sent to one consumer of the group.
+
+4. Bamboo
+	*para que sirve.
+5. Jira 
+	* conta un poco de tu expreiencia con jira
+6. jenkins
+
+7. cucumber
+
+8. Gradle
+	* Que es y para que sirve?
+	* Ventajas y desventajas con respecto a maven
+	* Que es una task en gradle y que ventajas me da.
+	* como se manejan las dependencias de las taks y como puedo hacer que una dependa de otra.
+9. Webservices
+	*REST
+	*SOAP wsdl 
+	
+b) Java
+
+SOLID Principles: https://www.educative.io/answers/what-are-the-solid-principles-in-java
+Single Responsibility Principle	  : Each class should have a single responsability in the system.
+Open-Closed Principle	          : Classes should be open for extension, but closed for modification. If I want to create a new subclass, that shouldn't impact the superclass in any way.
+Liskov Substitution Principle	  : A superclass should be replaceable with its subclasses without breaking the system.
+Interface Segregation Principle	  : We shouldn't force any client to implement an interface that is irrelevant to them. ISP splits interfaces that are very large into smaller and more specific ones so that clients will 
+                                    only have to know about the methods that are of interest to them.
+Dependency Inversion Principle	  : States that we should depend on abstractions (interfaces and abstract classes) instead of concrete implementations (classes)
+
+1. diferencia entre jdk y jre
+	* Herramientas para debugear la jdk, jconsole, new relic.
+	* como funciona el garbage collector. tipos de garbage collector.
+	
+2.Cuales son los conceptos de POO?
+	Encapsulation: is a way to restrict the direct access to some components of an object
+	Abstraction: is the concept that “shows” only essential attributes and “hides” unnecessary information. The idea is to hide the implementation details of a class and present a clean, easy-to-use interface.
+	Inheritance: allows us to derive a class from another class that share a set of attributes and methods
+	Polymorphism: is the ability of an object to take on many forms at runtime. Method overloading represents a static form of polymorphism.
+
+
+2.a polimorfismo
+
+2.b clase abstracta/interfaz
+	b1. como instancio una clase abstracta. 
+	b2. ¿Cuántas clases puede extender una clase abstracta? Una sola
+	 ¿Cuántas interfaces? infinitas
+	
+2.c encapsulamiento (Access Modifiers)
+	private: Can only be accessed by class members.
+	public: Accessible to everyone
+	protected: Access level is within the package AND outside the package through the child class. In case of no child class, you can’t access it from outside the package.
+	default: access within the package and can’t be accessed outside the package
+
+2.d clase/objeto/instancia
+
+2.e Que 2 formas existen de reutilizar código: Herencia y Composición (Utlizar objetos dentro de otros objetos)
+
+3. Streams
+ - Java Stream API. Filter y map son operaciones terminales o intermedias?
+  > Intermedias: filter, map, distinct, sorted, limit. 
+  > Terminal(End of stream): forEach, collect, reduce, count, min, max, anyMatch, allMatch, noneMatch.
+
+4. Final
+	* variable: its memory reference cannot be modified
+	* método: cannot be overriden
+	* Clase: cannot be extended
+
+4.1 Functional Interface:
+	A functional interface is an interface that contains only one abstract method. They can have only one functionality to exhibit. 
+        From Java 8 onwards, lambda expressions can be used to represent the instance of a functional interface. 
+        A functional interface can have any number of default methods.
+
+5. Constructores
+	* ¿Se puede sobrecargar un constructor? Si, podes tener varios constructores en una clase con diferentes firmas.
+	* ¿Se puede sobreescribir un constructor? No, si tenes una subclase, no podes sobreescribir el constructor de la clase padre. El constructor de la clase padre siempre se llama
+
+6 Exceptions: https://www.geeksforgeeks.org/checked-vs-unchecked-exceptions-in-java/
+	* Object -> Throwable -> Error: Indicates a problem that the application can not recover from. (Like OOM)
+			      -> Exception: Indicates a problem that the application could recover from.	
+	* Checked Exception -> Is caught at compile time
+	* Unchecked Exception-> Its caught at runtime
+	* ¿El bloqué finally se ejecuta siempre? Si.
+	* ¿Se ejecuta siempre completo? Depende. si ocurre una exception en el bloque finally, entonces no. Si no, si.
+	* Que pasa si ambos bloques catch y finally tienen un return? El return del finally overridea el del catch.
+
+7 Generics
+	* ventajas
+	* Como implementar una clase con generics.
+
+8 Core questions
+ --- Memory Management ---
+Whenever an object is created, it's always stored in the Heap space and stack memory contains the reference to it. 
+Stack memory only contains local primitive variables and reference variables to objects in heap space.
+https://www.baeldung.com/java-stack-heap
+Poner tambien lo del GC y eden space y todo eso. donde se asignan las variables primitivas y donde los objetos (stack vs heap)
+
+        * Como funciona el paquete atomic que provee java?
+	- Las clases atomicas te dan una opcion lock-free thread-safe.
+	  They use a combination of volatile & CAS (compare and swap) to achieve thread-safety.
+          It is non-blocking in nature and used concurrent data structures.
+   	  Compare-and-swap (CAS) is an atomic instruction, it compares the contents of a memory location to a given value and, only if they are the same, 
+          modifies the contents of that memory location to a given new value.
+	* Serialization in Java
+	- Serialization is the conversion of the state of an object into a byte stream. The object has to implement Serializable interface.
+	  static variables, since they belong to the class and not the object, are not serialized. There are a few more caveats related with inheritance.
+	* transient keyword: transient keyword is used along with instance variables to exclude them from the serialization process.
+        * volatile keyword:  volatile keyword can be used in variables to indicate the compiler and JVM to always read its value from the main memory (heap) instead of the thread stack or CPU Cache. 
+	  This way, in multithreading scenarios, you make the variable visible to all threads.
+	  Good reading: https://stackoverflow.com/questions/62914811/java-multi-threading-why-do-we-need-to-look-into-main-memoryram-if-we-have
+	* Why is String immutable in Java? 
+	- Varias razones. Una de ellas es que java tiene un string pool en el cache de cada thread. Este string pool almacena cada string que se crea.
+          Si el string fuese mutable, creo un string "Hola", y despues creo otro String "Hola", pero este segundo lo modifico (Ej: toUpperCase()), entonces 
+	  tambien estaría modificando el primer string.
+	- Tambien es inmutable porque tiene un uso interesante para los hashmaps. Cada vez que se crea un string se cachea su hashcode, entonces cada vez que
+	  usas el string como key en un hashmap, no hace falta calcular el hashcode.
+	* Qué es ThreadLocal?
+	- The ThreadLocal class allows programmers to create variables that are accessible only to the thread that created them.
+	* String pool que es?
+  	- https://www.baeldung.com/java-string-pool - Thanks to the immutability of Strings in Java, the JVM can optimize the amount of memory allocated for them by storing only one copy of each literal String in the pool. This process is called interning. When we create a String variable and assign a value to it, the JVM searches the pool for a String of equal value. If found, the Java compiler will simply return a reference to its memory address, without allocating additional memory. If not found, it’ll be added to the pool (interned) and its reference will be returned.
+	  
+	* Why char array is preferred to store passwords than a String in Java?
+	- Since Strings are immutable in Java if you store the password as plain text it will be available in memory until the Garbage collector clears it and since String is used in the String pool for reusability there is a pretty high chance that it will remain in memory for a long duration, which poses a security threat. 
+	Since anyone who has access to memory dump can find the password in clear text and that's another reason you should always use an encrypted password than plain text. Since Strings are immutable there is no way 	   the contents of Strings can be changed because any change will produce new String, while if you char[] you can still set all his elements as blank or zero. So Storing the password in a character array clearly             mitigates security risk of stealing passwords.
+	* What is a deadlock?" When two or more threads are waiting for each other to release the resource they need (lock) and get stuck for infinite time
+	
+	* https://www.baeldung.com/java-wait-notify
+	* https://stackoverflow.com/questions/38213467/what-does-intrinsic-lock-actually-mean-for-a-java-class
+	* https://jenkov.com/tutorials/java-concurrency/starvation-and-fairness.html
+	* https://www.java67.com/2012/09/top-10-tough-core-java-interview-questions-answers.html
+	* https://stackoverflow.com/questions/9848616/whats-the-meaning-of-an-objects-monitor-in-java-why-use-this-word
+	* https://jenkov.com/tutorials/java-concurrency/synchronized.html#synchronized-blocks-instance-methods
+	  - Synchronized blocks in Java are marked with the synchronized keyword. A synchronized block in Java is synchronized on some object.
+            Osea, si en una clase tengo 2 metodos distintos syncrhonized, entonces no importa que sean 2 metodos distintos, solo 1 thread va a poder ejecutar uno de estos metodos a la vez.
+	    Ejemplo:
+	    In case a class contains more than one static synchronized method, only one thread can execute inside any of these methods at the same time. Look at this static synchronized method example:
+		public static MyStaticCounter{
+		  private static int count = 0;
+		  public static synchronized void add(int value){
+		    count += value;
+		  }
+		  public static synchronized void subtract(int value){
+		    count -= value;
+		  }
+		}
+		Only one thread can execute inside any of the two add() and subtract() methods at any given time. 
+		If Thread A is executing add() then Thread B cannot execute neither add() nor subtract() until Thread A has exited add().
+	    Also very interesting:
+		When a thread enters a synchronized block it will refresh the values of all variables visible to the thread. 
+		When a thread exits a synchronized block all changes to variables visible to the thread will be committed to main memory. This is similar to how the volatile keyword works.
+		
+ Conclusiones:
+  - syncronized methods: El thread que llama al método adquiere el lock del objeto al cual pertenece el método (Conocido como lock intrinseco, ya que no cree un objeto especial para usar como lock, si no que uso
+    el objeto del método como lock)
+  - syncronized blocks: cuando uso esto, tengo que especificar un objeto del cual agarrar el lock. Puede ser "this" (uso el objeto actual como lock), o puede ser cualquier otro objeto.
+  - usar un Lock en vez de syncronized tiene ventajas ya que el lock implementa un mecanismo de fairness (si hay varios threads esperando agarrar el lock, el lock
+    va a ser agarrado por el thread que haya esperado mas tiempo, esto asegura que todos los threads eventualmente accedan al lock (fairness). Con el keyword syncrhonized, el lock del objeto
+    se asigna de forma random, lo que puede causar que si varios threads estan tratando de agarrar el lock, puede que 1 o varios jamas lo agarren, o tarden demasiado.
+	 
+9 Threads
+	9.a diferentes formas de crear threads, cual te gusta mas y porque?
+		-extends thread
+		-implement runnable
+		-use Executors
+	9.b que es un deadlock?
+	9.c synchronized
+
+	context switch is the process of storing the state of a process or thread, so that it can be restored and resume execution at a later point, and then restoring a different, previously saved, state
+
+10. logging
+	10a. info,debug,error,fatal.
+	10b. Como manejarias el logging para 20 aplicaciones en paralelo. (elk, logstash, elastic search, kibana).
+
+11. Patrones de diseño
+	10.1 que patrones de disenio conoces.
+		* Template: The Template Pattern is used to defer or delegate some or all steps of an algorithm to a subclass. 
+		            Common behavior can be defined in a superclass, and then specific variants are written in a subclass.
+		            For example, in a super class we define a method that involves a series
+		            of steps, and those steps are defined in abstract methods in the super class.
+			    The subclasses will have to implement steps. 
+		* Singleton: This pattern is useful when we only need a single instance of a class in the jvm.
+		* Strategy: This pattern enables us to easily swap specific implementation of an algorithm at run time. Simply create an interface "Strategy" with a method like execute(), create subclasses with different
+		            execute implementations, and then create a class that uses the Strategy interface. The subclasses can be swapped at runtime.
+		* Builder 
+		* Factory
+		* Flyweight: Useful in situations where you have several inmmutable objects, and many may represent the same value. Instead of creating a new object that already exists in the heap, 
+		             we re-use the existing object. Java uses the flyweight pattern, for example, in the Integer class valueOf method. The valueOf method checks the value of the given parameter, and if it is a                                precached value, the method returns the constructed instance rather than creating a new copy.
+
+	10.2 Como se implementa singleton.
+	10.3 como se implementa factory/builder
+
+12. websocket/jetty
+	* como funcionan los websockets. 
+	* jetty
+
+13.  messaging
+	9.1 reactor pattern
+	9.2 kafka
+
+14. Junit/mockito/tdd
+	9.1 herramientas de stress test. jmetter
+	9.2 como probas tu codigo.
+	9.3 defini a grandes rasgos como funciona junit.
+	9.4 como usarias mockito para mockear un metodo.
+	9.5 TDD
+
+## Garbage Collector ##
+Java objects are created on the heap, which is a section of RAM memory dedicated to a program. When objects are no longer needed, the garbage collector finds and tracks these unused objects and deletes them to free up space. Without garbage collection, the heap would eventually run out of memory, leading to a runtime OutOfMemoryError.
+
+During the garbage collection process, the collector scans different parts of the heap, looking for objects that are no longer in use. If an object no longer has any references to it from elsewhere in the application, the collector removes the object, freeing up memory in the heap.
+
+To work efficiently, the JVM separates the heap into separate spaces called generations.
+
+- Eden: The eden space in Java is a memory pool where objects are created. When the eden space is full, the garbage collector either removes objects if they are no longer in use or stores them in the survivor space if they are still being used. This space is considered part of the young generation in the memory heap.
+- Survivor: There are two survivor spaces in the JVM: survivor zero and survivor one. This space is also part of the young generation.
+- Tenured: The tenured space is where long-lived objects are stored. Objects are eventually moved to this space if they survive a certain number of garbage collection cycles. This space is much larger than the eden space and the garbage collector checks it less often. This space is considered the old generation in the heap.
+
+The garbage collection occurs most frequently in the eden space because many new objects don’t need to stay in memory for very long. 
+By moving objects into survivor and tenured spaces, the garbage collector knows that there is a higher likelihood that the objects there will need to remain in memory, so it checks those areas less frequently. 
+
+That heap division is not true for all garbage collectors. Some split the heap in different ways.
+
+What to do when we encounter frequent/Long GC pauses: https://dzone.com/articles/how-to-reduce-long-gc-pause
+- Check For High Object Creation Rate
+- Check if the Young Generation Size should be increased
+- Check for Process Swapping (Maybe there is not enough RAM and its allocating part of the heap on disk)
+
+15. Patrones de Diseño para arquitectura de  microservicios
+Sources: 
+https://www.tutorialspoint.com/microservices_design_patterns/microservices_design_patterns_proxy.htm
+https://medium.com/@madhukaudantha/microservice-architecture-and-design-patterns-for-microservices-e0e5013fd58a
+
+Integration Patterns
+
+(A) Aggregator pattern: Its helpful when a consumer needs data from many different microservices. Instead of making the consumer client to call many microservices, it could call an aggregator microservice that will collect the required data from the different microservices, aggregate the data and build a final response to the consumer. This can be done in two ways:
+ - A composite microservice will make calls to all the required microservices, consolidate the data, and transform the data before responding to the client.
+ - An API Gateway can also partition the request to multiple microservices and aggregate the data before sending it to the consumer.
+If any business logic needs to be applied, the composite microservice is recommended, otherwise, the API Gateway is the established solution.
+
+(B) API Gateway: When there are many microservices in the system, the API Gateway works as the single point of entry for any microservice call. It can also aggregate the results, or take care the authentication and authorization. It can also have features like rate limiting, api monitoring, etc.
+The difference with the Aggregator pattern is that API Gateway is always at the gate, its the entry point to the system, and its only one, while the aggregegator microservice could be somewhere in the middle layer.
+
+(C) Proxy Pattern: Its the same as the API Gateway but the only thing that it does is to re-route the requests to the desired microservice.
+
+(D) Chained Pattern: It has a single entry point, lets say microservice A. Microservice A will call microservice B, and B will call C, and so on in a manner of syncrhonous calls to get the task done. This is slow, but its secure given we have just one entry point.
+
+(E) Is a hybrid of chain and aggregator pattern. Service A -> Service C -> Service D
+                                                           -> Service B
+
+Service A is acting like an aggregator and it is branching out into two branches. One branch contains a single autonomous service (Service B) and the other branch contains a chain of services (Service D is accessible from Service C). This type of design is useful when a large monolithic application is needed to be converted into an application with microservice type of architecture.
+
+Database Patterns
+
+(A) The Database-per-Service Pattern: In order to keep the loose coupling between services, each microservice should have its own private database. Separating databases per app has the advantage that we can pick the best optimized database for each microservice.
+
+(B) Command Query Responsibility Segregation (CQRS): This pattern is meant to separate the read(query) and write(command) logic of our applications in regards to the database. This is sometimes a good idea when we have a database with a lot of reads and writes that are producing a lock contention, maybe because the read queries involve the join of multiple tables. 
+
+There are many ways to implement this. 
+In a single database (Having tables for writes and materialized views for reads)
+In two databases: One for writing and another for reading.
+Etc.
+
+The event sourcing pattern is generally used along with it to create events for any data change. Materialized views are kept updated by subscribing to the stream of events.
+
+Materialized view: A materialized view is a database object that contains the results of a query. For example, it may be a local copy of data located remotely, or may be a subset of the rows and/or columns of a table or join. The query result is cached as a concrete ("materialized") table (rather than a view as such) that may be updated from the original base tables from time to time. This enables much more efficient access, at the cost of extra storage and of some data being potentially out-of-date. 
+
+(C) Event sourcing: This pattern involves sending a continuous stream of messages to some event storage. Each message describes an event in the system. Examples include: A write to the database, request to a web server, or logging activity. Applications then query the event store in a way that suits their needs. The event store becomes our primary source of truth
+
+Great web for CQRS and Event sourcing: https://www.baeldung.com/cqrs-event-sourcing-java
+
+When to use Event sourcing? 
+- If the business requires it, for audit purposes
+- When the ability to re-build the system state at certain point on time is needed
+- Good for debugging.
+- ETC.
+
+Observability Patterns
+
+(A) Log Aggregation
+Consider a use case where an application consists of multiple services. Each service instance generates a log file in a standardized format. We need a centralized logging service that aggregates logs from each service instance.
+
+(B) Performance Metrics
+When a metrics service is required to gather statistics about individual operations. It should aggregate the metrics of an application service, which provides reporting and alerting.
+There are two models for aggregating metrics:
+Push — the service pushes metrics to the metrics service e.g. NewRelic, AppDynamics
+Pull — the metrics services pulls metrics from the service e.g. Prometheus
+
+
+Cross-Cutting Concern Patterns
+
+(A) Service Discovery Pattern
+
+When microservices come into the picture, we need to address a few issues in terms of calling services.
+With container technology, IP addresses are dynamically allocated to the service instances. Every time the address changes, a consumer service can break and need manual changes.
+Each service URL has to be remembered by the consumer and become tightly coupled.
+A service registry needs to be created which will keep the metadata of each producer service and specification for each. A service instance should register to the registry when starting and should de-register when shutting down. There are two types of service discovery
+
+(B) Circuit Breaker Pattern
+
+A service generally calls other services to retrieve data, and there is the chance that the downstream service may be down. There are two problems with this: first, the request will keep going to the down service, exhausting network resources, and slowing performance. Second, the user experience will be bad and unpredictable.
+
+The consumer should invoke a remote service via a proxy that behaves in a similar fashion to an electrical circuit breaker. When the number of consecutive failures crosses a threshold, the circuit breaker trips, and for the duration of a timeout period, all attempts to invoke the remote service will fail immediately. After the timeout expires the circuit breaker allows a limited number of test requests to pass through. If those requests succeed, the circuit breaker resumes normal operation. Otherwise, if there is a failure, the timeout period begins again.
+
+
+
+el banco ciudad se enfoca en los siguientes temas:
+
+- Java
+- Live Coding
+- Multithreading: 
+  > Atomics and why they are better than syncronized: Atomics use a combination of volatile (for reading the latest from main memory) and CAS which is a fast hardware level instruction to achieve thread safety.
+    They are better than syncronized because synchronization uses a locking mechanism hence it is slower than atomic variables. https://stackoverflow.com/questions/46092685/cas-vs-synchronized-performance
+  > How concurrent collections work (ConcurrentHashMap): It locks at the segment level (A group of buckets), it doesnt block the hole data structure.
+    It uses pesimistic locking. It only locks for write operations, not reads. 
+  > We have an app that runs calculations in paralell and we need to pick the number of threads we want to dedicate to these calculations, how do we pick this number?
+    I would check how many available threads we have (we could have 1 or more threads per core), and the number I would pick is all the available threads minus 1, so we have one free thread for the main thread.
+  > So lets say our app has like 70 threads available. Why would it be a bad thing if our app spins up 100 threads? (So, more threads than we currently have available).
+    We would be having context switching, which is very expensive in terms of time: 
+	First all the process registers have to be saved. 
+	Second, restoring the context for the new process is equally time consuming.
+	Third, memory caches have to be flushed and reloaded for the new process.
+	Fourth, there is overhead in determining what process to execute next.
+    Having more threads than currently available is BAD only in CPU-Bound scenarios. If we are IO-Bound, then we can have more threads than currently available.
+    For example, an IO-Bound scenario could be each thread making a database call that usually takes 30 seconds to get resolved. In this case its better to have more threads than available
+    because we will be waiting more on the external resource than context switching. https://stackoverflow.com/questions/24149834/choosing-optimal-number-of-threads-for-parallel-processing-of-data
+  > DeadLock and LiveLock: https://www.tutorialspoint.com/deadlock-starvation-amp-livelock#:~:text=Deadlocks%20can%20be%20resolved%20by,symmetry%2C%20randomness%2C%20and%20timeouts. MUST KNOW.
+- Messaging 
+  KAFKA - 
+	> Lets say we have an app which is consuming from a topic. We have a single consumer, single consumer group and throughput is fine, but we know that in 4 months the load will increase 1000% times.
+            How do I prepare for this?
+            Kafka scales by increasing the number of partitions. Although we have to keep in mind that if we care about the order of the messages order, the order is maintained by partition.
+	    But this can be managed by having a logic for the partition keys. For the same partition key, kafka sends the messages to the same partition.
+	    We should probably also increase the number of consumers to stay as close to 0 lag as possible.
+	> If we increase the number of partitions that might mean that we will end up with one partition bigger than the other.
+   	  What is the proper way of creating new partitions to prevent this?
+ 	- Kafka uses the partitioning key (The key of the message) to determine to which partition the message will go.
+	  So the idea is that we need to pick up certain partitioning keys that is uniformly distributed.
+        > How do we pick such a key so that its uniformly distributed? Because sometimes we dont have a field we can rely on that is uniformly distributed
+ 	- For this kafka supplies a hashing strategy so it can hash any field in an uniformly distribution	
+  
+- Microservices
+   GRPC -
+ 	Its an Remote Procedure Call framework, were the core idea is defining a service with methods that can be remotely called with their parameters and return types. 
+	I have limited experience with this because, although I use it in my current job, we are using a proprietary version that works on top of grpc.
+	Pros:
+	  It uses Protobuf (Protocol Buffers) as a protocol for serializing data, which produces a binary format that requires few resources and messages are smaller.
+	Cons:
+	  GRPC is based on HTTP2, which could mean that I might not be able to work with a client that doesn't support HTTP2. So, lets say Im providing a public API,
+	  and we have legacy consumers like old mobile phones, then maybe a RESTful API might be a better choice.
+  	  But for communicating internal microservices grpc is good.
+
+- Kubernetes: MUST KNOW: How to make CI/CD pipelines with kubernetes.Essentially how to make the code from my repository gets deployed to kubernetes. (Webhooks, jenkins, etc)
+	Know difference between Cdelivery and Cdeployment. Not every pipeline is the same for every project, there are pros and cons.
+	Never say: I did this in my last project. 
+	Do say: If I would have to build a pipeline I would do it like this: pa, pa, pa.
+  GIT-GITHUB: I would use GIT for version control and I would host this on some source code manager like GITHUB.
+  Folder structure of my repo; I would have two folders
+     > One folder for my application. Inside I would have the source code, and also a Dockerfile that describes how to create a docker image of my app.
+     > Another folder with my terraform scripts, which I would use to define the infraestructure of my application, and define things like the provider which is kubernetes,
+	     and some deployment objects to create the containers.
+	     
+  	     
+		
+- Practise LeetCode just in case. On the inverview before start coding, ask questions, verify I understood the problem, and validate my solution. Try to talk, at least a bit.
+
+
+
+
+

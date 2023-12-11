@@ -1,0 +1,181 @@
+https://www.youtube.com/watch?v=UgX5lgv4uVM
+
+Spring is a framework focused on the inversion of control principle. To achieve this it uses the dependency Injection pattern.
+Because of this, it makes it easy to develop loosely coupled applications. It makes applications testable.
+
+Spring stereotypes - There are ONLY 4.
+
+@Component: Most generic stereotype. A class with this annotation makes it visible to the Spring IoC Container.
+@Repository: Indicates that the class deals with CRUD operations against some data store.
+@Service : Indicates that the class contains business logic.
+@Controller : Indicates that the class is a web controller and responsible to handle user requests and return the appropriate response.
+
+2.- listame caracteristicas de spring
+	a) contenedor
+	b) framework-mvc
+	c) inversion de control
+		c.1) que es la inyeccion de dependencias?
+		c.2) Liste algunos tipos de inyeccion de dependencias.
+	d) transacciones
+		d.1) en que capa se manejan las transacciones?
+	e) programacion orientada a aspectos
+	f) manejo de excepciones jdbc
+		
+
+Spring Core
+	Inversion of control 
+        Application Context 
+        Beans 
+
+Spring MVC
+	Models
+	Annotations
+	CRUD REST API
+	CDRS
+	Data Validation
+
+Spring Data
+	- JDBC
+	- ...
+
+Spring Boot
+	Spring based applications have a lot of configuration. When we use Spring MVC, we need to configure component scan, dispatcher servlet, a view resolver, web jars(for delivering static content) among other things. 	        When we use Hibernate/JPA, we would need to configure a datasource, an entity manager factory, a transaction manager among a host of other things. 
+	Spring Boot can auto configure some beans automatically
+	
+	Spring boot provides:
+	Starters - convenient dependencies that package everything we need for certain scenarios
+	Auto config
+	Production ready - Actuator dependency provides production ready features: Endpoints for health check, beans, etc
+	                                                                           Observability - Logging, metrics, tracing
+
+Spring MVC 
+	Provides a decoupled way of developing web applications, separating the model, the view and the controller(a.k.a dispatcher servlet)
+
+Bean lifecycle: 
+Bean life cycle is managed by the spring container. When we run the program then, first of all, the spring container gets started. After that, the container creates the instance of a bean as per the request, and then dependencies are injected. And finally, the bean is destroyed when the spring container is closed.
+We can execute actions after bean creation with @PostConstruct and before its destroyed with @PreDestroy
+
+
+Annotation questions:
+	- Q: If more than one bean of the same type(class or interface) is available in the container, the framework will throw NoUniqueBeanDefinitionException, 
+             indicating that more than one bean is available for autowiring. How do you solve this?
+	  A: Use @Qualifier annotation together with the name of the specific implementation we want to use, we fix the ambiguity situation.
+	     Two other options are:
+		- Autowiring by Name: Set the name of the variable that will be wired equal to the bean name. Doing this will make the autowire mechanism to solve the ambiguity. 
+		- @Primary annotation. 
+		More info: https://www.baeldung.com/spring-qualifier-annotation
+	- Q: Let's say I have a class that I don't own because its in an external library, how do I inject an instance of that class into the ApplicationContext?
+	  A: We create a class with the @Configuration annotation. Inside that class, we create a method that returns an instance of the class we want to inject, and we mark the method
+             with the @Bean annotation. @Bean indicates that a method produces a bean that will be managed by the Spring Container. The name of the bean wil be the method name
+
+	- Q: What does @Controller and @RestController do?
+	  A: @Controller is used to create web controllers that return views, which is further resolved by view resolver, while @RestController is used to create web services that return JSON or XML data
+
+	- Q: What does @RequestMapping do?
+	  A: It tells Spring whats the path to arrive to the current controller.
+
+	- Q: What does @GetMapping do?
+	  A: Its a method annotation that tells spring to call the current method for GET requests for a certain path.
+
+	- Q: What does @Repository do?
+	  A: It tells Spring that the class provides a mechanism for storage, retrieval, search, update and delete operation on objects.
+
+	- Q: What does @Autowired do?
+	  A: It tells Spring to assign a variable with an instance that is living in the application context.
+	     It is not always needed to write this annotation. For example, if a class has a constructor with just 1 argument, Spring will autowire that argument without the need for the annotation.
+
+	- Q: What does @PostConstruct do?
+	  A: It tells spring that the current method has to be called after dependency injection is done. Usually used for initialization.
+
+	- Q: What does @PathVariable do?
+	  A: Tells spring that the argument value has to be taken from the Mapping Path
+		@GetMapping("/{id}")
+		public Integer findById(@PathVariable Integer id) {
+                	...
+		}
+
+	- Q: What does @ResponseStatus do?
+	  A: Sets the response HTTP code of a controller method. The status will be set if no exception is thrown.
+
+	- Q: What does @RequestBody do?
+	  A: Maps the HttpRequest body to a java object, enabling automatic deserialization. In the example, the LoginForm object is created
+		@PostMapping("/request")
+		public ResponseEntity postController(@RequestBody LoginForm loginForm) {
+		    ....
+		}
+	  Q: How do we validate that the given LoginForm is ok?
+          A: We use a validator. First, we tell spring using the @Valid annotation that it has to validate the LoginForm
+		@PostMapping("/request")
+		public ResponseEntity postController(@Valid @RequestBody LoginForm loginForm) {
+		    ....
+		}
+  	     Then, in the LoginForm class, we can annotate each field to define what validations we want. Like @NotNull, @NotBlank, etc.
+
+	- Q: How can you inject configuration into the application?
+	  A: There are many ways.
+	     On every class variable, add a @Value("${property.name: defaultValue}"
+ 	     With the above, the "property.name" will be lookuped up in the configuration. If the property is not set, then it will default to "defaultValue"
+	     This while fast, has a downside like no type checking.
+
+	     Another option is to create a class and annotate it with @ConfigurationProperties, for example:
+		@Configuration
+		@ConfigurationProperties(prefix = "mail")
+		public record ConfigProperties(String hostName, int port, String from) {}
+	
+		To make this work we will also have to annotate with @EnableConfigurationProperties(ConfigProperties.class) the class where our main method will execute
+
+	- Q: Transactional annotation
+	  A: https://www.marcobehler.com/guides/spring-transaction-management-transactional-in-depth
+
+JDBC Questions
+
+	- Q: How can I make Spring run a query or sql script on every startup?
+	  A: We can do this programatically or using a .sql file.
+		SQL FILE: Spring JDBC has a DataSource initializer feature enabled by default. It scans the root classpath looking for the files schema.sql and data.sql. 
+			  In addition Spring Boot will load the schema-${platform}.sql and data-${platform}.sql files (if present).
+
+	- Q: What does the JDBCTemplate interface gives us? Is it part of Spring Data?
+	  A: JDBCTemplate offers an interface to talk to the database. We still have to write the Queries as usual, and the interface asks for a RowMapper method, that Spring will use
+	     to create an Object for every row in the result set.
+	     This is the first layer of abstraction that Spring provides when it comes to the DB. 
+	     JDBCTemploate is not part of Spring Data. Spring data offers more layers of abstraction (JDBCTemplate is not the same as Spring Data JDBC), where we don't have to write any queries
+	     or row mappers.
+
+	- Q: Spring Data JDBC vs Spring Data JPA?
+	  A: Spring Data JPA and Spring Data JDBC use Spring Data Commons as a base library. Both share the same abstractions; the most important one is Repository. 
+             In Spring Data JPA, repositories allow us to use derived methods instead of queries. Such methods transparently convert their invocations to queries using a JPA implementation. 
+             In Spring Data JDBC, method invocations are transformed into pure SQL and executed via JDBC.
+	     Spring Data JDBC is very similar to Spring Data JPA in terms of API. However, JPA provides several useful features that are not present in Spring Data JDBC:
+
+             @*ToOne associations allow us to create bidirectional references between entities.
+	     Automatic ID generation prevents us from manually selecting IDs from sequences or caring about IDENTITY datatype support in an RDBMS.
+             Batch operations. Hibernate groups similar operations into batches automatically. It helps when an application deals with massive insert operations.
+             L1 Cache keeps entities used in one transaction in memory. It allows us not to fetch the same data twice in two services if executed in the same transaction.
+             Etc.
+
+	- Q: Do we need to add @Repository when we create an interface that extends CrudRepository<>?
+        - A: No. When we extend CrudRepository, or any other repository spring class, Spring, at runtime, will create an implementation from that interface
+
+	- Q: So, extending CrudRepository gives you default queries like findById, findAll, etc. What if I want to implement custom queries?
+        - A: There are at least 2 ways.
+
+             1- Query derivation: Basically you write a method name in the interface, following some convention, and Spring will know how to transform that method into a query.
+                For example, I have a repository with fields Id, name and age. I want a query to get all the names that don't match a string
+		interface UserRepository extends JpaRepository<User, Integer> {
+			List<User> findByNameIsNot(String name);
+		}
+		Spring is clever enough to translate that method name into a query.
+
+	    2- Another option is to write the query ourselves with @Query and @Param
+		@Query("SELECT * FROM Users where name is not :name")
+		interface UserRepository extends JpaRepository<User, Integer> {
+			List<User> findByNameIsNot(@Param("name") String name);
+		}
+
+
+Production
+	- Profiles
+	  The application.properties file will always be read despite the active profile.
+	  On top of that, we can have separate application properties (application-{profile}.properties) that will be read depending on the active profile.
+          If spring.profiles.active=ut is set, then the application-ut.properties file will be loaded.
+   

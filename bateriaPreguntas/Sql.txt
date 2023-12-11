@@ -1,0 +1,103 @@
+SQL(Structured Query Language) 
+- Table Based structure, which has some pros:
+  > Its useful for organizing and structuring a lot of different data. 
+  > Allow easy querying on relationships among related data across multiple tables
+  > Since data is structured the potential for error is reduced, because you know how to format the data before storing/retrieving.
+  > ACID Compliant: Transactions are atomic (Either all or no instructions complete), consistent
+- It also has weaknesses:
+  > Structured data might mean fewer errors but also means that the structure must be created in advance. More setup time.
+  > Dificult to scale horizontally because of the relational nature. 
+    For read heavy system its easy to provide horizontal replicas. But for write heavy systems, usually the only option
+    is to scale vertically.
+- Vertical Scaling (Increase size of instance, RAM, CPU)
+
+NoSQL
+- Document key-value pairs: Good for storing unstructured data
+- Horizontal Scaling (Add more instances)
+- It has some pros:
+  > Flexible, easy to setup since they dont support table relationships
+  > Because they are good for unstructured data, they can also shard this data acrros different stores,
+    allowing for distributed databases, allowing easy horizontal scaling
+- It has some weaknessses:
+  > Loss of consistency. NoSQL databases are tipically designed for distributed use cases and write heavy systems
+    can be supported by having multiple shards for the same data partition (called peer-to-peer replication), 
+    however the trade off is loss of strong consistency, because after the write to a shard in a distributed nosql
+    cluster, there is a small delay before that update can be propagated to the replicas, so during this time, 
+    reading from a replica can result in getting stale data. This weakness of the data eventually being up to date
+    is called eventual consistency. 
+    Eventual consistency isnt exactly a fault of nosql DBs, but distributed DBs in general.
+    A single shard nosql database can be strongly consistent, but to fully take advantage of the scalability benefits
+    of nosql, the database should really be setup as a distributed cluster.
+- There are actually several types of NoSQL databases:
+ > A key-value store provides the simplest possible data model and is exactly what the name suggests: it's a storage system that stores values indexed by a key. You're limited to query by key and the values are opaque, 
+   the store doesn't know anything about them. This allows very fast read and write operations (a simple disk access) and I see this model as a kind of non volatile cache (i.e. well suited if you need fast accesses by 
+   key to long-lived data).
+ > A document-oriented database extends the previous model and values are stored in a structured format (a document, hence the name) that the database can understand. For example, a document could be a blog post and the 
+   comments and the tags stored in a denormalized way. Since the data are transparent, the store can do more work (like indexing fields of the document) and you're not limited to query by key. Such 
+   databases allows to fetch an entire page's data with a single query and are well suited for content oriented applications (which is why big sites like Facebook or Amazon like them).
+  > Other kinds of NoSQL databases include column-oriented stores, graph databases and even object databases. TODO
+    
+
+- Optimistic Locking vs Perssimistic Locking
+ https://stackoverflow.com/questions/129329/optimistic-vs-pessimistic-locking
+
+- Database sharding and partitioning (https://www.linkedin.com/advice/1/how-do-you-balance-load-distribute-data-across-multiple)
+
+Database sharding is the process of splitting a large database into smaller, independent, and distributed units called shards. Each shard contains a subset of the data, and can be located on a different server or cluster. Sharding reduces the load on each database server, and allows for parallel processing and querying of the data. However, sharding also introduces some challenges, such as data consistency, availability, and security.
+
+Database partitioning is the process of dividing a large table or collection into smaller, more manageable units called partitions. Each partition contains a subset of the rows or documents, and can be stored on the same or different server. Partitioning improves the performance and efficiency of queries, by reducing the amount of data that needs to be scanned or indexed. However, partitioning also requires careful planning and design, as it affects the schema, indexing, and querying of the data.
+
+- ACID: 4 key properties that define a transaction: Atomicity, Consistency, Isolation, and Durability. 
+ACID transactions guarantee that each read, write, or modification of a table has the following properties:
+Atomicity - ensures that either all the CRUD Statements inside a transaction are completed successfully or all of them are rolled back.
+Consistency - ensures that the database data is in a consistent state before the transaction started and also left the data in a consistent state after the transaction is completed.
+Isolation - ensures that the intermediate state of a transaction is invisible to other transactions. The Data modifications made by one transaction must be isolated from the data modifications made by all other transactions. Most databases use locking to maintain transaction isolation.
+Durability - ensures that once the transaction is successfully completed, then the changes it made to the database will be permanent.
+
+- Database indexing 
+A database index allows a query to retrieve data from a database in an efficient manner.
+When a database table is unindexed, there won’t be any clear order of the rows, thus, to fulfill any query, it will need to search through the rows linearly, that is, the query will have to search through each row to find the rows with the matching condition. As you can imagine, this isn’t ideal and can be a problem when looking inside a database table with huge amount of data.
+A database index is a data structure that allows quick access to specific pieces of information without having to read all data stored in a particular table.
+Adding an index takes up extra space, and every time a write occurs, the index has to be updated. This means INDEXING is not always a good idea, for example, if the table is small, indexing might not be needed.
+Also in services like google cloud spanner, they charge you for storage, and indexes use extra storage..
+
+What data structures are used for indexing?
+B-Trees
+B-trees are the most often used index data structures because they are fast for lookups, deletions, and insertions. All of these operations are possible in logarithmic time and the data contained within a B-tree can be sorted easily.
+
+Hash Tables
+Hash indexes are commonly used to describe indexes that utilize hash tables. Because hash tables are particularly efficient at looking up data, queries that look for an exact match may be processed rapidly. The key in a hash index is the column value, and the value in a hash table is a reference to the table's row data.
+Hash tables, on the other hand, are not ordered data structures; therefore, they may be inefficient for other types of searches.
+
+R-Tree
+R-tree is frequently used in spatial databases, usually used to index multi-dimensional information such as geographical coordinates, rectangles, polygons, etc. It is useful for searches such as "find all the coffee shops within 2 miles of my location."
+
+Bitmap Index
+Bitmap indexes are useful for columns that have a high number of occurrences of such values, i.e. columns with low selectivity. For instance, consider a column having boolean values.
+
+Si Btree es log(n) y hash es o(1), porque no siempre usar hash tables? -> Respuesta: Cuando necesitas filtrar por rango u orden
+You can only access elements by their primary key in a hashtable. This is faster than with a tree algorithm (O(1) instead of log(n)), but you cannot select ranges (everything in between x and y). Tree algorithms support this in Log(n) whereas hash indexes can result in a full table scan O(n). Also the constant overhead of hash indexes is usually bigger (which is no factor in theta notation, but it still exists). Also tree algorithms are usually easier to maintain, grow with data, scale, etc.
+
+
+How to select the columns to index: https://stackoverflow.com/questions/212264/how-to-choose-and-optimize-oracle-indexes
+Consider indexing keys that are used frequently in WHERE clauses.
+Consider indexing keys that are used frequently to join tables in SQL statements. 
+Choose index keys that have high selectivity. Selectivity is a measure of how much the index narrows the search for values. A lower selectivity value is better: it means fewer rows to scan and filter. Oddly, though, we say an index is “highly” selective if it has a low selectivity value. An index's selectivity is optimal if few rows have the same value, because that index will narow down the search a lot.
+Do not index columns that are modified frequently. UPDATE statements that modify indexed columns and INSERT and DELETE statements that modify indexed tables take longer than if there were no index.
+Etc..
+
+- Explain what the CAP theorem is.
+A la hora de elegir una base de datos distribuida en un proyecto, hay que tener en cuenta tres atributos (Que son los atributos de los que habla este teorema):
+
+Consistency: La consistencia nos garantiza que una lectura nos retornará la escritura mas reciente de un registro dado. Lo que esto implica es que siempre que se haga alguna modificación a un dato dicho cambio debe reflejarse en todos los nodos de la base de datos, esto garantiza que siempre que se acceda a la información cualquiera de los nodos puede responder y la información siempre será la misma.
+Availability: Un nodo en funcionamiento nos debe retornar una respuesta razonable en un periodo razonable de tiempo (Ni error ni timeout).
+Partition tolerance: El sistema nos debe seguir funcionando aunque algunos nodos no se encuentren disponibles ya que la información es consistente en todos los nodos.
+
+Lo que dice el teorema es que solo puedes garantizar dos de estos tres atributos,
+CP (Consistencia y Tolerancia al particionamiento): Esto quiere decir que no se garantiza la disponibilidad, hay clientes que por ejemplo requieren que el sistema esté disponible 100% del tiempo o muy cerca, con bases de datos que cumplan con CP no es posible garantizar esto, no quiero decir que no se pueda lograr en cierto nivel, pero el sistema está enfocado en aplicar los cambios de forma consistente aunque se pierda comunicación con algunos nodos.
+AP (Disponibilidad y Tolerancia al particionamiento): En este caso no se garantiza que los datos sean iguales en todos los nodos todo el tiempo, en este caso el sistema siempre estará disponible para las peticiones aunque se pierda la comunicación entre los nodos.
+CA (Consistencia y disponibilidad): En este caso no se puede permitir el particionado de los datos, porque se garantiza que los datos siempre son iguales y el sistema estará disponible respondiendo todas las peticiones.
+Por ejemplo, los sistemas de bases de datos relacionales (SQL de toda la vida) son CA porque todas las escrituras y lecturas se hacen sobre la misma copia de los datos.
+Teorema de CAP bien explicado https://eamodeorubio.wordpress.com/2010/05/17/nosql-2-no-necesitas-acid/
+
+

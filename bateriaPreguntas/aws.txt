@@ -1,0 +1,67 @@
+AWS Services:
+  IAM: Identity and Access Management, a global service.
+       You can grant permissions to:
+        - A single User
+        - To a group (All users in the group will inherit the permission)
+       A user could be in a group or not.
+      IAM Roles: Are like users but are meant to be used by Services. 
+                 e.g grant a EC2 instance an IAM Role to access an EC2 Bucket.
+       
+  EC2 (Elastic Compute Cloud): A virtual server that runs continuosly and you get billed by runtime.
+    EC2 mainly consist of:
+    - Renting Virtual Machines(EC2)
+    - Storing data on virtual drives (EBS)
+    - Distributing load across machines (ELB)
+    - Scaling the services using auto-scaling group (ASG)
+
+  S3: Simple storage service
+  AWS Lambda: Virtual functions, no servers to manage.
+  - Limited by time: short executions
+  - Run on-demand, so you dont get billed while its not running.
+  Concepts:  
+    - Function: A piece of code that does a single job, short and fast.
+    - Events: Something that triggers a lambda function to execute (HTTP through an API gateway, S3 File upload, etc)
+    - Resources: AWS Infraestructure components which the function use (AWS DynamoDB, and S3 Bucket, etc)
+    - Services: Where we define the functions, the events that trigger them and the resources that the functions use. 
+      A service can be described in yaml or json. (The hole stack) This is good so we can centralize the configuration and flow in 1 place.
+    - Timeout and Memory for each function can be speicified in the serverless.yml aswell
+    - VPC (Virtual Private Network) - Lambda functions always run inside VPCs(Subnets) owned by the Lambda service.
+    - AWS SAM (Serverless Application Modle): Framework to define serverless apps. Its almost the same as Serverless Framework, 
+      but specific to AWS. Essentially, instraestructure as config.
+      AWS SAM has:
+        - Template specs to write function, API, permissions, etc
+        - CLI to invoke functions (local/remote), package and deploy,etc.
+        - Single deployment configuration.
+        - Uses AWS CloudFormation for the stack deployment
+    - Step Function: A service to build workflows composed by step functions and services. (like uc4)
+  
+  
+  AWS CloudWatch: Service that allows you to go and see what's happening in the back end.
+  AWS S3 - Simple Storage Service
+  AWS Cloudshell: Its a terminal in the cloud, free to use.. It uses the region and credentials of the user you are logged in with. Whatever you do in Cloudshell will stay after you closed it (files, cfg)
+  
+
+
+Other stuff:
+
+Serverless Framework(Not an AWS tool): Its a cloud agnostic framework that allows us to create deploy and delete and manage a Lambda functions (among other things) 
+- "sls" or "serverless" is the command in the command line
+  Create
+  - sls create --template aws-java-maven --path aws-java-lamda-example
+  Deploy
+  - sls deploy deploys the hole stack
+  - sls deploy function -f {function_name} : just deploys the function. much faster for incremental upgrades.
+  Invoking the function
+  - sls invoke -f {function_name} : invokes the function from aws
+  - sls invoke -f function_name --log : for more details
+  Remove the function from the back-end (from aws in this case)
+   - To remove the function - dependencies of the function - CloudWatch logs - IAM Roles - everything else the framework has created, serverless is GREAT
+     sls remove 
+
+AWS SAM Commands:
+  - sam init (To create a new project)
+  - sam build -> Builds the project and leaves it ready to be invoked or deployed
+  - sam local invoke "function_name" -e events/event.json-> Runs the function locally using docker!
+  - sam deploy --guided -> Does a lot of great things: Creates IAM Roles, Functions, sets up an API Gateway to reach the function, and more.
+  - sam local start-api -> Starts a local server api (localhost:3000/function_name) to call the lambda
+  - aws cloudformation delete-stack --stack-name app_name --region regionUsed -> To delete the hole stack

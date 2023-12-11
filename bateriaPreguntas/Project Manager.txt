@@ -1,0 +1,2 @@
+* Critical Path
+- the critical path in project management is the longest sequence of activities that must be finished on time to complete the entire project.
